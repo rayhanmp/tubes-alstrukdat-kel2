@@ -1,15 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-void exit(int status){
-    printf("Anda keluar dari game BNMO.\n");
-    printf("Bye bye...\n");
-}
+int main(){
+    int flag = 0;
+    char ch[100];
+    do{
+        printf("ENTER COMMAND: ");
+        scanf("%s", &ch);
+    
+        if (strcmp(ch, "EXIT") == 0)
+            printf("Anda keluar dari game BNMO.\n");
+            printf("Bye bye...\n");
+            flag = 1;
+        }
+    while (flag == 0);
 
-
-int main()
-{
-// ini test buat manggil exit yh
-    exit(0);
     return 0;
-}
+    }
