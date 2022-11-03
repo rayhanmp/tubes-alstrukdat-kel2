@@ -3,17 +3,27 @@
 
 char currentChar;
 boolean EOP;
-static FILE *pita;
+FILE *pita;
 static int retval;
 
-void START() {
+void START_INPUT()
+{
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
-    pita = fopen("../../data/data1.txt", "r");
+    pita = stdin;
     ADV();
 }
 
-void ADV() {
+void START()
+{
+    /* Mesin siap dioperasikan. Pita disiapkan ... */
+    /* Algoritma */
+    pita = fopen("../ADT/data1.txt", "r");
+    ADV();
+}
+
+void ADV()
+{
     /* Pita dimajukan satu karakter. ... */
     /* Algoritma */
     retval = fscanf(pita, "%c", &currentChar);
@@ -23,13 +33,15 @@ void ADV() {
     }
 }
 
-char GetCC() {
+char GetCC()
+{
     /* Mengirimkan currentChar */
     /* Algoritma */
     return currentChar;
 }
 
-boolean IsEOP() {
+boolean IsEOP()
+{
     /* Mengirimkan true jika currentChar = MARK */
     /* Algoritma */
     return EOP;
