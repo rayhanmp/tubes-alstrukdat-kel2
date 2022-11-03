@@ -9,7 +9,7 @@ static int retval;
 void START() {
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
-    pita = fopen("../../data/data1.txt", "r");
+    pita = stdin;
     ADV();
 }
 
