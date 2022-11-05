@@ -6,16 +6,11 @@
 
 #include "boolean.h"
 #include "mesinkarakter.h"
+#include "word.h"
 
 #define NMax 100
 #define BLANK ' '
 #define ENTER '\n'
-
-typedef struct
-{
-   char TabWord[NMax]; /* container penyimpan kata, indeks yang dipakai [0..NMax-1] */
-   int Length;
-} Word;
 
 void IgnoreBlanks();
 /* Mengabaikan satu atau beberapa BLANK
