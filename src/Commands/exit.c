@@ -12,6 +12,12 @@ int main(){
             printf("Anda keluar dari game BNMO.\n");
             printf("Bye bye...\n");
             flag = 1;
+        
+            while (!IsEmpty(Q)) {
+                Eltype val;
+                Dequeue(&Q, val);
+            }
+                
         }
     while (flag == 0);
 
