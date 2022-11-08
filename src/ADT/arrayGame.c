@@ -114,20 +114,19 @@ void PrintArray(arrGame arr){
     }
 }
 
-// DRIVER ADT ARRAY
-// #include "mesinkarakter.h"
-// #include "mesinkata.h"
+//DRIVER ADT ARRAY
+// #include "mesinkarakter.c"
+// #include "mesinkata.c"
 // int main(){
 //     arrGame arr;
 //     int i = 0;
 //     MakeArray(&arr);
-//     STARTWORD();
+//     STARTWORD(filename);
 //     ADVWORD();
 //     while(!isEndWord()){
 //         InsertLast(&arr, currentWord);
 //         ADVWORD();
 //         i++;
 //     }
-//     DeleteAt(&arr, 3);
 //     PrintArray(arr);
 // }

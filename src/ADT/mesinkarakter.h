@@ -5,11 +5,12 @@
 #define __MESIN_KAR_H_
 
 #include "boolean.h"
-
+#include "word.h"
 #define MARK '.'
 /* State Mesin */
 extern char currentChar;
 extern boolean EOP;
+
 
 void START_INPUT();
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
@@ -20,7 +21,7 @@ void START_INPUT();
           Jika currentChar != MARK maka EOP akan padam (false)
           Jika currentChar = MARK maka EOP akan menyala (true) */
 
-void START();
+void START(file filename);
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
    Karakter pertama yang ada pada pita posisinya adalah pada jendela.
    Pita baca diambil dari file data.

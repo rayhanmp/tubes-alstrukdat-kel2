@@ -14,11 +14,23 @@ void START_INPUT()
     ADV();
 }
 
-void START()
+void START(file filename)
 {
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
-    pita = fopen("../ADT/data1.txt", "r");
+    char directory[50] = "../../data/";
+    int i=0,j=0;
+    while(directory[i]!='\0'){
+        i++;  
+    }
+    while(filename[j]!='\0')
+    {
+        directory[i]=filename[j];
+        j++;
+        i++;
+    }
+  directory[i]='\0';
+    pita = fopen(directory, "r");
     ADV();
 }
 

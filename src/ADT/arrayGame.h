@@ -50,7 +50,7 @@ void InsertAt(arrGame *arr, Game el, IdxType i);
 //  * Fungsi untuk menambahkan elemen baru di akhir array.
 //  * Prekondisi: array terdefinisi
 //  */
-void InsertLast(arrGame *array, Game el);
+void InsertLast(arrGame *arr, Game el);
 
 // /**
 //  * Fungsi untuk menambahkan elemen baru di awal array.
@@ -63,21 +63,21 @@ void InsertFirst(arrGame *arr, Game el);
 //  * Prekondisi: array terdefinisi, i di antara 0..Length(array).
 //  */
 
-void DeleteAt(arrGame *array, IdxType i);
+void DeleteAt(arrGame *arr, IdxType i);
 
 // /**
 //  * Fungsi untuk menghapus elemen terakhir Array
 //  * Prekondisi: array tidak kosong
 //  */
 
-void DeleteLast(arrGame*array);
+void DeleteLast(arrGame*arr);
 
 // /**
 //  * Fungsi untuk menghapus elemen pertama Array
 //  * Prekondisi: array tidak kosong
 //  */
 
-void DeleteFirst(arrGame *array);
+void DeleteFirst(arrGame *arr);
 
 // /**
 //  * Fungsi untuk melakukan print suatu Array.
@@ -85,6 +85,6 @@ void DeleteFirst(arrGame *array);
 //  * dan diakhiri newline.
 //  * Prekondisi: array terdefinisi
 //  */
-void PrintArray(arrGame array);
+void PrintArray(arrGame arr);
 
 #endif

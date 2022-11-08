@@ -12,6 +12,9 @@
 #define BLANK ' '
 #define ENTER '\n'
 
+boolean endWord;
+Word currentWord;
+
 void IgnoreBlanks();
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang
@@ -29,7 +32,7 @@ void STARTWORD_INPUT();
           atau EndWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
 
-void STARTWORD();
+void STARTWORD(file filename);
 /* I.S. : currentChar sembarang
    F.S. : endWord = true, dan currentChar = MARK;
          atau endWord = false, currentWord adalah kata yang sudah diakuisisi,

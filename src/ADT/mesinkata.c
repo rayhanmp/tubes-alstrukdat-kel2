@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "mesinkata.h"
 
-boolean endWord;
-Word currentWord;
 
 
 void IgnoreBlanks()
@@ -28,13 +26,13 @@ void IgnoreEnters()
     } 
 }
 
-void STARTWORD()
+void STARTWORD(file filename)
 {
     /* I.S. : currentChar sembarang
        F.S. : endWord = true, dan currentChar = MARK;
               atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
               currentChar karakter pertama sesudah karakter terakhir kata */
-    START();
+    START(filename);
     IgnoreEnters();
     if (currentChar == MARK)
     {
