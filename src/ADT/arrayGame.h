@@ -9,7 +9,7 @@
 typedef int IdxType;
 typedef Word Game;
 typedef struct {
-    Game* A;
+    Game A[100];
     int Neff;
 } arrGame;
 
@@ -50,7 +50,7 @@ void InsertAt(arrGame *arr, Game el, IdxType i);
 //  * Fungsi untuk menambahkan elemen baru di akhir array.
 //  * Prekondisi: array terdefinisi
 //  */
-void InsertLast(arrGame *array, char* el);
+void InsertLast(arrGame *array, Game el);
 
 // /**
 //  * Fungsi untuk menambahkan elemen baru di awal array.
