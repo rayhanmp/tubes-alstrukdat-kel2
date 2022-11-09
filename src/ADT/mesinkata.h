@@ -32,7 +32,7 @@ void STARTWORD_INPUT();
           atau EndWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
 
-void STARTWORD(file filename);
+void STARTWORD(char* filename);
 /* I.S. : currentChar sembarang
    F.S. : endWord = true, dan currentChar = MARK;
          atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
@@ -76,4 +76,13 @@ boolean isEndWord();
 
 void clearWord();
 /*Membersihkan Word*/
+
+boolean isKataEqual(Word word, char* string);
+/*
+Mengembalikan true jika word == string dan false jika word != string.
+Fungsi ini dipakai untuk menyocokan command input.
+*/
+
+int wordToInt (Word kata);
+/*Mengubah kata menjadi integer*/
 #endif
