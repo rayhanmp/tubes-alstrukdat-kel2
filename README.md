@@ -24,7 +24,7 @@ Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perin
 
 ## Fitur
 Program ini memiliki sejumlah fitur yang dapat diakses oleh pengguna, di antaranya adalah:
-* **1. START\**
+* **1. START**
 Program akan memuat konfigurasi default.
 * **2. LOAD**  
 Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
@@ -36,8 +36,9 @@ Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
 * **8. PLAY GAME**
 * **9. SKIP GAME**
 * **10. QUIT**
+Keluar dari program.
 * **11. HELP**
-* **12. COMMAND LAIN**
+Program akan menampilkan daftar perintah yang bisa diakses.
 
 ## Kontributor
 Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor program ini:\
