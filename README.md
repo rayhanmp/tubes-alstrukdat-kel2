@@ -23,13 +23,13 @@ Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perin
 ```
 
 ## Fitur
-Program ini memiliki sejumlah fitur yang dapat diakses oleh pengguna, di antaranya adalah:
-###1.START\
-###2.LOAD\
-###3.SAVE
+Program ini memiliki sejumlah fitur yang dapat diakses oleh pengguna, di antaranya adalah:\
+### 1.START\
+### 2.LOAD\
+### 3.SAVE
 
 ## Kontributor
-Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor program ini:\n
+Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor program ini:\
 Jazzmy Izzati Alamsyah (18221124)\
 Karunia Mega Lestari (18221126)\
 Marcheline Fanni Hidayat Putri (18221090)\
