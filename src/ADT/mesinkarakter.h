@@ -7,6 +7,7 @@
 #include "boolean.h"
 #include "word.h"
 #define MARK '.'
+#define MARK_INPUT '\n'
 /* State Mesin */
 extern char currentChar;
 extern boolean EOP;
@@ -21,7 +22,7 @@ void START_INPUT();
           Jika currentChar != MARK maka EOP akan padam (false)
           Jika currentChar = MARK maka EOP akan menyala (true) */
 
-void START(file filename);
+void START(char* filename);
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
    Karakter pertama yang ada pada pita posisinya adalah pada jendela.
    Pita baca diambil dari file data.
@@ -36,6 +37,13 @@ void ADV();
    F.S. : currentChar adalah karakter berikutnya dari currentChar yang lama,
           currentChar mungkin = MARK
           Jika  currentChar = MARK maka EOP akan menyala (true) */
+
+void ADV_INPUT();
+/* Pita dimajukan satu karakter.
+   I.S. : Karakter pada jendela = currentChar, currentChar != MARK_INPUT
+   F.S. : currentChar adalah karakter berikutnya dari currentChar yang lama,
+          currentChar mungkin = MARK_INPUT
+          Jika  currentChar = MARK_INPUT maka EOP akan menyala (true) */
 
 char GetCC();
 /* Mengirimkan currentChar */

@@ -11,14 +11,14 @@ void START_INPUT()
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
     pita = stdin;
-    ADV();
+    ADV_INPUT();
 }
 
-void START(file filename)
+void START(char* filename)
 {
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
-    char directory[50] = "../../data/";
+    char directory[50] = "../data/";
     int i=0,j=0;
     while(directory[i]!='\0'){
         i++;  
@@ -43,6 +43,14 @@ void ADV()
     if (EOP) {
         fclose(pita);
     }
+}
+
+void ADV_INPUT()
+{
+    /* Pita dimajukan satu karakter. ... */
+    /* Algoritma */
+    retval = fscanf(pita, "%c", &currentChar);
+    EOP = (currentChar == MARK_INPUT);
 }
 
 char GetCC()
