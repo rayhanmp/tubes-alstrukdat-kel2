@@ -12,7 +12,7 @@
 typedef Word ElType;
 typedef Word Game;
 typedef struct {
-	Game A[100]; 
+	Game A[CAPACITY]; 
 	int idxHead;
 	int idxTail;
 } queueGame;
