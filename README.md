@@ -42,7 +42,7 @@ Program akan menampilkan daftar perintah yang bisa diakses.
 
 ## Kontributor
 Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor program ini:\
-* Jazzmy Izzati Alamsyah (18221124)\
+* Jazmy Izzati Alamsyah (18221124)\
 * Karunia Mega Lestari (18221126)\
 * Marcheline Fanni Hidayat Putri (18221090)\
 * Raditya Azka Prabaswara (18221152)\
