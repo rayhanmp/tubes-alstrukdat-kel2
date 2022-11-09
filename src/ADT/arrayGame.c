@@ -109,24 +109,25 @@ void DeleteFirst(arrGame *arr){
 //  * Prekondisi: array terdefinisi
 //  */
 void PrintArray(arrGame arr){
-    for(int i = 0; i < Length(arr); i++){
-        printf("%d. %s\n",i+1,Get(arr,i).TabWord);
+    for(int i = 1; i < Length(arr); i++){
+        printf("%d. %s\n",i,Get(arr,i).TabWord);
     }
 }
 
-// DRIVER ADT ARRAY
-#include "mesinkarakter.c"
-#include "mesinkata.c"
-int main(){
-    arrGame arr;
-    char filename[50] = "default_config.txt";
-    int i = 0;
-    MakeArray(&arr);
-    STARTWORD(filename);
-    while(!isEndWord()){
-        InsertLast(&arr, currentWord);
-        ADVWORD();
-        i++;
-    }
-    PrintArray(arr);
-}
+
+// // DRIVER ADT ARRAY
+// #include "mesinkarakter.h"
+// #include "mesinkata.h"
+// int main(){
+//     arrGame arr;
+//     char filename[50] = "default_config.txt";
+//     int i = 0;
+//     MakeArray(&arr);
+//     STARTWORD(filename);
+//     while(!isEndWord()){
+//         InsertLast(&arr, currentWord);
+//         ADVWORD();
+//         i++;
+//     }
+//     PrintArray(arr);
+// }
