@@ -1,16 +1,15 @@
 #include "load.h"
 
-void load(arrGame* arr, file filename){
-    int i = 0;
+void load(arrGame* arr, char* filename){
+    //MEMBUAT ARRAY BARU
     MakeArray(arr);
+    
+    //MEMBACA ISI FILE
     STARTWORD(filename);
-    ADVWORD();
     while(!isEndWord()){
         InsertLast(arr, currentWord);
         ADVWORD();
-        i++;
     }
-
 }
 /*
 I.S.: arrGame sembarang

@@ -4,7 +4,7 @@
 #include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
 
-void load(arrGame* arr, file filename);
+void load(arrGame* arr, char* filename);
 /*
 I.S.: arrGame sembarang
 F.S.: arrGame terisi dengan game-game dari config yang dipilih dengan nama filename
