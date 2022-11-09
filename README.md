@@ -24,8 +24,10 @@ Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perin
 
 ## Fitur
 Program ini memiliki sejumlah fitur yang dapat diakses oleh pengguna, di antaranya adalah:
-* **1. START**\ Program akan memuat konfigurasi default.
-* **2. LOAD** \ Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
+* **1. START** 
+Program akan memuat konfigurasi default.
+* **2. LOAD**  
+Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
 * **3. SAVE**
 * **4. CREATE GAME**
 * **5. LIST GAME**
