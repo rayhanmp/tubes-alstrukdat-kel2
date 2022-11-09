@@ -163,3 +163,14 @@ void clearWord(){
         i++;
     }
 }
+
+int wordToInt (Word kata) {
+/*Mengubah kata menjadi integer*/
+    int i=0, sum=0, len=kata.Length;
+    
+    for (i; i<len; i++) {
+        sum = sum*10 + (kata.TabWord[i] - '0');
+    }
+    
+    return sum;
+}
