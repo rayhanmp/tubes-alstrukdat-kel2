@@ -114,19 +114,19 @@ void PrintArray(arrGame arr){
     }
 }
 
-//DRIVER ADT ARRAY
-// #include "mesinkarakter.c"
-// #include "mesinkata.c"
-// int main(){
-//     arrGame arr;
-//     int i = 0;
-//     MakeArray(&arr);
-//     STARTWORD(filename);
-//     ADVWORD();
-//     while(!isEndWord()){
-//         InsertLast(&arr, currentWord);
-//         ADVWORD();
-//         i++;
-//     }
-//     PrintArray(arr);
-// }
+// DRIVER ADT ARRAY
+#include "mesinkarakter.c"
+#include "mesinkata.c"
+int main(){
+    arrGame arr;
+    char filename[50] = "default_config.txt";
+    int i = 0;
+    MakeArray(&arr);
+    STARTWORD(filename);
+    while(!isEndWord()){
+        InsertLast(&arr, currentWord);
+        ADVWORD();
+        i++;
+    }
+    PrintArray(arr);
+}
