@@ -4,7 +4,7 @@
 #include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
 
-void start(arrGame* arr, file filename);
+void start(arrGame* arr);
 /*
 I.S.: arrGame sembarang
 F.S.: arrGame terisi dengan game-game dari default config
