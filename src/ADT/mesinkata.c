@@ -164,11 +164,11 @@ void clearWord(){
     }
 }
 
-boolean isKataEqual(Word word, char* string){
+boolean isKataEqual(Word kata, char* string){
     int i = 0;
     boolean equal = true;
     while(string[i] != '\0'){
-        if(word.TabWord[i]!=string[i]){
+        if(kata.TabWord[i]!=string[i]){
             return equal = false;
         }
         i++;
