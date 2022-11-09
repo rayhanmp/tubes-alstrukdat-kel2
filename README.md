@@ -24,16 +24,25 @@ Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perin
 
 ## Fitur
 Program ini memiliki sejumlah fitur yang dapat diakses oleh pengguna, di antaranya adalah:\
-### 1.START\
-### 2.LOAD\
-### 3.SAVE
+### 1. START
+### 2. LOAD
+### 3. SAVE
+### 4. CREATE GAME
+### 5. LIST GAME
+### 6. DELETE GAME
+### 7. QUEUE GAME
+### 8. PLAY GAME
+### 9. SKIP GAME
+### 10. QUIT
+### 11. HELP
+### 12. COMMAND LAIN
 
 ## Kontributor
 Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor program ini:\
-Jazzmy Izzati Alamsyah (18221124)\
-Karunia Mega Lestari (18221126)\
-Marcheline Fanni Hidayat Putri (18221090)\
-Raditya Azka Prabaswara (18221152)\
-Rayhan Maheswara Pramanda (18221130)\
+* Jazzmy Izzati Alamsyah (18221124)\
+* Karunia Mega Lestari (18221126)\
+* Marcheline Fanni Hidayat Putri (18221090)\
+* Raditya Azka Prabaswara (18221152)\
+* Rayhan Maheswara Pramanda (18221130)\
 
 K02 | Kelompok 4.
