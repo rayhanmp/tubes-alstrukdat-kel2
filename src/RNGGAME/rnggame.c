@@ -11,7 +11,7 @@ int rnggame(){
     int try = 0;
     boolean success = false;
     int ans;
-    x = rng() % (MAX_RNG_X - MIN_RNG_X + 1) + MIN_RNG_X;
+    int x = rng(MIN_RNG_X, MAX_RNG_X);
     printf("RNG Telah dimulai. Uji keberuntungan Anda dengan menebak X.\n");
     while ((try < MAX_RNG_TRY) && (!success)){
         scanf("%d",&ans);
@@ -20,13 +20,13 @@ int rnggame(){
         } else if (ans > x){
             printf("Lebih Kecil\n");
         } else /* ans == x */{
-            printf("\n \n Ya, X adalah %d.\n",x);
+            printf("\n \nYa, X adalah %d.\n",x);
             success = true;
         }
         try++;
     }
     if (!success){
-        printf("\n \n X adalah %d.\n",x);
+        printf("\n \nX adalah %d.\n",x);
     }
     return 0;
 }
