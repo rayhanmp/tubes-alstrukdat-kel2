@@ -187,6 +187,17 @@ int wordToInt (Word kata) {
     return sum;
 }
 
+int wordToIntDD (Word kata) {
+/*Mengubah kata dari input gim Diner Dash menjadi integer*/
+    int i=1, sum=0, len=kata.Length;
+    
+    for (i; i<len; i++) {
+        sum = sum*10 + (kata.TabWord[i] - '0');
+    }
+    
+    return sum;
+}
+
 boolean isIdentical(Word kata1, Word kata2){
 /*Mengembalikan true jika kata1 identik dengan kata2*/
     int i = 0;
