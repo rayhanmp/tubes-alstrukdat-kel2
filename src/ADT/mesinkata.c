@@ -187,7 +187,7 @@ int wordToInt (Word kata) {
     return sum;
 }
 
-boolean isIdentic(Word kata1, Word kata2){
+boolean isIdentical(Word kata1, Word kata2){
 /*Mengembalikan true jika kata1 identik dengan kata2*/
     int i = 0;
     boolean equal = true;
