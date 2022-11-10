@@ -33,7 +33,7 @@ Game Get(arrGame arr, IdxType i){
     return arr.A[i];
 }
 
-boolean IsMember(arrGame arr, Game el) {
+boolean IsMemberArr(arrGame arr, Game el) {
     boolean found;
     int i;
     
