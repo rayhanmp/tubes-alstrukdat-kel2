@@ -1,7 +1,3 @@
-#include "ADT/mesinkata.h"
-#include "ADT/mesinkarakter.h"
-#include "ADT/arrayGame.h"
-#include "ADT/queueGame.h"
 #include "Commands/deletegame.h"
 #include "Commands/creategame.h"
 #include "Commands/commandlain.h"
@@ -13,7 +9,10 @@
 #include "Commands/queueGame.h"
 #include "Commands/skipgame.h"
 #include "Commands/start.h"
-#include "diner_dash/diner_dash.c"
+#include "Commands/help.h"
+#include "RNGGAME/random_number_generator_ver_2.h"
+#include "diner_dash/diner_dash.h"
+
 
 
 
@@ -76,8 +75,7 @@ int main(){
             skipGame(arrayGame, &qGame, wordToInt(currentWord));
         }
         else if(isKataEqual(currentWord,"HELP")){
-            // quit();
-            // play = false;
+            help();
         }
         else if(isKataEqual(currentWord,"QUIT")){
             quit(qGame);
