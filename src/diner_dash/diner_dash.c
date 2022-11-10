@@ -96,7 +96,8 @@ int diner_dash(){
             STARTWORD_INPUT();
             input1 = currentWord;
             if (isKataEqual(input1,"COOK"){ 
-                scanf("%d", &input2); /*GANTI DENGAN KATA*/
+                ADVWORD_INPUT();
+                input2 = wordToIntDD (currentWord);
                 if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand)input1,"COOK")  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
                     input_valid = true;
                     printf("\nBerhasil memasak M%d\n",input2); /* COOK, berhasil*/
@@ -110,8 +111,9 @@ int diner_dash(){
                  else {
                     printf("\nM%d tidak ada pada pemesanan\n",input2); /* COOK, gagal*/
                 }
-            } else if isKataEqual(input1,"SERVE") { /*GANTI DENGAN KATA*/
-                scanf("%d", &input2); /*GANTI DENGAN KATA*/
+            } else if isKataEqual(input1,"SERVE") { 
+                ADVWORD_INPUT();
+                input2 = wordToIntDD (currentWord);
                 if ((IsMember(mServe,input2)) && (HEAD_ID(qErrand) == input2)){
                     input_valid = true;
                     printf("\nBerhasil mengantar M%d\n",input2); /* SERVE, berhasil*/
