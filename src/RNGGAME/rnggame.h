@@ -1,5 +1,6 @@
 /*rnggame.h*/
-
+#ifndef RNG_GAME
+#define RNG_GAME
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
@@ -12,3 +13,5 @@
 
 
 int rnggame();
+
+#endif
