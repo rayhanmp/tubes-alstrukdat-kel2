@@ -4,7 +4,7 @@
 #include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
 
-void listGame (arrayGame arr);
+void listGame (arrGame arr);
 /*
 I.S.: Sembarang
 F.S.: menampilkan daftar game
