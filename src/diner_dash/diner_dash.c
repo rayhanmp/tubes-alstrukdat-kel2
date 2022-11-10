@@ -94,10 +94,10 @@ int diner_dash(){
         /* PROSES INPUT*/
         while(!(input_valid)){
             STARTWORD_INPUT();
-            input1 = currentWord;/*GANTI DENGAN KATA*/
-            if (input1 == 1){ /*GANTI DENGAN KATA*/
+            input1 = currentWord;
+            if (isKataEqual(input1,"COOK"){ 
                 scanf("%d", &input2); /*GANTI DENGAN KATA*/
-                if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand))  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
+                if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand)input1,"COOK")  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
                     input_valid = true;
                     printf("\nBerhasil memasak M%d\n",input2); /* COOK, berhasil*/
                 } 
@@ -110,7 +110,7 @@ int diner_dash(){
                  else {
                     printf("\nM%d tidak ada pada pemesanan\n",input2); /* COOK, gagal*/
                 }
-            } else if (input1 == 2) { /*GANTI DENGAN KATA*/
+            } else if isKataEqual(input1,"SERVE") { /*GANTI DENGAN KATA*/
                 scanf("%d", &input2); /*GANTI DENGAN KATA*/
                 if ((IsMember(mServe,input2)) && (HEAD_ID(qErrand) == input2)){
                     input_valid = true;
@@ -131,7 +131,7 @@ int diner_dash(){
         }
         /* UPDATE GAME*/
         /* laksanakan input serve*/
-        if (input1 == 2){
+        if (isKataEqual(input1,"SERVE")){
             dequeuedd(&qErrand, &key, &duration, &spoliage, &price);
             Delete(&mServe,key);
             saldo = saldo + price;
@@ -163,7 +163,7 @@ int diner_dash(){
             }
         }        
         /* laksanakan input cook*/
-        if (input1 == 1){
+        if (isKataEqual(input1,"COOK")){
             takeValue(qErrand, input2, &duration, &spoliage, &price);
             Insert(&mCook, input2, duration);
         }
