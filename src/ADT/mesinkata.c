@@ -176,15 +176,86 @@ boolean isKataEqual(Word kata, char* string){
     return equal;
 }
 
-int wordToInt (Word kata) {
-/*Mengubah kata menjadi integer*/
-    int i=0, sum=0, len=kata.Length;
+char intToChar(int n) {
+    return (n >= 0 && n <= 9)? (char)(n + '0') : n;
+}
+
+void CopyWord(Word *word1, Word word2)
+{
+    word1->Length = word2.Length;
+    for (int i = 0; i < word2.Length; i++)
+    {
+        word1->TabWord[i] = word2.TabWord[i];
+    }
+}
+
+void SetWordChar(Word *word, int i, char c)
+{
+    if (i >= word->Length)
+    {
+        i = word->Length;
+        word->Length++;
+    }
+    word->TabWord[i] = c;
+}
+
+
+void Reverse(Word *word)
+{
+    Word tempword;
+    tempword.Length = 0;
+    CopyWord(&tempword, *word);
+    int len = word->Length;
+    for (int i = 0; i < len; i++)
+    {
+        SetWordChar(word, i, tempword.TabWord[len - i - 1]);
+    }
+}
+
+
+Word intToWord(int n) {
+    Word word;
+    word.Length = 0;
+
+    while (n > 0) {
+        SetWordChar(&word, word.Length, intToChar(n%10));
+        // printf("<<%s>>", word.TabWord);
+        // printf("char: %c",intToChar(n%10));
+        n /= 10;
+    }
+    Reverse(&word);
+    return word;
+}
+
+
+int wordToInt(Word word) {
+/*Mengubah word menjadi integer*/
+    int i=0, sum=0, len=word.Length;
     
     for (i; i<len; i++) {
-        sum = sum*10 + (kata.TabWord[i] - '0');
+        sum = sum*10 + (word.TabWord[i] - '0');
     }
     
     return sum;
+}
+
+Word intToWord(int n) {
+    Word word;
+    int i;
+    word.Length = 0;
+    i = word.Length;
+
+    while (n > 0) {
+        if (i >= word.Length){
+        i = word.Length;
+        word.Length++;
+    }
+    word.TabWord[i] = intToChar(n%10);
+        n /= 10;
+    }
+
+    Reverse(&word);
+    return word;
 }
 
 int wordToIntDD (Word kata) {

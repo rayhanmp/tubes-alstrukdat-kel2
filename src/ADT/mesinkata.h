@@ -82,14 +82,24 @@ boolean isKataEqual(Word word, char* string);
 Mengembalikan true jika word == string dan false jika word != string.
 Fungsi ini dipakai untuk menyocokan command input.
 */
+char intToChar(int n);
 
-int wordToInt (Word kata);
-/*Mengubah kata menjadi integer*/
+void CopyWord(Word *word1, Word word2);
 
-Word IntToword(int integer);
+void SetWordChar(Word *word, int i, char c);
 
-int wordToIntDD (Word kata);
-/*Mengubah kata dari input gim Diner Dash menjadi integer*/
+
+void Reverse(Word *word);
+
+
+Word intToWord(int n);
+
+int wordToInt (Word word);
+/*Mengubah word menjadi integer*/
+
+
+int wordToIntDD (Word word);
+/*Mengubah word dari input gim Diner Dash menjadi integer*/
 
 boolean isIdentical(Word kata1, Word kata2);
 
