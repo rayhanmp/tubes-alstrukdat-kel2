@@ -7,8 +7,15 @@ void playGame (arrGame arr, queueGame q){
 
     Word game;
     Dequeue(&q, &game);
-    if (...){
-        // play game
+    if (IsMember(arr, game)){ // IsMember dari array
+        printf("Loading %s ...\n", game.TabWord);
+        if (isKataEqual(game, "Diner DASH")){
+            diner_dash();
+        } else if (isKataEqual(game, "RNG")){
+            rnggame();
+        } else {
+            gametambahan();
+        }
     } else {
         printf("Game %s masih dalam maintenance, belum dapat dimainkan.\n", game.TabWord);
         printf("Silahkan pilih game lain.\n");

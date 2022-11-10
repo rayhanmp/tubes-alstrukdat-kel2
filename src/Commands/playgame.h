@@ -3,6 +3,9 @@
 
 #include "../ADT/arrayGame.h"
 #include "../ADT/queueGame.h"
+#include "../diner_dash/diner_dash.h"
+#include "../RNGGAME/rnggame.h"
+#include "../gameTambahan/gametambahan.h"
 
 void playGame (arrGame arr, queueGame q);
 /*
