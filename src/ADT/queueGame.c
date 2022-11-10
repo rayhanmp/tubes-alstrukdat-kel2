@@ -30,8 +30,8 @@ boolean IsMemberQ(queueGame q, ElType val) {
   else {
     int i = IDX_HEAD(q);
     boolean found=false;
-    while (i!=IDX_TAIL(q) && !found) {
-      if (q.A[i] == val) { /* Harus buat fungsi compare Word */
+    while (i != IDX_TAIL(q) && !found) {
+      if (isIdentical(q.A[i], val)) { /* Harus buat fungsi compare Word */
         found = true;
       }
       else {
