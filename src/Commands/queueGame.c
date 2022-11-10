@@ -8,7 +8,7 @@ void QueueGame(queueGame *q, arrGame arr) {
   
     printf("\n");
 
-    ListGame()
+    ListGame();
       
     printf("\n");
   
@@ -16,8 +16,8 @@ void QueueGame(queueGame *q, arrGame arr) {
     STARTWORD_INPUT();
     num = wordToInt(currentWord);
 
-    if (num>0 && num<=arr.Length) {
-        Enqueue(&q, arr[num-1]);
+    if (num>0 && num<=Length(arr)) {
+        Enqueue(&q, Get(arr,num-1));
         printf("Game berhasil ditambahkan kedalam daftar antrian.");
     }
     else {
