@@ -14,7 +14,7 @@ void MakeArray(arrGame *arr){
  * Fungsi untuk mengetahui apakah suatu array kosong.
  * Prekondisi: array terdefinisi
  */
-boolean IsEmpty(arrGame arr){
+boolean IsEmptyArr(arrGame arr){
     return Length(arr) == 0;
 }
 /**
