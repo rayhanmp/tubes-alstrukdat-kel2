@@ -44,6 +44,13 @@ Game Get(arrGame arr, IdxType i);
  * Fungsi untuk menambahkan elemen baru di index ke-i
  * Prekondisi: array terdefinisi, i di antara 0..Length(array).
  */
+
+boolean IsMember(arrGame arr, Game el);
+/**
+ * Mengembalikan true apabila elemen el terdapat di arrGame
+ * Prekondisi: arrGame terdefinisi.
+ */
+
 void InsertAt(arrGame *arr, Game el, IdxType i);
 
 // /**
