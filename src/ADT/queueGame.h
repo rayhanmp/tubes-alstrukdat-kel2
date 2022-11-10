@@ -38,18 +38,18 @@ boolean IsEmptyQ(queueGame q);
 boolean IsFullQ(queueGame q);
 /* Mengirim true jika tabel penampung elemen q sudah penuh */
 /* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
-boolean IsMemberQ(queueGame q, ElType val);
+boolean IsMemberQ(queueGame q, Game val);
 /* Mengirim true jika val terdapat dalam queueGame */
 int LengthQ(queueGame q);
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
 
 /* *** Primitif Add/Delete *** */
-void Enqueue(queueGame *q, ElType val);
+void Enqueue(queueGame *q, Game val);
 /* Proses: Menambahkan val pada q dengan aturan FIFO */
 /* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
 /* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur" dalam buffer melingkar. */
 
-void Dequeue(queueGame *q, ElType *val);
+void Dequeue(queueGame *q, Game *val);
 /* Proses: Menghapus val pada q dengan aturan FIFO */
 /* I.S. q tidak mungkin kosong */
 /* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";

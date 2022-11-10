@@ -56,7 +56,7 @@ void Enqueue(queueGame *q, Game val) {
 /* Proses: Menambahkan val pada q dengan aturan FIFO */
 /* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
 /* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur" dalam buffer melingkar. */
-    if (IsEmpty(*q)) {
+    if (IsEmptyQ(*q)) {
         IDX_HEAD(*q) = 0;
         IDX_TAIL(*q) = 0;
         TAIL(*q) = val;
@@ -67,7 +67,7 @@ void Enqueue(queueGame *q, Game val) {
     }
 }
 
-void Dequeue(queueGame *q, ElType *val) {
+void Dequeue(queueGame *q, Game *val) {
 /* Proses: Menghapus val pada q dengan aturan FIFO */
 /* I.S. q tidak mungkin kosong */
 /* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
