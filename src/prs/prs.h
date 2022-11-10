@@ -4,7 +4,7 @@
 #include "mesinkata.h"
 #include "arrayGame.h"
 #include <time.h>
-#inlude <stdlib.h>
+#include <stdlib.h>
 
 void prs();
 /*  I.S. Sembarang
