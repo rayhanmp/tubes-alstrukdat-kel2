@@ -7,7 +7,7 @@
 void quit (queueGame queue);
 /*
 I.S.: Sembarang
-F.S.: queueGame kosong
+F.S.: queueGame kosong, keluar dari permainan
 */
 
 #endif
