@@ -13,18 +13,18 @@ void CreateQueue(queueGame *q) {
 }
 
 /* ********* Prototype ********* */
-boolean IsEmpty(queueGame q) {
+boolean IsEmptyQ(queueGame q) {
 /* Mengirim true jika q kosong: lihat definisi di atas */
   return (IDX_HEAD(q) == IDX_UNDEF && IDX_TAIL(q) == IDX_UNDEF);
 }
-boolean IsFull(queueGame q) {
+boolean IsFullQ(queueGame q) {
 /* Mengirim true jika tabel penampung elemen q sudah penuh */
 /* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
   return IDX_HEAD(q) == (IDX_TAIL(q) + 1) % CAPACITY;
 }
-boolean IsMember(queueGame q, ElType val) {
+boolean IsMemberQ(queueGame q, ElType val) {
 /* Mengirim true jika val terdapat dalam queueGame */
-   if (isEmpty(q)) {
+   if (IsEmptyQ(q)) {
      return false;
    }
   else {
@@ -41,9 +41,9 @@ boolean IsMember(queueGame q, ElType val) {
   }
 }
 
-int Length(queueGame q) {
+int LengthQ(queueGame q) {
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
-    if (isEmpty(q)) {
+    if (IsEmptyQ(q)) {
         return 0;
     }
     else {
@@ -72,7 +72,7 @@ void Dequeue(queueGame *q, ElType *val) {
 /* I.S. q tidak mungkin kosong */
 /* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
         q mungkin kosong */
-   if (IsEmpty(*q))
+   if (IsEmptyQ(*q))
     {
         printf("QueueGame kosong!\n");
     }
@@ -108,7 +108,7 @@ void PrintQueue(queueGame q) {
             2. Diner Dash
             3. Feeding Frenzy */
 /* Jika queueGame kosong tidak dilakukan apa-apa */
-  if (!IsEmpty(q)) {
+  if (!IsEmptyQ(q)) {
         int i, j=1;
         for (i = IDX_HEAD(q); i != IDX_TAIL(q)+1; i = (i + 1) % CAPACITY) {
             printf("%d. %s\n", j, q.A[i].TabWord);
