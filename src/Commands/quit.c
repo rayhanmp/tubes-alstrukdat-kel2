@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "quit.h"
 
-void quit(){
+void quit(queueGame queue){
     int flag = 0;
     do{
             printf("Anda keluar dari game BNMO.\n");
