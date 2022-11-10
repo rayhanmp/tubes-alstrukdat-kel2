@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include "quit.h"
 
 void quit(){
     int flag = 0;
