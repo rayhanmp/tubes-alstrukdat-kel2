@@ -51,12 +51,12 @@ void prs() {
   printf("\n");
   
   printf("Aturan:\n");
-  printf("Rock vs Paper -> Paper"\n);
-  printf("Rock vs Scissor -> Rock"\n);
-  printf("Paper vs Scissor -> Scissor"\n);
-  printf("Paper vs Rock -> Paper"\n);
+  printf("Rock vs Paper -> Paper\n");
+  printf("Rock vs Scissor -> Rock\n");
+  printf("Paper vs Scissor -> Scissor\n");
+  printf("Paper vs Rock -> Paper\n");
   
-  printf("INPUT HARUS DALAM HURUF KAPITAL"\n);
+  printf("INPUT HARUS DALAM HURUF KAPITAL\n");
 
   /* Minta masukan dari pengguna */
   printf("Masukan jumlah ronde (3/5/7/9): ");
@@ -67,7 +67,7 @@ void prs() {
     printf("Input tidak valid.\n");
     printf("Masukan jumlah ronde (3/5/7/9): ");
     ADVWORD_INPUT();
-    round = wordToInt(currentWord)
+    round = wordToInt(currentWord);
   }
   
   printf("\n");
@@ -84,43 +84,43 @@ void prs() {
     ADVWORD_INPUT();
     printf("\n");
     
-    while (!((isIdentical(currentWord, arrKata.A[0]) || (isIdentical(currentWord, arrKata.A[1]) || (isIdentical(currentWord, arrKata.A[2]))) {
+    while (!((isIdentical(currentWord, arrKata.A[0]) || (isIdentical(currentWord, arrKata.A[1]) || (isIdentical(currentWord, arrKata.A[2])))))) {
       printf("Input tidak valid.\n");
       printf("Input harus ditulis dengan huruf kapital, misal: ROCK\n");
       ADVWORD_INPUT();
     }
-    if (isIdentical(currentWord, arrKata.A[0]) {
-      number = rand() % 3;
-            if (number==0) {
+    if (isIdentical(currentWord, arrKata.A[0])) {
+      num = rand() % 3;
+            if (num==0) {
               printf("Pilihan Anda: %s\n", arrKata.A[0].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[0].TabWord);
               printf("Hasil: SERI\n");
             }
-            else if (number==1) {            
+            else if (num==1) {            
               printf("Pilihan Anda: %s\n", arrKata.A[0].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[1].TabWord);
               printf("Hasil: KALAH\n");
               printf("SkorLawan +100\n");
-              skorlawan += 100;
+              skorLawan += 100;
             }
             else {            
               printf("Pilihan Anda: %s\n", arrKata.A[0].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[2].TabWord);
               printf("Hasil: MENANG\n");
               printf("SkorAnda +100\n");
-              skor += 100;
+              skorAnda += 100;
             }
         }
-    else if (isIdentical(currentWord, arrKata.A[1]) {
-            number = rand() % 3;
-            if (number==0) {            
+    else if (isIdentical(currentWord, arrKata.A[1])) {
+            num = rand() % 3;
+            if (num==0) {            
               printf("Pilihan Anda: %s\n", arrKata.A[1].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[0].TabWord);
               printf("Hasil: MENANG\n");
               printf("SkorAnda +100\n");
-              skor += 100;
+              skorAnda += 100;
             }
-            else if (number==1) {            
+            else if (num==1) {            
               printf("Pilihan Anda: %s\n", arrKata.A[1].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[1].TabWord);
               printf("Hasil: SERI\n");
@@ -129,25 +129,25 @@ void prs() {
               printf("Pilihan Anda: %s\n", arrKata.A[1].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[2].TabWord);
               printf("Hasil: KALAH\n");
-              printf("SkorLawan +100\n");
-              skorlawan += 100;
+              printf("skorLawan +100\n");
+              skorLawan += 100;
             }
         }
-    else if (isIdentical(currentWord, arrKata.A[2]) {
-            number = rand() % 3;
-            if (number==0) {            
+    else if (isIdentical(currentWord, arrKata.A[2])) {
+            num = rand() % 3;
+            if (num==0) {            
               printf("Pilihan Anda: %s\n", arrKata.A[2].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[0].TabWord);
               printf("Hasil: KALAH\n");
-              printf("SkorLawan +100\n");
-              skorlawan += 100;
+              printf("skorLawan +100\n");
+              skorLawan += 100;
             }
-            else if (number==1) {            
+            else if (num==1) {            
               printf("Pilihan Anda: %s\n", arrKata.A[2].TabWord);
               printf("Pilihan Lawan: %s\n", arrKata.A[1].TabWord);
               printf("Hasil: MENANG\n");
               printf("SkorAnda +100\n");
-              skor += 100;
+              skorAnda += 100;
             }
             else {            
               printf("Pilihan Anda: %s\n", arrKata.A[2].TabWord);
@@ -159,13 +159,13 @@ void prs() {
         }  
   
   /* Menuliskan hasil pertandingan PRS ke layar */
-  printf("Skor Anda: %d\n", skor);
-  printf("Skor Lawan: %d\n", skorlawan);
+  printf("Skor Anda: %d\n", skorAnda);
+  printf("Skor Lawan: %d\n", skorLawan);
   
-  if (skor>skorlawan) {
+  if (skorAnda>skorLawan) {
     printf("Anda menang!\n");
   }
-  else if (skor==skorlawan) {
+  else if (skorAnda==skorLawan) {
     printf("Seri!\n");
   }   
   else {
