@@ -7,7 +7,7 @@ void playGame (queueGame* q){
 
     Word game;
     Dequeue(q, &game);
-    if (IsEmptyQ){
+    if (IsEmptyQ(*q)){
         printf("Daftar Game kosong\n");
     } else {
         if (isKataEqual(game, "DINOSAUR IN EARTH") || isKataEqual(game, "RISEWOMAN") || isKataEqual(game, "EIFFEL TOWER")){
@@ -24,7 +24,7 @@ void playGame (queueGame* q){
             }
         }
     }
-
+}
 /*
 I.S.: q terdefinisi, currentGame Nil (?)
 F.S.: q berkurang satu, currentGame adalah elemen pertama q sebelum dihapus
