@@ -1,6 +1,6 @@
 #include "skipgame.h"
 
-void skipGame (arrGame arr, queueGame *q, int n){
+void skipGame (queueGame *q, int n){
     printf("Berikut adalah daftar game yang tersedia\n");
     PrintQueue(*q);
     printf("\n");
@@ -15,7 +15,7 @@ void skipGame (arrGame arr, queueGame *q, int n){
         }
         currentGame = HEAD(*q);
         printf("Loading %s ...\n", currentGame.TabWord);
-        playGame(arr, q);
+        playGame(q);
     }
 }
 /*
