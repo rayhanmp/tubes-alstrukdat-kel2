@@ -1,10 +1,9 @@
 #include "creategame.h"
 
 void createGame (arrGame *arr){
-    Game newGame;
     printf("Masukkan nama game yang akan ditambahkan: ");
-    // input pakai mesinkata
-    InsertLast(arr, newGame);
+    STARTWORD_INPUT();
+    InsertLast(arr, currentWord);
     printf("Game berhasil ditambahkan\n");
 }
 /*
