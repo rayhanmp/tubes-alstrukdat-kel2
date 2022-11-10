@@ -30,7 +30,7 @@ void START(char* filename)
         i++;
     }
   directory[i]='\0';
-    pita = fopen(directory, "r");
+    pita = fopen("data/config1.txt", "r");
     ADV();
 }
 
