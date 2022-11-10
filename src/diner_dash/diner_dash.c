@@ -120,7 +120,7 @@ int diner_dash(){
                 } else {
                     printf("\nM%d belum dapat disajikan karena M%d belum selesai\n",input2,HEAD_ID(qErrand)); /* SERVE, gagal karena id bukanlah HEAD_ID*/
                 }
-            } else if (input1 == 3){ /*GANTI DENGAN KATA*/
+            } else if ((isKataEqual(input1,"SKIP"))){ /*GANTI DENGAN KATA*/
                 input_valid = true;
             } else {
                 printf("Command yang tersedia adalah COOK, SERVE, SKIP\n"); /* INPUT PERTAMA GAGAL*/
