@@ -25,7 +25,7 @@ void MakeArray(arrGame *arr);
  * Fungsi untuk mengetahui apakah suatu array kosong.
  * Prekondisi: array terdefinisi
  */
-boolean IsEmpty(arrGame arr);
+boolean IsEmptyArr(arrGame arr);
 
 /**
  * Fungsi untuk mendapatkan banyaknya elemen efektif array, 0 jika tabel kosong.
