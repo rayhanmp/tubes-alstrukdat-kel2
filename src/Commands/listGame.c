@@ -2,5 +2,5 @@
 #include <stdio.h>
 
 void listGame (arrGame arr){
-  PrintArray(arrGame arr)
+  PrintArray(arr);
   }
