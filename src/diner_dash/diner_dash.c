@@ -8,6 +8,9 @@
 #include "queuedd.h"
 #include "random_number_generator.h"
 #include "diner_dash.h"
+#include "mesinkata.h"
+#include "mesinkarakter.h"
+#include "word.h"
 
 void displayCook(Map m){
     printf("Daftar Makanan yang sedang dimasak\n");
@@ -66,7 +69,7 @@ int diner_dash(){
     int customer = 0;
     int saldo = 0;
     int seed;
-    int input1;
+    Word input1;
     int input2;
     int key,duration,spoliage,price;
     CreateQueuedd(&qErrand);
@@ -90,7 +93,8 @@ int diner_dash(){
         printf("MASUKKAN COMMAND: ");
         /* PROSES INPUT*/
         while(!(input_valid)){
-            scanf("%d", &input1); /*GANTI DENGAN KATA*/
+            STARTWORD_INPUT();
+            input1 = currentWord;/*GANTI DENGAN KATA*/
             if (input1 == 1){ /*GANTI DENGAN KATA*/
                 scanf("%d", &input2); /*GANTI DENGAN KATA*/
                 if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand))  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
