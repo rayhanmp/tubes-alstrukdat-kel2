@@ -18,7 +18,7 @@
 
 
 int main(){
-    INISIALISASI ARRAY GAME
+    // INISIALISASI ARRAY GAME
     arrGame arrayGame;
     MakeArray(&arrayGame);
     queueGame qGame;
@@ -80,7 +80,7 @@ int main(){
             // play = false;
         }
         else if(isKataEqual(currentWord,"QUIT")){
-            quit();
+            quit(qGame);
             play = false;
         }
         else{
