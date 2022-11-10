@@ -10,7 +10,6 @@ void MakeArray(arrGame *arr){
     arr->Neff= 0;
 }
 
-
 /**
  * Fungsi untuk mengetahui apakah suatu array kosong.
  * Prekondisi: array terdefinisi
@@ -34,6 +33,27 @@ Game Get(arrGame arr, IdxType i){
     return arr.A[i];
 }
 
+boolean IsMember(arrGame arr, Game el) {
+    boolean found;
+    int i;
+    
+    i = 0;
+    found = false;
+    
+    while (!found && i<Length(arr)) {
+        if (isIdentical(arr.A[i], el)) {
+            found = true;
+        }
+        else {
+            i++;
+        }
+    }
+    return found;
+}
+/**
+ * Mengembalikan true apabila elemen el terdapat di arrGame
+ * Prekondisi: arrGame terdefinisi.
+ */
 
 /**
  * Fungsi untuk menambahkan elemen baru di index ke-i
