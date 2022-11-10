@@ -7,7 +7,7 @@
 #include "../RNGGAME/rnggame.h"
 #include "../gameTambahan/gametambahan.h"
 
-void playGame (arrGame arr, queueGame q);
+void playGame (arrGame arr, queueGame* q);
 /*
 I.S.: q terdefinisi, currentGame Nil (?)
 F.S.: q berkurang satu, currentGame adalah elemen pertama q sebelum dihapus

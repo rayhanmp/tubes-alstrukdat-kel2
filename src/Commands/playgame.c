@@ -1,12 +1,12 @@
 #include "playgame.h"
 
-void playGame (arrGame arr, queueGame q){
+void playGame (arrGame arr, queueGame* q){
     printf("Berikut adalah daftar game yang tersedia\n");
-    PrintQueue(q);
+    PrintQueue(*q);
     printf("\n");
 
     Word game;
-    Dequeue(&q, &game);
+    Dequeue(q, &game);
     if (IsMember(arr, game)){ // IsMember dari array
         printf("Loading %s ...\n", game.TabWord);
         if (isKataEqual(game, "Diner DASH")){
