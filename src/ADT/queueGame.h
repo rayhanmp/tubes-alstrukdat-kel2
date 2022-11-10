@@ -33,14 +33,14 @@ void CreateQueue(queueGame *q);
 /* Proses : Melakukan alokasi, membuat sebuah q kosong */
 
 /* ********* Prototype ********* */
-boolean IsEmpty(queueGame q);
+boolean IsEmptyQ(queueGame q);
 /* Mengirim true jika q kosong: lihat definisi di atas */
-boolean IsFull(queueGame q);
+boolean IsFullQ(queueGame q);
 /* Mengirim true jika tabel penampung elemen q sudah penuh */
 /* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
-boolean IsMember(queueGame q, ElType val);
+boolean IsMemberQ(queueGame q, ElType val);
 /* Mengirim true jika val terdapat dalam queueGame */
-int Length(queueGame q);
+int LengthQ(queueGame q);
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
 
 /* *** Primitif Add/Delete *** */
