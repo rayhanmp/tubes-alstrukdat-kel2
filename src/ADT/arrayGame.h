@@ -4,7 +4,7 @@
 #include "boolean.h"
 #include <stdio.h>
 #include "Word.h"
-
+#include "mesinkata.h"
 
 typedef int IdxType;
 typedef Word Game;
