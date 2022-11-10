@@ -4,7 +4,7 @@
 #ifndef __MESINKATA_H__
 #define __MESINKATA_H__
 
-#include "boolean.h"
+#include "../boolean.h"
 #include "mesinkarakter.h"
 #include "word.h"
 
@@ -85,4 +85,8 @@ Fungsi ini dipakai untuk menyocokan command input.
 
 int wordToInt (Word kata);
 /*Mengubah kata menjadi integer*/
+
+Word IntToword(int integer);
+
+boolean isIdentical(Word kata1, Word kata2);
 #endif

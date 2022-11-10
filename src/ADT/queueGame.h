@@ -1,7 +1,7 @@
 #ifndef __QUEUE_GAME_DIN__
 #define __QUEUE_GAME_DIN__
 
-#include "boolean.h"
+#include "../boolean.h"
 #include "Word.h"
 #include <stdio.h>
 
@@ -56,11 +56,7 @@ void Dequeue(queueGame *q, ElType *val);
         q mungkin kosong */
 
 /* *** Primitif DeleteQueue *** */
-void DeleteQueue (queueGame *q) {
-    free(q->A);
-    q->idxHead = IDX_UNDEF;
-    q->idxHead = IDX_UNDEF;
-}
+void DeleteQueue (queueGame *q);
 
 /* *** Display Queue *** */
 void PrintQueue(queueGame q);

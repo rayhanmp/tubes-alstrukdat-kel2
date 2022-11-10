@@ -4,7 +4,7 @@
 #ifndef __MESIN_KAR_H_
 #define __MESIN_KAR_H_
 
-#include "boolean.h"
+#include "../boolean.h"
 #include "word.h"
 #define MARK '.'
 #define MARK_INPUT '\n'
