@@ -201,10 +201,10 @@ int wordToIntDD (Word kata) {
 boolean isIdentical(Word kata1, Word kata2){
 /*Mengembalikan true jika kata1 identik dengan kata2*/
     int i = 0;
-    boolean equal = true;
+    boolean found = true;
     
     if (kata1.Length == kata2.Length) {
-        while(i < kata1.Length && (equal)) {
+        while(i < kata1.Length && (found)) {
             if(kata1.TabWord[i]!=kata2.TabWord[i]){
                 found = false;
             }
