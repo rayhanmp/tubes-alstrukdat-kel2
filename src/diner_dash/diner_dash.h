@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
-#include "boolean.h"
+#include "../boolean.h"
 #include "map.h"
 #include "queuedd.h"
 #include "random_number_generator.h"
