@@ -9,7 +9,7 @@
 #include "random_number_generator.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
-#include "word.h"
+#include "../ADT/word.h"
 
 void displayCook(Map m);
 /*I.S. Map m terdefinis
