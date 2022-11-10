@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "skipgame.h": "c",
+        "queuegame.h": "c"
+    }
+}

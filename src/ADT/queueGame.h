@@ -21,8 +21,8 @@ typedef struct {
 /* Jika q adalah queueGame, maka akses elemen : */
 #define IDX_HEAD(q) (q).idxHead
 #define IDX_TAIL(q) (q).idxTail
-#define     HEAD(q) (q).buffer[(q).idxHead]
-#define     TAIL(q) (q).buffer[(q).idxTail]
+#define     HEAD(q) (q).A[(q).idxHead]
+#define     TAIL(q) (q).A[(q).idxTail]
 
 /* *** Kreator *** */
 void CreateQueue(queueGame *q);
