@@ -7,7 +7,9 @@
 #include "map.h"
 #include "queuedd.h"
 #include "random_number_generator.h"
-
+#include "../ADT/mesinkata.h"
+#include "../ADT/mesinkarakter.h"
+#include "word.h"
 
 void displayCook(Map m);
 /*I.S. Map m terdefinis

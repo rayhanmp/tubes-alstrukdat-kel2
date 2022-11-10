@@ -1,7 +1,6 @@
 /* map.c 
 18221152
  Raditya Azka Prabaswara*/
-#include "boolean.h"
 #include <stdio.h>
 #include "map.h"
 

@@ -4,7 +4,6 @@ Raditya Azka Prabaswara*/
 
 
 #include "queuedd.h"
-#include "boolean.h"
 #include <stdio.h>
 #include <stdlib.h>
 

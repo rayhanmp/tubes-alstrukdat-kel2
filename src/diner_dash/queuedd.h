@@ -4,7 +4,7 @@
 #ifndef QUEUE_H_DD
 #define QUEUE_H_DD
 
-#include "boolean.h"
+#include "../boolean.h"
 
 #define IDX_UNDEF -1
 #define CAPACITY 100
@@ -15,9 +15,9 @@ typedef struct {
     int duration;
     int spoliage;
     int price;
-} ElType;
+} ElTypedd;
 typedef struct {
-	ElType buffer[CAPACITY]; 
+	ElTypedd buffer[CAPACITY]; 
 	int idxHead;
 	int idxTail;
 } QueueDD;

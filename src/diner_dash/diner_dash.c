@@ -1,16 +1,5 @@
 /*diner_dash.c*/
-
-#include <stdio.h>
-#include <time.h>
-#include <math.h>
-#include "boolean.h"
-#include "map.h"
-#include "queuedd.h"
-#include "random_number_generator.h"
 #include "diner_dash.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "word.h"
 
 void displayCook(Map m){
     printf("Daftar Makanan yang sedang dimasak\n");
@@ -95,10 +84,10 @@ int diner_dash(){
         while(!(input_valid)){
             STARTWORD_INPUT();
             input1 = currentWord;
-            if (isKataEqual(input1,"COOK"){ 
+            if (isKataEqual(input1,"COOK")){ 
                 ADVWORD_INPUT();
                 input2 = wordToIntDD (currentWord);
-                if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand)input1,"COOK")  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
+                if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand))  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
                     input_valid = true;
                     printf("\nBerhasil memasak M%d\n",input2); /* COOK, berhasil*/
                 } 
@@ -111,7 +100,7 @@ int diner_dash(){
                  else {
                     printf("\nM%d tidak ada pada pemesanan\n",input2); /* COOK, gagal*/
                 }
-            } else if isKataEqual(input1,"SERVE") { 
+            } else if(isKataEqual(input1,"SERVE")) { 
                 ADVWORD_INPUT();
                 input2 = wordToIntDD (currentWord);
                 if ((IsMember(mServe,input2)) && (HEAD_ID(qErrand) == input2)){
