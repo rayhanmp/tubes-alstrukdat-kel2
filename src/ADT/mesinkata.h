@@ -88,5 +88,10 @@ int wordToInt (Word kata);
 
 Word IntToword(int integer);
 
+int wordToIntDD (Word kata);
+/*Mengubah kata dari input gim Diner Dash menjadi integer*/
+
 boolean isIdentical(Word kata1, Word kata2);
+
+
 #endif
