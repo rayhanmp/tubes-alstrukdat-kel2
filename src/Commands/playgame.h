@@ -6,6 +6,7 @@
 #include "../diner_dash/diner_dash.h"
 #include "../RNGGAME/rnggame.h"
 #include "../gameTambahan/gametambahan.h"
+#include "../prs/prs.h"
 
 void playGame (queueGame* q);
 /*

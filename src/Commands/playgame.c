@@ -19,6 +19,8 @@ void playGame (queueGame* q){
                 diner_dash();
             } else if (isKataEqual(game, "RNG")){
                 rnggame();
+            } else if (isKataEqual(game, "PRS")) {
+                prs();
             } else {
                 gametambahan();
             }

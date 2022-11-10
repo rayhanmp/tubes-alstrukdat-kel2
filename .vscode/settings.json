@@ -2,6 +2,7 @@
     "files.associations": {
         "skipgame.h": "c",
         "queuegame.h": "c",
-        "random_number_generator.h": "c"
+        "random_number_generator.h": "c",
+        "gametambahan.h": "c"
     }
 }
