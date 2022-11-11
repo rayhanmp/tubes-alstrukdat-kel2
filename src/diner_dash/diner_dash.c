@@ -57,16 +57,17 @@ int diner_dash(){
     boolean input_valid;
     int customer = 0;
     int saldo = 0;
-    int seed;
+    long long seed;
+    seedrngver2(&seed);
     Word input1;
     int input2;
     int key,duration,spoliage,price;
     CreateQueuedd(&qErrand);
     CreateEmpty(&mCook);
     CreateEmpty(&mServe);
-    enqueuedd(&qErrand,1,rng(2,4),rng(1,3),rng(20,40)*1000);
-    enqueuedd(&qErrand,2,rng(1,2),rng(2,4),rng(10,20)*1000);
-    enqueuedd(&qErrand,3,rng(3,5),rng(2,3),rng(30,50)*1000);
+    enqueuedd(&qErrand,1,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
+    enqueuedd(&qErrand,2,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
+    enqueuedd(&qErrand,3,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
     printf("Selamat Datang di Diner Dash!\n");
     while (run){
         /* CETAK */
@@ -78,7 +79,6 @@ int diner_dash(){
         displayServe(mServe);
         printf("\n");
         input_valid = false;
-        seed = rng(1,5); /* buat pelanggan baru*/
         printf("MASUKKAN COMMAND: ");
         /* PROSES INPUT*/
         while(!(input_valid)){
@@ -161,7 +161,7 @@ int diner_dash(){
         /* MENAMBAH CUSTOMER*/
         if (lengthdd(qErrand) <= 7){
             key = TAIL_ID(qErrand) + 1;
-            enqueuedd(&qErrand,key,seed,rng(1,5),rng(10,50)*1000);
+            enqueuedd(&qErrand,key,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
         } else {
             run = false;
         }
