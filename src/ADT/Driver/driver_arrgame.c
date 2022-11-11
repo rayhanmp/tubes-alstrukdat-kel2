@@ -5,13 +5,16 @@
 int main () {
     arrGame arr;
     Game game1, game2, game3, game4;
-    
+    InsertLastW(&game1, "RISEWOMAN");
+    InsertLastW(&game2, "PRS");
+    InsertLastW(&game3, "NEW WORLD");
+    InsertLastW(&game4, "POKEMON");
 
     /* Uji Make Array */
     MakeArray(&arr);
 
     /* Uji empty */
-    if (IsEmpty(arr)) {
+    if (IsEmptyArr(arr)) {
         printf("arr kosong.");
     }
     else {
@@ -22,7 +25,7 @@ int main () {
     InsertFirst(&arr, game1);
     InsertFirst(&arr, game2);
     InsertLast(&arr, game3);
-    InserAt(&arr, game4, 3);
+    InsertAt(&arr, game4, 3);
     PrintArray(arr); 
     // Expected ouput: Game1, Game2, Game3, Game4
 
