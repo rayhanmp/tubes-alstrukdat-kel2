@@ -1,7 +1,6 @@
 #ifndef _DELETEGAME_H_
 #define _DELETEGAME_H_
 
-#include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
 #include "../ADT/queueGame.h"
 

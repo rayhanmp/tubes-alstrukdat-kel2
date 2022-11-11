@@ -2,9 +2,9 @@
 #include "help.h"
 
 void help(){
-  pritf("===========================NINUNINUNINU===========================\n");
-  pritf("===========================HELP===========================");
-  pritf("===========================NINUNINUNINU===========================\n");
+  printf("===========================NINUNINUNINU===========================\n");
+  printf("===========================HELP===========================");
+  printf("===========================NINUNINUNINU===========================\n");
   printf("1. START - membaca file konfigurasi sistem yang berisi list game yang dapat dimainkan\n");
   printf("2. LOAD - membaca save file yang berisi list game yang dapat dimainkan, histori, dan scoreboard game \n");
   printf("3. SAVE - menyimpan kondisi state game pemain terkini \n");

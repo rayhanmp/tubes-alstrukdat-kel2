@@ -1,7 +1,6 @@
 #ifndef _LOAD_H_
 #define _LOAD_H_
 
-#include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
 
 void load(arrGame* arr, char* filename);

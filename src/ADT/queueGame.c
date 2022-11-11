@@ -22,7 +22,7 @@ boolean IsFullQ(queueGame q) {
 /* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
   return IDX_HEAD(q) == (IDX_TAIL(q) + 1) % CAPACITY;
 }
-boolean IsMemberQ(queueGame q, ElType val) {
+boolean IsMemberQ(queueGame q, Game val) {
 /* Mengirim true jika val terdapat dalam queueGame */
    if (IsEmptyQ(q)) {
      return false;

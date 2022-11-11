@@ -4,6 +4,8 @@
 #include "../boolean.h"
 #include "word.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "mesinkata.h"
 
 #define IDX_UNDEF -1
 #define CAPACITY 100

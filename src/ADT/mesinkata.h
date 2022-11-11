@@ -14,8 +14,8 @@
 #define BLANK ' '
 #define ENTER '\n'
 
-boolean endWord;
-Word currentWord;
+extern boolean endWord;
+extern Word currentWord;
 
 void IgnoreBlanks();
 /* Mengabaikan satu atau beberapa BLANK

@@ -1,7 +1,6 @@
 #ifndef _CREATEGAME_H_
 #define _CREATEGAME_H_
 
-#include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
 
 void createGame (arrGame *arr);

@@ -72,7 +72,7 @@ int main(){
         }
         else if(isKataEqual(currentWord,"SKIPGAME")){
             ADVWORD_INPUT();
-            skipGame(arrayGame, &qGame, wordToInt(currentWord));
+            skipGame(&qGame, wordToInt(currentWord));
         }
         else if(isKataEqual(currentWord,"HELP")){
             help();

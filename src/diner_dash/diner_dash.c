@@ -107,7 +107,7 @@ int diner_dash(){
                     input_valid = true;
                     printf("\nBerhasil mengantar M%d\n",input2); /* SERVE, berhasil*/
                 } else if (!IsMember(mServe,input2)){
-                    printf("\nM%d belum selesai dimasak\n"); /* SERVE, gagal karena tidak ada di mServe*/
+                    printf("\nM%d belum selesai dimasak\n",input2); /* SERVE, gagal karena tidak ada di mServe*/
                 } else {
                     printf("\nM%d belum dapat disajikan karena M%d belum selesai\n",input2,HEAD_ID(qErrand)); /* SERVE, gagal karena id bukanlah HEAD_ID*/
                 }

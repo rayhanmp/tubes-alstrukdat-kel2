@@ -1,5 +1,7 @@
 #include "mesinkata.h"
 
+boolean endWord;
+Word currentWord;
 
 
 void IgnoreBlanks()

@@ -14,11 +14,11 @@ void deleteGame (arrGame *arr, queueGame q) {
 
     /* Cek kondisi */
     if (val>5) { // Jika bukan 5 gim pertama
-        if (!IsMemberQ(q)) { // Jika gim tidak terdapat di queueGame
+        if (!IsMemberQ(q,currentWord)) { // Jika gim tidak terdapat di queueGame
                 if(!(isKataEqual(currentWord, "RNG")) && !(isKataEqual(currentWord, "Diner Dash"))) { // Jika gim bukan bawaan sistem (RNG/Diner Dash)
                     DeleteAt(arr, val);
                     printf("Game berhasil dihapus\n");
-                    return 0; // Early return agar printf di bawahnya tidak dieksekusi
+                    return;
                 }
         }
     }
