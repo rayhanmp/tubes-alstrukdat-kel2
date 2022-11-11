@@ -17,14 +17,15 @@
 
 
 int main(){
-    // INISIALISASI ARRAY GAME
+    // INISIALISASI ARRAY GAME DAN QUEUE GAME
     arrGame arrayGame;
     MakeArray(&arrayGame);
     queueGame qGame;
     CreateQueue(&qGame);
     boolean play = true;
 
-    //MAIN PROGRAM
+    //TITLE PROGRAM
+    printf("==================SELAMAT DATANG DI==================\n");
     printf(" /$$$$$$$  /$$   /$$  /$$$$$$  /$$      /$$  /$$$$$$ \n");
     printf("| $$__  $$| $$$ | $$ /$$__  $$| $$$    /$$$ /$$__  $$\n");
     printf("| $$  \\ $$| $$$$| $$| $$  \\ $$| $$$$  /$$$$| $$  \\ $$\n");
@@ -33,8 +34,9 @@ int main(){
     printf("| $$  \\ $$| $$\\  $$$| $$  | $$| $$\\  $ | $$| $$  | $$\n");
     printf("| $$$$$$$/| $$ \\  $$|  $$$$$$/| $$ \\/  | $$|  $$$$$$/\n");
     printf("|_______/ |__/  \\__/ \\______/ |__/     |__/ \\______/ \n");
+    printf("=====================================================\n");
 
-    
+    //MAIN PROGRAM
     while(play){
         clearWord();
         printf("MASUKKAN COMMAND: ");

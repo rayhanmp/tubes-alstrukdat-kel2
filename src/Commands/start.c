@@ -9,6 +9,7 @@ void start(arrGame* arr){
         ADVWORD();
         i++;
     }
+    printf("Save file berhasil dibaca.\n");
 }
 
 /*

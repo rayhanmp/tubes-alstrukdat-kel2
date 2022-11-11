@@ -27,6 +27,7 @@ void save(arrGame* arr, char* filename){
     }
     fputc('.',file);
     fclose(file);
+    printf("Save file berhasil disimpan.\n"); 
 }
 
 /*
