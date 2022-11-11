@@ -11,7 +11,6 @@
 #define CAPACITY 100
 
 /* Definisi elemen dan address */
-typedef Word ElType;
 typedef Word Game;
 typedef struct {
 	Game A[CAPACITY]; 
