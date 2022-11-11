@@ -18,7 +18,7 @@ void START(char* filename)
 {
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
-    char directory[50] = "../../data/";
+    char directory[50] = "data/";
     int i=0,j=0;
     while(directory[i]!='\0'){
         i++;  
@@ -30,7 +30,7 @@ void START(char* filename)
         i++;
     }
   directory[i]='\0';
-    pita = fopen("data/config1.txt", "r");
+    pita = fopen(directory, "r");
     ADV();
 }
 

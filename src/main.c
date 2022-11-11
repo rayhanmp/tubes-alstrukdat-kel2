@@ -64,11 +64,11 @@ int main(){
         }
         else if(isKataEqual(currentWord,"QUEUE")){
             ADVWORD_INPUT();
-            deleteGame(&arrayGame,qGame);
+            QueueGame(&qGame,arrayGame);
         }
         else if(isKataEqual(currentWord,"PLAY")){
             ADVWORD_INPUT();
-            deleteGame(&arrayGame,qGame);
+            playGame(&qGame);
         }
         else if(isKataEqual(currentWord,"SKIPGAME")){
             ADVWORD_INPUT();

@@ -106,6 +106,7 @@ int wordToIntDD (Word word);
 boolean isIdentical(Word kata1, Word kata2);
 /*Mengembalikan true jika kata1 identik dengan kata2*/
 
-
+void InsertLastW(Word* word, char* str);
+/*Memasukkan str ke word dari akhir word.tabword*/
 
 #endif

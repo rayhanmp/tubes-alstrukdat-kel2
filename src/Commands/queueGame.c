@@ -1,5 +1,5 @@
 #include "queueGame.h"
-
+#include "listGame.h"
 void QueueGame(queueGame *q, arrGame arr) {
     int num;
   
@@ -8,7 +8,7 @@ void QueueGame(queueGame *q, arrGame arr) {
   
     printf("\n");
 
-    ListGame();
+    listGame(arr);
       
     printf("\n");
   

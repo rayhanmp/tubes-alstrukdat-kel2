@@ -204,7 +204,7 @@ void Reverse(Word *word)
 {
     Word tempword;
     tempword.Length = 0;
-    CopyWord(&tempword, *word);
+    CloneWord(&tempword, *word);
     int len = word->Length;
     for (int i = 0; i < len; i++)
     {
@@ -264,4 +264,17 @@ boolean isIdentical(Word kata1, Word kata2){
         }
     }
     return found;
+}
+
+void InsertLastW(Word* word, char* str){
+/*Memasukkan str ke word dari akhir word.tabword*/
+    int i=0;
+    while(str[i]!='\0')
+    {
+        word->TabWord[word->Length]=str[i];
+        word->Length++;
+        i++;
+    }
+  word->TabWord[word->Length] ='\0';
+        
 }

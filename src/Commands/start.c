@@ -4,7 +4,6 @@ void start(arrGame* arr){
     int i = 0;
     MakeArray(arr);
     STARTWORD("default_config.txt");
-    ADVWORD();
     while(!isEndWord()){
         InsertLast(arr, currentWord);
         ADVWORD();

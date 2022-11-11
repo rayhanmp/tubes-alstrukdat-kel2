@@ -1,13 +1,26 @@
 #include "save.h"
 
-void save(arrGame* arr, char* filename){
+void save(arrGame* arr, char* filename){ 
+    //SET DIRECTORY
+    char directory[50] = "data/";
+    int i=0,j=0;
+    while(directory[i]!='\0'){
+        i++;  
+    }
+    while(filename[j]!='\0')
+    {
+        directory[i]=filename[j];
+        j++;
+        i++;
+    }
+  directory[i]='\0';
+
     //MEMBUAT FILE
-    FILE *file = fopen(filename,"w+");
+    FILE *file = fopen(directory,"w+");
 
     //PENGISIAN FILE
-    int i = 0;
+    i = 0;
     while(i < Length(*arr)){
-        printf("<%s>\n",Get(*arr,i).TabWord);
         fputs(Get(*arr,i).TabWord,file);
         fputc('\n', file);
         i++;

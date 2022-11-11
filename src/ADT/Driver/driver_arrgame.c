@@ -1,6 +1,6 @@
 /*** DRIVER ADT ARRAYGAME ***/
 
-#include "arrayGame.h"
+#include "../arrayGame.h"
 
 int main () {
     arrGame arr;
@@ -13,7 +13,7 @@ int main () {
         printf("arr kosong.");
     }
     else {
-        printf("arr tidak kosong.")
+        printf("arr tidak kosong.");
     }
 
     /* Uji Insert */
