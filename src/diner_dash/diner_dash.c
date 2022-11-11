@@ -116,9 +116,9 @@ int diner_dash(){
                 }
             } else if ((isKataEqual(input1,"SKIP"))){ /*GANTI DENGAN KATA*/
                 input_valid = true;
-                printf("Putaran ini dilewati\n");
+                printf("\nPutaran ini dilewati\n");
             } else {
-                printf("Command yang tersedia adalah COOK, SERVE, SKIP\n"); /* INPUT PERTAMA GAGAL*/
+                printf("\nCommand yang tersedia adalah COOK, SERVE, SKIP\n"); /* INPUT PERTAMA GAGAL*/
             }
             if (!(input_valid)){
                 printf("\nMASUKKAN COMMAND: ");
