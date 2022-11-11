@@ -1,10 +1,6 @@
 #include "playgame.h"
 
 void playGame (queueGame* q){
-    printf("Berikut adalah daftar game yang tersedia\n");
-    PrintQueue(*q);
-    printf("\n");
-
     Word game;
     if (IsEmptyQ(*q)){
         printf("Daftar Game kosong\n");
