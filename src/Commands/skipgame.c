@@ -1,13 +1,9 @@
 #include "skipgame.h"
 
 void skipGame (queueGame *q, int n){
-    printf("Berikut adalah daftar game yang tersedia\n");
-    PrintQueue(*q);
-    printf("\n");
-
     int i; 
     Word skippedGame, currentGame;
-    if (n > LengthQ(*q)){
+    if (n >= LengthQ(*q)){
         printf("Tidak ada permainan lagi dalam daftar game-mu.\n");
     } else {
         for (i = 0; i < n; i++){

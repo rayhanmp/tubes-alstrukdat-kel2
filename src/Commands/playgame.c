@@ -6,10 +6,10 @@ void playGame (queueGame* q){
     printf("\n");
 
     Word game;
-    Dequeue(q, &game);
     if (IsEmptyQ(*q)){
         printf("Daftar Game kosong\n");
     } else {
+        Dequeue(q, &game);
         if (isKataEqual(game, "DINOSAUR IN EARTH") || isKataEqual(game, "RISEWOMAN") || isKataEqual(game, "EIFFEL TOWER")){
             printf("Game %s masih dalam maintenance, belum dapat dimainkan.\n", game.TabWord);
             printf("Silahkan pilih game lain.\n");

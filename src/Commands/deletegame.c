@@ -17,6 +17,14 @@ void deleteGame (arrGame *arr, queueGame q) {
         if (!IsMemberQ(q,currentWord)) { // Jika gim tidak terdapat di queueGame
                 if(!(isKataEqual(currentWord, "RNG")) && !(isKataEqual(currentWord, "Diner Dash"))) { // Jika gim bukan bawaan sistem (RNG/Diner Dash)
                     DeleteAt(arr, val);
+                    int jumlah_game = Length(*arr) - 1;
+                    Word sum_game;
+                    sum_game.Length = 0;
+                    //masih bingung kenapa harus di clone 2 kali agar sempurna
+                    CloneWord(&sum_game,intToWord(jumlah_game));
+                    CloneWord(&sum_game,intToWord(jumlah_game));
+                    DeleteFirst(arr);
+                    InsertFirst(arr, sum_game);
                     printf("Game berhasil dihapus\n");
                     return;
                 }
