@@ -87,7 +87,7 @@ int diner_dash(){
             if (isKataEqual(input1,"COOK")){ 
                 ADVWORD_INPUT();
                 input2 = wordToIntDD (currentWord);
-                if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand))  && (!IsMember(mCook,input2)) && (!IsMember(mServe,input2))){ 
+                if ((input2 >= HEAD_ID(qErrand)) && (input2 <= TAIL_ID(qErrand))  && (!IsMember(mCook,input2)) && (mCook.Count < 5) && (!IsMember(mServe,input2))){ 
                     input_valid = true;
                     printf("\nBerhasil memasak M%d\n",input2); /* COOK, berhasil*/
                 } 
@@ -97,6 +97,9 @@ int diner_dash(){
                  else if (IsMember(mServe, input2)){
                     printf("\nM%d sudah siap disajikan\n",input2);
                 }
+                 else if (mCook.Count >= 5) {
+                     printf("\nHanya bisa memasak 5 makanan sekaligus\n);
+                 }
                  else {
                     printf("\nM%d tidak ada pada pemesanan\n",input2); /* COOK, gagal*/
                 }
