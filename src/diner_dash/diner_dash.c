@@ -65,9 +65,9 @@ int diner_dash(){
     CreateQueuedd(&qErrand);
     CreateEmpty(&mCook);
     CreateEmpty(&mServe);
-    enqueuedd(&qErrand,1,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
-    enqueuedd(&qErrand,2,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
-    enqueuedd(&qErrand,3,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
+    enqueuedd(&qErrand,1,rngver2(&seed,1,5),rngver2(&seed,1,5),rngver2((&seed,10,50)*1000);
+    enqueuedd(&qErrand,2,rngver2(&seed,1,5),rngver2((&seed,1,5),rngver2((&seed,10,50)*1000);
+    enqueuedd(&qErrand,3,rngver2(&seed,1,5),rngver2((&seed,1,5),rngver2((&seed,10,50)*1000);
     printf("Selamat Datang di Diner Dash!\n");
     while (run){
         /* CETAK */
@@ -161,7 +161,7 @@ int diner_dash(){
         /* MENAMBAH CUSTOMER*/
         if (lengthdd(qErrand) <= 7){
             key = TAIL_ID(qErrand) + 1;
-            enqueuedd(&qErrand,key,rngver2(&seed,1,5),rngver2(1,5),rngver2(10,50)*1000);
+            enqueuedd(&qErrand,key,rngver2(&seed,1,5),rngver2((&seed,1,5),rngver2((&seed,10,50)*1000);
         } else {
             run = false;
         }
