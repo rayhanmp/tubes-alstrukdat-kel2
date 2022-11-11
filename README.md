@@ -1,19 +1,32 @@
-# Tugas Besar 1 Algoritma dan Struktur Data (IF2111)
-
-## Deskripsi Program
+# BNMO 
+## IF2111 Algoritma dan Struktur Data 
 BNMO adalah suatu program berbasis CLI (command-line interface) yang ditulis dengan bahasa C. Seorang pengguna dapat memainkan gim, menambahkan gim, menghapus gim, dan mengurutkan gim yang akan dimainkan. Konfigurasi akan disimpan pada suatu file .txt yang dibaca menggunakan tipe bentukan mesin kata dan mesin karakter. 
 
+## Struktur Folder
+Berikut ini adalah struktur folder dari project ini:
+* Folder `data` berisi file konfigurasi default serta konfigurasi dari user (save file)
+* Folder `docs` berisi laporan, notulensi, dan spesifikasi Tugas Besar
+* Folder `src` berisi source program. Pada folder ini terdiri atas:
+  * file program utama `main.c`
+  * file 'header boolean'
+  * file shell 'compile.sh'
+  * folder `ADT` berisi file c, header, dan driver ADT
+  * folder `Commands` berisi perintah utama yang dapat dijalankan di _main_
+  * folder `RNGGAME` berisi file c dan header untuk gim Diner Dash
+  * folder `prs` berisi file c dan header untuk gim Paper Rock Scissor
+  * folder `gameTambahan` berisi file c dan header untuk gim tambahan
 
-
-
-## Cara Menjalankan Program
-### Instalasi C
+## Prosedur Penggunaan
+### Instal C
 Program dibuat dengan menggunakan bahasa C sehingga pengguna wajib memiliki _compiler_ C, disarankan menggunakan GCC versi terbaru. Apabila GCC telah terinstall, pengguna dapat melakukan _clone_ pada _repository_ ini atau langsung mengunduh _repository_ dalam file zip.
+
+### Instal GitBash
+Apabila Anda menggunakan sistem operasi Linux, abaikan langkah ini karena Linux sudah memiliki Bash. Abaikan pula jika Anda sudah memiliki Git. Anda dapat memasang GitBash dengan  meng-_install_ Git dari situs git-scm.com. 
 
 ### Compile Program
 Buka terminal dari direktori file src dan tuliskan perintah berikut pada terminal:
 ```
-gcc -o main Main.c arrGame//arrGame.c
+src/compile.sh
 ```
 
 ### Eksekusi Program
@@ -23,29 +36,29 @@ Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perin
 ```
 
 ## Fitur
-Program ini memiliki sejumlah fitur yang dapat diakses oleh pengguna, di antaranya adalah:
-* **1. START**
-Program akan memuat konfigurasi default.
-* **2. LOAD**  
-Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
-* **3. SAVE**
-* **4. CREATE GAME**
-* **5. LIST GAME**
-* **6. DELETE GAME**
-* **7. QUEUE GAME**
-* **8. PLAY GAME**
-* **9. SKIP GAME**
-* **10. QUIT**
-Keluar dari program.
-* **11. HELP**
-Program akan menampilkan daftar perintah yang bisa diakses.
+Program ini memiliki sejumlah fitur utama di _main_ yang dapat diakses oleh pengguna, di antaranya adalah:
+<table>
+<tr><td>No.</td><td>Command</td><td>Fungsi</td></tr>
+<tr><td>1.</td><td>START</td><td>Program akan memuat konfigurasi default.</td></tr>
+<tr><td>2.</td><td>LOAD</td><td>Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
+</td></tr>
+<tr><td>3.</td><td>SAVE</td><td>Selesai</td></tr>
+<tr><td>4.</td><td>CREATEGAME</td><td>Selesai</td></tr>
+<tr><td>5.</td><td>LISTGAME</td><td>Selesai</td></tr>
+<tr><td>6.</td><td>DELETEGAME</td><td>Selesai</td></tr>
+<tr><td>7.</td><td>QUEUEGAME</td><td>Selesai</td></tr>
+<tr><td>8.</td><td>PLAYGAME</td><td>Selesai</td></tr>
+<tr><td>9.</td><td>SKIPGAME</td><td>Selesai</td></tr>
+<tr><td>10.</td><td>QUIT</td><td>Keluar dari program</td></tr>
+<tr><td>11.</td><td>HELP</td><td>Program akan menampilkan daftar perintah yang bisa diakses.
+</td></tr>
+
+</table>
 
 ## Kontributor
-Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor program ini:\
-* Jazmy Izzati Alamsyah (18221124)\
-* Karunia Mega Lestari (18221126)\
-* Marcheline Fanni Hidayat Putri (18221090)\
-* Raditya Azka Prabaswara (18221152)\
-* Rayhan Maheswara Pramanda (18221130)\
-
-K02 | Kelompok 4.
+Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor dari Kelompok 2 Kelas Genap untuk program ini:
+* Jazmy Izzati Alamsyah (18221124)
+* Karunia Mega Lestari (18221126)
+* Marcheline Fanni Hidayat Putri (18221090)
+* Raditya Azka Prabaswara (18221152)
+* Rayhan Maheswara Pramanda (18221130)
