@@ -50,23 +50,23 @@ int main(){
             ADVWORD_INPUT();
             save(&arrayGame, currentWord.TabWord);
         }
-        else if(isKataEqual(currentWord,"CREATE")){
+        else if(isKataEqual(currentWord,"CREATEGAME")){
             ADVWORD_INPUT();
             createGame(&arrayGame);
         }
-        else if(isKataEqual(currentWord,"LIST")){
+        else if(isKataEqual(currentWord,"LISTGAME")){
             ADVWORD_INPUT();
             listGame(arrayGame);
         }
-        else if(isKataEqual(currentWord,"DELETE")){
+        else if(isKataEqual(currentWord,"DELETEGAME")){
             ADVWORD_INPUT();
             deleteGame(&arrayGame,qGame);
         }
-        else if(isKataEqual(currentWord,"QUEUE")){
+        else if(isKataEqual(currentWord,"QUEUEGAME")){
             ADVWORD_INPUT();
             QueueGame(&qGame,arrayGame);
         }
-        else if(isKataEqual(currentWord,"PLAY")){
+        else if(isKataEqual(currentWord,"PLAYGAME")){
             ADVWORD_INPUT();
             playGame(&qGame);
         }

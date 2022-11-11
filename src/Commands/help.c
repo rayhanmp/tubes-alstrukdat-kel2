@@ -3,7 +3,7 @@
 
 void help(){
   printf("===========================NINUNINUNINU===========================\n");
-  printf("===========================HELP===========================");
+  printf("===============================HELP===============================\n");
   printf("===========================NINUNINUNINU===========================\n");
   printf("1. START - membaca file konfigurasi sistem yang berisi list game yang dapat dimainkan\n");
   printf("2. LOAD - membaca save file yang berisi list game yang dapat dimainkan, histori, dan scoreboard game \n");

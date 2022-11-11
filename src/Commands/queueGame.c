@@ -17,7 +17,7 @@ void QueueGame(queueGame *q, arrGame arr) {
     STARTWORD_INPUT();
     num = wordToInt(currentWord);
 
-    if (num>0 && num<=Length(arr)) {
+    if (num>0 && num < Length(arr)) {
         Enqueue(q, Get(arr,num));
         printf("Game berhasil ditambahkan kedalam daftar antrian.\n");
     }
