@@ -24,13 +24,13 @@ Program dibuat dengan menggunakan bahasa C sehingga pengguna wajib memiliki _com
 Apabila Anda menggunakan sistem operasi Linux, abaikan langkah ini karena Linux sudah memiliki Bash. Abaikan pula jika Anda sudah memiliki Git. Anda dapat memasang GitBash dengan  meng-_install_ Git dari situs git-scm.com. 
 
 ### Compile Program
-Buka terminal dari direktori file src dan tuliskan perintah berikut pada terminal:
+Buka bash lalu tuliskan perintah berikut:
 ```
 src/compile.sh
 ```
 
 ### Eksekusi Program
-Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perintah berikut pada direktori yang sama dengan direktori _compile_
+Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perintah berikut pada direktori yang sama dengan direktori _compile_:
 ```
 ./main
 ```
@@ -39,16 +39,16 @@ Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perin
 Program ini memiliki sejumlah fitur utama di _main_ yang dapat diakses oleh pengguna, di antaranya adalah:
 <table>
 <tr><td>No.</td><td>Command</td><td>Fungsi</td></tr>
-<tr><td>1.</td><td>START</td><td>Program akan memuat konfigurasi default.</td></tr>
-<tr><td>2.</td><td>LOAD</td><td>Program akan memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
+<tr><td>1.</td><td>START</td><td>Memuat konfigurasi default.</td></tr>
+<tr><td>2.</td><td>LOAD</td><td>Memuat konfigurasi dari _save file_ tertentu sesuai masukan user.
 </td></tr>
-<tr><td>3.</td><td>SAVE</td><td>Selesai</td></tr>
-<tr><td>4.</td><td>CREATEGAME</td><td>Selesai</td></tr>
-<tr><td>5.</td><td>LISTGAME</td><td>Selesai</td></tr>
-<tr><td>6.</td><td>DELETEGAME</td><td>Selesai</td></tr>
-<tr><td>7.</td><td>QUEUEGAME</td><td>Selesai</td></tr>
-<tr><td>8.</td><td>PLAYGAME</td><td>Selesai</td></tr>
-<tr><td>9.</td><td>SKIPGAME</td><td>Selesai</td></tr>
+<tr><td>3.</td><td>SAVE</td><td>Menyimpan konfigurasi serta kondisi array ke _file_ tertentu</td></tr>
+<tr><td>4.</td><td>CREATEGAME</td><td>Menambahkan gim baru ke daftar gim</td></tr>
+<tr><td>5.</td><td>LISTGAME</td><td>Menampilkan daftar gim yang tersedia</td></tr>
+<tr><td>6.</td><td>DELETEGAME</td><td>Menghapus sebuah gim dari daftar gim</td></tr>
+<tr><td>7.</td><td>QUEUEGAME</td><td>Menambahkan suatu gim ke daftar antrean</td></tr>
+<tr><td>8.</td><td>PLAYGAME</td><td>Memainkan gim dengan urutan pertama di antrean</td></tr>
+<tr><td>9.</td><td>SKIPGAME</td><td>Melewatkan sejumlah permainan tertentu berdasarkan masukan</td></tr>
 <tr><td>10.</td><td>QUIT</td><td>Keluar dari program</td></tr>
 <tr><td>11.</td><td>HELP</td><td>Program akan menampilkan daftar perintah yang bisa diakses.
 </td></tr>
