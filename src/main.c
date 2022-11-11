@@ -72,9 +72,6 @@ int main(){
         }
         else if(isKataEqual(currentWord,"SKIPGAME")){
             ADVWORD_INPUT();
-            printf("Berikut adalah daftar Game-mu\n");
-            PrintQueue(qGame);
-            printf("\n");
             skipGame(&qGame, wordToInt(currentWord));
         }
         else if(isKataEqual(currentWord,"HELP")){
