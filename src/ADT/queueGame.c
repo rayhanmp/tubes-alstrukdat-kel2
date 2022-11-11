@@ -72,12 +72,6 @@ void Dequeue(queueGame *q, Game *val) {
 /* I.S. q tidak mungkin kosong */
 /* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
         q mungkin kosong */
-   if (IsEmptyQ(*q))
-    {
-        printf("QueueGame kosong!\n");
-    }
-    else
-    {
         *val = HEAD(*q);
         if (IDX_HEAD(*q) == IDX_TAIL(*q))
         {
@@ -88,8 +82,8 @@ void Dequeue(queueGame *q, Game *val) {
         {
             IDX_HEAD(*q) = (IDX_HEAD(*q) + 1) % CAPACITY;
         }
-    }
 }
+
 
 /* *** Primitif DeleteQueue *** */
 void DeleteQueue (queueGame *q) {
