@@ -14,7 +14,8 @@ int rnggame(){
     int x = rng(MIN_RNG_X, MAX_RNG_X);
     printf("RNG Telah dimulai. Uji keberuntungan Anda dengan menebak X.\n");
     while ((try < MAX_RNG_TRY) && (!success)){
-        scanf("%d",&ans);
+        STARTWORD_INPUT();
+        ans = wordToInt(currentWord);
         if (ans < x){
             printf("Lebih Besar\n");
         } else if (ans > x){

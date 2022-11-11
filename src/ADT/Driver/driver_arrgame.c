@@ -4,6 +4,8 @@
 
 int main () {
     arrGame arr;
+    Game game1, game2, game3, game4;
+    
 
     /* Uji Make Array */
     MakeArray(&arr);
@@ -17,10 +19,10 @@ int main () {
     }
 
     /* Uji Insert */
-    InsertFirst(&arr, "Game1");
-    InsertFirst(&arr, "Game2");
-    InsertLast(&arr, "Game4");
-    InserAt(&arr, "Game3", 2);
+    InsertFirst(&arr, game1);
+    InsertFirst(&arr, game2);
+    InsertLast(&arr, game3);
+    InserAt(&arr, game4, 3);
     PrintArray(arr); 
     // Expected ouput: Game1, Game2, Game3, Game4
 

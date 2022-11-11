@@ -85,16 +85,19 @@ Mengembalikan true jika word == string dan false jika word != string.
 Fungsi ini dipakai untuk menyocokan command input.
 */
 char intToChar(int n);
+/*int to char converter*/
 
 void CloneWord(Word *word1, Word word2);
+/*Membuat duplikat word*/
 
 void SetWordChar(Word *word, int i, char c);
 
 
 void Reverse(Word *word);
-
+/*Membalikan string word.Tabword dalam word*/
 
 Word intToWord(int n);
+/*int to word converter */
 
 int wordToInt (Word word);
 /*Mengubah word menjadi integer*/

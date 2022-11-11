@@ -6,6 +6,7 @@
 #include <math.h>
 #include "boolean.h"
 #include "random_number_generator.h"
+#include "../ADT/mesinkata.h"
 
 #define MAX_RNG_X 100
 #define MIN_RNG_X 0
