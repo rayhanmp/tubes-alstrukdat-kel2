@@ -1,10 +1,10 @@
 #ifndef __ARRAY_GAME_DIN__
 #define __ARRAY_GAME_DIN__
 
-#include "../boolean.h"
 #include <stdio.h>
-#include "Word.h"
+#include "word.h"
 #include "mesinkata.h"
+#include "../boolean.h"
 
 typedef int IdxType;
 typedef Word Game;

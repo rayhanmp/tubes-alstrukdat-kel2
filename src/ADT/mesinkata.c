@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "mesinkata.h"
 
 
@@ -180,7 +178,7 @@ char intToChar(int n) {
     return (n >= 0 && n <= 9)? (char)(n + '0') : n;
 }
 
-void CopyWord(Word *word1, Word word2)
+void CloneWord(Word *word1, Word word2)
 {
     word1->Length = word2.Length;
     for (int i = 0; i < word2.Length; i++)
@@ -237,25 +235,6 @@ int wordToInt(Word word) {
     }
     
     return sum;
-}
-
-Word intToWord(int n) {
-    Word word;
-    int i;
-    word.Length = 0;
-    i = word.Length;
-
-    while (n > 0) {
-        if (i >= word.Length){
-        i = word.Length;
-        word.Length++;
-    }
-    word.TabWord[i] = intToChar(n%10);
-        n /= 10;
-    }
-
-    Reverse(&word);
-    return word;
 }
 
 int wordToIntDD (Word kata) {

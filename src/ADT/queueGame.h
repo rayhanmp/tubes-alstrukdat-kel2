@@ -2,7 +2,7 @@
 #define __QUEUE_GAME_DIN__
 
 #include "../boolean.h"
-#include "Word.h"
+#include "word.h"
 #include <stdio.h>
 
 #define IDX_UNDEF -1

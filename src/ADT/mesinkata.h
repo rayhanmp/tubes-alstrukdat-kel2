@@ -7,6 +7,8 @@
 #include "../boolean.h"
 #include "mesinkarakter.h"
 #include "word.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define NMax 100
 #define BLANK ' '
@@ -84,7 +86,7 @@ Fungsi ini dipakai untuk menyocokan command input.
 */
 char intToChar(int n);
 
-void CopyWord(Word *word1, Word word2);
+void CloneWord(Word *word1, Word word2);
 
 void SetWordChar(Word *word, int i, char c);
 
@@ -102,6 +104,8 @@ int wordToIntDD (Word word);
 /*Mengubah word dari input gim Diner Dash menjadi integer*/
 
 boolean isIdentical(Word kata1, Word kata2);
+/*Mengembalikan true jika kata1 identik dengan kata2*/
+
 
 
 #endif
