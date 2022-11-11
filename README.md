@@ -8,8 +8,8 @@ Berikut ini adalah struktur folder dari project ini:
 * Folder `docs` berisi laporan, notulensi, dan spesifikasi Tugas Besar
 * Folder `src` berisi source program. Pada folder ini terdiri atas:
   * file program utama `main.c`
-  * file 'header boolean'
-  * file shell 'compile.sh'
+  * file `header boolean`
+  * file shell `compile.sh`
   * folder `ADT` berisi file c, header, dan driver ADT
   * folder `Commands` berisi perintah utama yang dapat dijalankan di _main_
   * folder `RNGGAME` berisi file c dan header untuk gim Diner Dash
