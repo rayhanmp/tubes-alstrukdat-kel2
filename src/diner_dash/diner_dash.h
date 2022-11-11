@@ -7,6 +7,7 @@
 #include "map.h"
 #include "queuedd.h"
 #include "random_number_generator.h"
+#include "random_number_generator_ver_2.h"
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
 #include "../ADT/word.h"
