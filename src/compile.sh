@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -o main main.c ADT/arrayGame.c ADT/queueGame.c ADT/mesinkarakter.c ADT/mesinkata.c Commands/load.c Commands/save.c Commands/quit.c Commands/help.c Commands/listGame.c Commands/load.c Commands/deletegame.c Commands/playgame.c Commands/commandlain.c Commands/creategame.c Commands/skipgame.c Commands/start.c diner_dash/diner_dash.c diner_dash/map.c diner_dash/queuedd.c diner_dash/random_number_generator.c RNGGAME/rnggame.c RNGGAME/random_number_generator.c RNGGAME/random_number_generator_ver_2.c
