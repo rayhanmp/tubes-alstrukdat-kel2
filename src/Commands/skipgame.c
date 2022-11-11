@@ -3,6 +3,11 @@
 void skipGame (queueGame *q, int n){
     int i; 
     Word skippedGame, currentGame;
+
+    printf("Berikut adalah daftar Game-mu\n");
+    PrintQueue(*q);
+    printf("\n");
+
     if (n >= LengthQ(*q)){
         for (i = 0; i < n; i++){
             Dequeue(q, &skippedGame);
