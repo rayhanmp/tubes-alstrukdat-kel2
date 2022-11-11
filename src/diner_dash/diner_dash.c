@@ -92,16 +92,16 @@ int diner_dash(){
                     printf("\nBerhasil memasak M%d\n",input2); /* COOK, berhasil*/
                 } 
                 else if (IsMember(mCook,input2)){
-                    printf("\nM%d sedang dimasak\n",input2);
+                    printf("\nM%d sedang dimasak\n",input2); /* COOK, gagal karena input2 ada pada mCook */
                 }
                  else if (IsMember(mServe, input2)){
-                    printf("\nM%d sudah siap disajikan\n",input2);
+                    printf("\nM%d sudah siap disajikan\n",input2); /*COOK, gagal karena input2 ada pada mServe */
                 }
                  else if (mCook.Count >= 5) {
-                     printf("\nHanya bisa memasak 5 makanan sekaligus\n);
+                     printf("\nHanya bisa memasak 5 makanan sekaligus\n"); /* COOK, mCook penuh */
                  }
                  else {
-                    printf("\nM%d tidak ada pada pemesanan\n",input2); /* COOK, gagal*/
+                    printf("\nM%d tidak ada pada pemesanan\n",input2); /* COOK, input2 tidak ada pada qErrand*/
                 }
             } else if(isKataEqual(input1,"SERVE")) { 
                 ADVWORD_INPUT();
