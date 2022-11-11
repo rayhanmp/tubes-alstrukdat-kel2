@@ -113,6 +113,7 @@ int diner_dash(){
                 }
             } else if ((isKataEqual(input1,"SKIP"))){ /*GANTI DENGAN KATA*/
                 input_valid = true;
+                printf("Putaran ini dilewati\n");
             } else {
                 printf("Command yang tersedia adalah COOK, SERVE, SKIP\n"); /* INPUT PERTAMA GAGAL*/
             }
@@ -167,6 +168,6 @@ int diner_dash(){
         }
         displaySeparator();
     }
-    printf("Jumlah pelanggan yang dilayani : %d\n Saldo total : %d",customer,saldo);
+    printf("Jumlah pelanggan yang dilayani : %d\n Saldo total : %d\n",customer,saldo);
     return 0;
 }
