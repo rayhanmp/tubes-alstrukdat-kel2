@@ -55,3 +55,5 @@ void Delete(Set *S, infotype Elmt);
 
 boolean IsMember(Set S, infotype Elmt);
 /* Mengembalikan true jika Elmt adalah member dari S */
+
+#endif
