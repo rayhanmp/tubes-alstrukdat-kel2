@@ -310,8 +310,3 @@ void hangman () {
     printf("Skor akhir: %d\n", skor);
 }
 
-
-int main () {
-    hangman();
-    return 0;
-}
