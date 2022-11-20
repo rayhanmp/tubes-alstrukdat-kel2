@@ -7,6 +7,7 @@
 #include "../RNGGAME/rnggame.h"
 #include "../gameTambahan/gametambahan.h"
 #include "../prs/prs.h"
+#include "../hangman/hangman.h"
 
 void playGame (queueGame* q);
 /*

@@ -17,6 +17,8 @@ void playGame (queueGame* q){
                 rnggame();
             } else if (isKataEqual(game, "PRS")) {
                 prs();
+            } else if (isKataEqual(game, "HANGMAN")) {
+                hangman();
             } else {
                 gametambahan();
             }
