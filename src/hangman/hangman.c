@@ -1,10 +1,4 @@
 #include "hangman.h"
-#include "../ADT/mesinkata.h"
-#include "../ADT/arrayGame.h"
-#include "../Commands/load.h"
-#include "../Commands/save.h"
-#include <time.h>
-#include <stdlib.h>
 
 boolean IsMemberRegArr (char *guesses, char guess) {
 /* Mengembalikan true apabila guess terdapat dalam array guesses */
@@ -70,6 +64,27 @@ void printRegArr(char *guesses, int guess) {
     printf("\n");
 }
 
+boolean cekNonKapital (Game el) {
+/* I.S. Sembarang */
+/* F.S. Jika ada huruf nonkapital dalam el mengembalikan false*/
+    int i;
+    boolean found;
+    
+    i = 0;
+    found = false;
+    
+    while (!found && i<el.Length) {
+        if (el.TabWord[i] < 'A' || el.TabWord[i] > 'Z') {
+            found = true;
+        }
+        else {
+            i++;
+        }
+    }
+
+    return found;
+}
+
 void tambahDiksi (arrGame *arrKata) {
 /* I.S. arrKata terdefinisi */
 /* F.S. Prosedur meminta masukan kepada pengguna hingga pengguna memberi masukan 'STOP', kemudian prosedur menyimpan masukan ke berkas kamus.txt */
@@ -78,15 +93,20 @@ void tambahDiksi (arrGame *arrKata) {
                 printf("Masukkan kata yang ingin ditambahkan: ");
                 STARTWORD_INPUT();
                 if (!isKataEqual(currentWord, "STOP")) {
-                    if (!IsMemberArr(*arrKata, currentWord)) {
-                        InsertLast(arrKata, currentWord);
+                    if (IsMemberArr(*arrKata, currentWord)) {
+                        if (!cekNonKapital(currentWord)) {
+                            printf("Kata berhasil ditambahkan!\n");
+                            InsertLast(arrKata, currentWord);
+                        }
+                        else {
+                            printf("Kata tidak boleh mengandung huruf nonkapital!\n");
+                        }
                     }
                     else {
                         printf("Kata sudah ada di kamus\n");
                     }
                 }
             }
-            printf("Kata berhasil ditambahkan!\n");
             printf("\n");
             save(arrKata, "kamus.txt");
 }
@@ -98,6 +118,7 @@ void hangman () {
     /* Kamus */
     arrGame arrKata;
     int num;
+    int arrlen;
     int wrong;
     int correct;
     char guesses[20];
@@ -111,6 +132,7 @@ void hangman () {
     correct=0;
     guess=0;
     skor=0;
+    arrlen = Length(arrKata);
     exit = false;
     gameover = false;
 
@@ -130,7 +152,7 @@ void hangman () {
 
     printf("Aturan:\n");
     printf("1. Anda punya 10 kesempatan\n");
-    printf("2. Masukan harus dalam huruf kapital\n");
+    printf("2. Jawaban dalam huruf kapital\n");
     printf("3. Jika ingin berhenti bermain, ketik EXIT\n\n");
 
     printf("Menu:\n");
@@ -151,7 +173,7 @@ void hangman () {
     else if (isKataEqual(currentWord, "MAIN")) { // Jika pengguna memilih MAIN
         /* MAIN LOOP: selama gameover bernilai false */
         while (!gameover) { 
-            num = rand() % 17; // Memilih angka secara acak
+            num = rand() % arrlen; // Memilih angka secara acak
             int len = arrKata.A[num].Length;
 
             /* SECOND LOOP: selama jumlah correct tidak sama dengan jumlah huruf dalam kata */
