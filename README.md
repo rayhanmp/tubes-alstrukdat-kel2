@@ -26,13 +26,13 @@ Apabila Anda menggunakan sistem operasi Linux, abaikan langkah ini karena Linux 
 ### Compile Program
 Buka bash lalu tuliskan perintah berikut:
 ```
-src/compile.sh
+./src/compile.sh
 ```
 
 ### Eksekusi Program
-Apabila _compile_ telah sukses dilakukan, user dipersilakan untuk mengetik perintah berikut pada direktori yang sama dengan direktori _compile_:
+Apabila _compile_ telah sukses dilakukan, pengguna dipersilakan untuk mengetik perintah berikut pada direktori yang sama dengan direktori _compile_:
 ```
-./main
+./src/main.exe
 ```
 
 ## Fitur
@@ -55,8 +55,21 @@ Program ini memiliki sejumlah fitur utama di _main_ yang dapat diakses oleh peng
 
 </table>
 
+## Gim
+Program ini memiliki sejumlah gim yang dapat dimainkan oleh pengguna, di antaranya adalah:
+<table>
+<tr><td>No.</td><td>Nama</td>
+<tr><td>1.</td><td>RNG</td>
+<tr><td>2.</td><td>DINER DASH</td>
+<tr><td>3.</td><td>HANGMAN</td>
+<tr><td>4.</td><td>TOWER OF HANOI</td>
+<tr><td>5.</td><td>SNAKE ON METEOR</td>
+</td></tr>
+
+</table>
+
 ## Kontributor
-Program ini dibuat untuk memenuhi Tugas Besar 1 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor dari Kelompok 2 Kelas Genap untuk program ini:
+Program ini dibuat untuk memenuhi Tugas Besar 2 Mata Kuliah Algoritma dan Struktur Data (IF2111) untuk Program Studi Sistem dan Teknologi Informasi Insitut Teknologi Bandung. Berikut kontributor dari Kelompok 2 Kelas Genap untuk program ini:
 * Jazmy Izzati Alamsyah (18221124)
 * Karunia Mega Lestari (18221126)
 * Marcheline Fanni Hidayat Putri (18221090)
