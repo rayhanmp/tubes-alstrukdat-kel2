@@ -1,32 +1,38 @@
 #include "towergame.h"
 
-void printKondisi(Stack S1, Stack S2, Stack S3){
+void printKondisi(Stack S1, Stack S2, Stack S3)
+{
     Stack Stemp1, Stemp2, Stemp3;
     stacktype X;
-    if(LengthS(S1) != 5){
-        for(int i = 5; i > LengthS(S1); i--){
+    if (LengthS(S1) != 5)
+    {
+        for (int i = 5; i > LengthS(S1); i--)
+        {
             printf("\n");
         }
     }
     printStack(S1);
     printf("#[TOWER A]#\n");
 
-    if(LengthS(S2) != 5){
-        for(int i = 5; i > LengthS(S2); i--){
+    if (LengthS(S2) != 5)
+    {
+        for (int i = 5; i > LengthS(S2); i--)
+        {
             printf("\n");
         }
     }
     printStack(S2);
     printf("#[TOWER B]#\n");
 
-    if(LengthS(S3) != 5){
-    for(int i = 5; i > LengthS(S3); i--){
-        printf("\n");
-    }
+    if (LengthS(S3) != 5)
+    {
+        for (int i = 5; i > LengthS(S3); i--)
+        {
+            printf("\n");
+        }
     }
     printStack(S3);
     printf("#[TOWER C]#\n");
-
 
     // while(!IsEmptyS(Stemp1)){
     //     Pop(&Stemp1, &X);
@@ -53,14 +59,17 @@ void printKondisi(Stack S1, Stack S2, Stack S3){
     // }
 }
 
-boolean isTowerValid(Stack S, int input){
-    return InfoTop(S) > input; 
+boolean isTowerValid(Stack S, int input)
+{
+    return InfoTop(S) > input;
 }
-boolean isInputValid(char input){
-    return input == 'A' | input == 'B' | input == 'C';
+boolean isInputValid(char input)
+{
+    return input == 'A' || input == 'B' || input == 'C';
 }
-void towerGame(){
-    //TITLE
+void towerGame()
+{
+    // TITLE
     printf("=====================================================================================================================================\n");
     printf("$$$$$$$$\\  $$$$$$\\  $$\\      $$\\ $$$$$$$$\\ $$$$$$$\\         $$$$$$\\  $$$$$$$$\\       $$\\   $$\\  $$$$$$\\  $$\\   $$\\  $$$$$$\\  $$$$$$\\ \n");
     printf("\\__$$  __|$$  __$$\\ $$ | $\\  $$ |$$  _____|$$  __$$\\       $$  __$$\\ $$  _____|      $$ |  $$ |$$  __$$\\ $$$\\  $$ |$$  __$$\\ \\_$$  _|\n");
@@ -71,37 +80,38 @@ void towerGame(){
     printf("   \\__|    \\______/ \\__/     \\__|\\________|\\__|  \\__|       \\______/ \\__|            \\__|  \\__|\\__|  \\__|\\__|  \\__| \\______/ \\______|\n");
     printf("=====================================================================================================================================\n");
 
-    //INISIALISASI
+    // INISIALISASI
     Stack A, B, C, Atemp, Btemp, Ctemp;
     int score, minsteps, sumPiringan, steps;
     stacktype var;
     char asal, tujuan;
-    score = 10;
     steps = 0;
-    minsteps = pow(2,sumPiringan) - 1;
-
     printf("MASUKKAN JUMLAH PIRINGAN: ");
     STARTWORD_INPUT();
     sumPiringan = wordToInt(currentWord);
-    //TOWER A
+    minsteps = (int)(pow(2, sumPiringan)) - 1;
+
+    // TOWER A
     CreateEmptyS(&A);
-    //Inisialisasi Tower A
-    for(int i = sumPiringan; i > 0; i--){ 
+    // Inisialisasi Tower A
+    for (int i = sumPiringan; i > 0; i--)
+    {
         Push(&A, i);
     }
-    //TOWER B
+    // TOWER B
     CreateEmptyS(&B);
-    //TOWER C
+    // TOWER C
     CreateEmptyS(&C);
-    //TEMPORARY TOWERS
-    CopyStack(A,&Atemp);
-    CopyStack(B,&Btemp);
-    CopyStack(C,&Ctemp);
+    // TEMPORARY TOWERS
+    CopyStack(A, &Atemp);
+    CopyStack(B, &Btemp);
+    CopyStack(C, &Ctemp);
 
-    //ALGORITMA
+    // ALGORITMA
     printf("=====================================================================================================================================\n");
-    printKondisi(A,B,C);
-    while(steps < (minsteps + 10) && LengthS(C) != sumPiringan){
+    printKondisi(A, B, C);
+    while (steps < (minsteps + 10) && LengthS(C) != sumPiringan)
+    {
         printf("=================\n");
         printf("TIANG ASAL  : ");
         STARTWORD_INPUT();
@@ -110,157 +120,184 @@ void towerGame(){
         STARTWORD_INPUT();
         tujuan = currentWord.TabWord[0];
         printf("=================\n");
-        if(isInputValid(asal) && isInputValid(tujuan) && asal != tujuan){
-            switch(asal){
+        if (isInputValid(asal) && isInputValid(tujuan) && asal != tujuan)
+        {
+            switch (asal)
+            {
             case 'A':
-                if(IsEmptyS(A)){
+                if (IsEmptyS(A))
+                {
                     printf("TIANG ASAL A KOSONG!\n");
                 }
-                else{
+                else
+                {
                     switch (tujuan)
                     {
                     case 'B':
-                        Pop(&Atemp,&var);
-                        if(IsEmptyS(B)){
+                        Pop(&Atemp, &var);
+                        if (IsEmptyS(B))
+                        {
                             Pop(&A, &var);
                             Push(&B, var);
                             steps++;
                         }
-                        else if(isTowerValid(B,var)){
+                        else if (isTowerValid(B, var))
+                        {
                             Pop(&A, &var);
                             Push(&B, var);
                             steps++;
                         }
-                        else{
+                        else
+                        {
                             printf("PIRINGAN YANG DIBAWAH HARUS LEBIH BESAR DARIPADA YANG DIATAS!\n");
                         }
                         CopyStack(A, &Atemp);
                         CopyStack(B, &Btemp);
                         break;
                     case 'C':
-                        Pop(&Atemp,&var);
-                        if(IsEmptyS(C)){
+                        Pop(&Atemp, &var);
+                        if (IsEmptyS(C))
+                        {
                             Pop(&A, &var);
                             Push(&C, var);
                             steps++;
                         }
-                        else if(isTowerValid(C,var)){
+                        else if (isTowerValid(C, var))
+                        {
                             Pop(&A, &var);
                             Push(&C, var);
                             steps++;
                         }
-                        else{
+                        else
+                        {
                             printf("PIRINGAN YANG DIBAWAH HARUS LEBIH BESAR DARIPADA YANG DIATAS!\n");
                         }
                         CopyStack(A, &Atemp);
                         CopyStack(C, &Ctemp);
                         break;
-                    
                     }
                 }
                 break;
             case 'B':
-                if(IsEmptyS(B)){
+                if (IsEmptyS(B))
+                {
                     printf("TIANG ASAL B KOSONG!\n");
                 }
-                else{
+                else
+                {
                     switch (tujuan)
                     {
                     case 'A':
-                        Pop(&Btemp,&var);
-                        if(IsEmptyS(A)){
+                        Pop(&Btemp, &var);
+                        if (IsEmptyS(A))
+                        {
                             Pop(&B, &var);
                             Push(&A, var);
                             steps++;
                         }
-                        else if(isTowerValid(A,var)){
+                        else if (isTowerValid(A, var))
+                        {
                             Pop(&B, &var);
                             Push(&A, var);
                             steps++;
                         }
-                        else{
+                        else
+                        {
                             printf("PIRINGAN YANG DIBAWAH HARUS LEBIH BESAR DARIPADA YANG DIATAS!\n");
                         }
                         CopyStack(A, &Atemp);
                         CopyStack(B, &Btemp);
                         break;
                     case 'C':
-                        Pop(&Btemp,&var);
-                        if(IsEmptyS(C)){
+                        Pop(&Btemp, &var);
+                        if (IsEmptyS(C))
+                        {
                             Pop(&B, &var);
                             Push(&C, var);
                             steps++;
                         }
-                        else if(isTowerValid(C,var)){
+                        else if (isTowerValid(C, var))
+                        {
                             Pop(&B, &var);
                             Push(&C, var);
                             steps++;
                         }
-                        else{
+                        else
+                        {
                             printf("PIRINGAN YANG DIBAWAH HARUS LEBIH BESAR DARIPADA YANG DIATAS!\n");
                         }
                         CopyStack(B, &Btemp);
                         CopyStack(C, &Ctemp);
                         break;
-                    
                     }
                 }
                 break;
             case 'C':
-                if(IsEmptyS(C)){
+                if (IsEmptyS(C))
+                {
                     printf("TIANG ASAL C KOSONG!\n");
                 }
-                else{
+                else
+                {
                     switch (tujuan)
                     {
                     case 'B':
-                        Pop(&Ctemp,&var);
-                        if(IsEmptyS(B)){
+                        Pop(&Ctemp, &var);
+                        if (IsEmptyS(B))
+                        {
                             Pop(&C, &var);
                             Push(&B, var);
                             steps++;
                         }
-                        else if(isTowerValid(B,var)){
+                        else if (isTowerValid(B, var))
+                        {
                             Pop(&C, &var);
                             Push(&B, var);
                             steps++;
                         }
-                        else{
+                        else
+                        {
                             printf("PIRINGAN YANG DIBAWAH HARUS LEBIH BESAR DARIPADA YANG DIATAS!\n");
                         }
                         CopyStack(C, &Ctemp);
                         CopyStack(B, &Btemp);
                         break;
                     case 'A':
-                        Pop(&Ctemp,&var);
-                        if(IsEmptyS(A)){
+                        Pop(&Ctemp, &var);
+                        if (IsEmptyS(A))
+                        {
                             Pop(&C, &var);
                             Push(&A, var);
                             steps++;
                         }
-                        else if(isTowerValid(A,var)){
+                        else if (isTowerValid(A, var))
+                        {
                             Pop(&C, &var);
                             Push(&A, var);
                             steps++;
                         }
-                        else{
+                        else
+                        {
                             printf("PIRINGAN YANG DIBAWAH HARUS LEBIH BESAR DARIPADA YANG DIATAS!\n");
                         }
                         CopyStack(A, &Atemp);
                         CopyStack(C, &Ctemp);
                         break;
-                    
                     }
                 }
                 break;
             }
         }
-        else{
+        else
+        {
             printf("MASUKKAN TIDAK VALID!\n");
             printf("MASUKKAN YANG VALID ADALAH \'A\', \'B\', \'C\' DENGAN ASAL DAN TUJUAN YANG BERBEDA!\n");
         }
 
-    printKondisi(A,B,C);
+        printKondisi(A, B, C);
     }
-
+    printf("=============\n");
+    score = minsteps + 10 - steps;
+    printf("SCORE : %d\n", score);
+    printf("=============\n");
 }
