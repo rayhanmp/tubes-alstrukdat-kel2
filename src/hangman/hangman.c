@@ -173,7 +173,7 @@ void hangman () {
     else if (isKataEqual(currentWord, "MAIN")) { // Jika pengguna memilih MAIN
         /* MAIN LOOP: selama gameover bernilai false */
         while (!gameover) { 
-            num = rand() % arrlen; // Memilih angka secara acak
+            num = rand() % Length(arrKata); // Memilih angka secara acak
             int len = arrKata.A[num].Length;
 
             /* SECOND LOOP: selama jumlah correct tidak sama dengan jumlah huruf dalam kata */
@@ -265,6 +265,9 @@ void hangman () {
 
         /* Tuliskan skor akhir */
         printf("Skor akhir: %d\n", skor);
+        printf("Nama: ");
+        STARTWORD_INPUT();
+        printf("\n");
     }
     else if (isKataEqual(currentWord, "EXIT")) { // Jika pengguna memilih EXIT
         return;
