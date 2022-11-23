@@ -276,5 +276,15 @@ void InsertLastW(Word* word, char* str){
         i++;
     }
   word->TabWord[word->Length] ='\0';
-        
+
 }
+
+void printWord(Word kata) {
+/*Mencetak word ke layar*/
+    int i=0;
+    while (i < kata.Length) {
+        printf("%c", kata.TabWord[i]);
+        i++;
+    }
+}
+

@@ -112,4 +112,7 @@ boolean isIdentical(Word kata1, Word kata2);
 void InsertLastW(Word* word, char* str);
 /*Memasukkan str ke word dari akhir word.tabword*/
 
+void printWord(Word word);
+/*Mencetak word ke layar*/
+
 #endif
