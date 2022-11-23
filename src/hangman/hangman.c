@@ -93,7 +93,7 @@ void tambahDiksi (arrGame *arrKata) {
                 printf("Masukkan kata yang ingin ditambahkan: ");
                 STARTWORD_INPUT();
                 if (!isKataEqual(currentWord, "STOP")) {
-                    if (IsMemberArr(*arrKata, currentWord)) {
+                    if (!IsMemberArr(*arrKata, currentWord)) {
                         if (!cekNonKapital(currentWord)) {
                             printf("Kata berhasil ditambahkan!\n");
                             InsertLast(arrKata, currentWord);

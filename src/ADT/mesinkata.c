@@ -257,11 +257,14 @@ boolean isIdentical(Word kata1, Word kata2){
     
     if (kata1.Length == kata2.Length) {
         while(i < kata1.Length && (found)) {
-            if(kata1.TabWord[i]!=kata2.TabWord[i]){
+            if (kata1.TabWord[i]!=kata2.TabWord[i]) {
                 found = false;
             }
             i++;
         }
+    }
+    else {
+        found = false;
     }
     return found;
 }
