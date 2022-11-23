@@ -1,62 +1,158 @@
 #include "towergame.h"
 
-void printKondisi(Stack S1, Stack S2, Stack S3)
+void printchar(char character, int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%c", character);
+    }
+}
+
+void printKondisi(Stack S1, Stack S2, Stack S3, int jumlahpiringan)
 {
     Stack Stemp1, Stemp2, Stemp3;
     stacktype X;
-    if (LengthS(S1) != 5)
+    int stars, spaces, length1, length2, length3;
+    CopyStack(S1, &Stemp1);
+    CopyStack(S2, &Stemp2);
+    CopyStack(S3, &Stemp3);
+
+    length1 = LengthS(Stemp1);
+    length2 = LengthS(Stemp2);
+    length3 = LengthS(Stemp3);
+    if (length1 == jumlahpiringan)
     {
-        for (int i = 5; i > LengthS(S1); i--)
+        for (int i = 1; i <= jumlahpiringan; i++)
         {
+            Pop(&Stemp1, &X);
+            stars = 2 * X - 1;
+            spaces = ((2 * jumlahpiringan - 1) - (2 * X - 1)) / 2;
+            printchar(' ', spaces);
+            printchar('*', stars);
+            printchar(' ', spaces);
+            printf(" ");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf(" ");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("\n");
+            
+        }
+        
+    }
+    else if (length2 == jumlahpiringan)
+    {
+        for (int i = 1; i <= jumlahpiringan; i++)
+        {
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf(" ");
+            Pop(&Stemp2, &X);
+            stars = 2 * X - 1;
+            spaces = ((2 * jumlahpiringan - 1) - (2 * X - 1)) / 2;
+            printchar(' ', spaces);
+            printchar('*', stars);
+            printchar(' ', spaces);
+            printf(" ");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
             printf("\n");
         }
     }
-    printStack(S1);
-    printf("#[TOWER A]#\n");
-
-    if (LengthS(S2) != 5)
-    {
-        for (int i = 5; i > LengthS(S2); i--)
-        {
+    else if(length3 == jumlahpiringan){
+        for(int i = 1; i <= jumlahpiringan; i++){
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf(" ");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf(" ");
+            Pop(&Stemp3, &X);
+            stars = 2*X -1;
+            spaces = ((2*jumlahpiringan - 1) - (2*X -1))/2;
+            printchar(' ', spaces);
+            printchar('*', stars);
+            printchar(' ', spaces);
             printf("\n");
         }
     }
-    printStack(S2);
-    printf("#[TOWER B]#\n");
-
-    if (LengthS(S3) != 5)
-    {
-        for (int i = 5; i > LengthS(S3); i--)
-        {
+    else{
+        int j = jumlahpiringan;
+        for(int i = 1; i <= jumlahpiringan; i++){
+            if(length1 >= j){
+            Pop(&Stemp1, &X);
+            stars = 2*X -1;
+            spaces = ((2*jumlahpiringan - 1) - (2*X -1))/2;
+            printchar(' ', spaces);
+            printchar('*', stars);
+            printchar(' ', spaces);
+            }
+            else{
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            }
+            if(length2 >= j){
+            printf(" ");
+            Pop(&Stemp2, &X);
+            stars = 2*X -1;
+            spaces = ((2*jumlahpiringan - 1) - (2*X -1))/2;
+            printchar(' ', spaces);
+            printchar('*', stars);
+            printchar(' ', spaces);
+            }
+            else{
+            printf(" ");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            }
+            if(length3 >= j){
+            printf(" ");
+            Pop(&Stemp3, &X);
+            stars = 2*X -1;
+            spaces = ((2*jumlahpiringan - 1) - (2*X -1))/2;
+            printchar(' ', spaces);
+            printchar('*', stars);
+            printchar(' ', spaces);
+            }
+            else{
+            printf(" ");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            printf("|");
+            printchar(' ', (2 * jumlahpiringan - 1)/2);
+            }
             printf("\n");
+            j--;
+            
         }
     }
-    printStack(S3);
-    printf("#[TOWER C]#\n");
-
-    // while(!IsEmptyS(Stemp1)){
-    //     Pop(&Stemp1, &X);
-    //     if(X == 1){
-    //         printf("     *");
-    //         printf("\n");
-    //     }
-    //     else if(X == 2){
-    //         printf("    ***");
-    //         printf("\n");
-    //     }
-    //     else if(X == 3){
-    //         printf("   *****");
-    //         printf("\n");
-    //     }
-    //     else if(X == 4){
-    //         printf("  *******");
-    //         printf("\n");
-    //     }
-    //     else if(X == 5){
-    //         printf(" *********");
-    //         printf("\n");
-    //     }
-    // }
+    printchar('-', 2 * jumlahpiringan - 1);
+    printf(" ");
+    printchar('-', 2 * jumlahpiringan - 1);
+    printf(" ");
+    printchar('-', 2 * jumlahpiringan - 1);
+    printf("\n");
+    printchar(' ', (2 * jumlahpiringan - 1)/2);
+    printf("A");
+    printchar(' ', (2 * jumlahpiringan - 1)/2);
+    printf(" ");
+    printchar(' ', (2 * jumlahpiringan - 1)/2);
+    printf("B");
+    printchar(' ', (2 * jumlahpiringan - 1)/2);
+    printf(" ");
+    printchar(' ', (2 * jumlahpiringan - 1)/2);
+    printf("C");
+    printchar(' ', (2 * jumlahpiringan - 1)/2);
+    printf(" ");
+    printf("\n");
 }
 
 boolean isTowerValid(Stack S, int input)
@@ -109,17 +205,17 @@ void towerGame()
 
     // ALGORITMA
     printf("=====================================================================================================================================\n");
-    printKondisi(A, B, C);
+    printKondisi(A, B, C, sumPiringan);
     while (steps < (minsteps + 10) && LengthS(C) != sumPiringan)
     {
-        printf("=================\n");
+        printf("=========================\n");
         printf("TIANG ASAL  : ");
         STARTWORD_INPUT();
         asal = currentWord.TabWord[0];
         printf("TIANG TUJUAN: ");
         STARTWORD_INPUT();
         tujuan = currentWord.TabWord[0];
-        printf("=================\n");
+        printf("=========================\n");
         if (isInputValid(asal) && isInputValid(tujuan) && asal != tujuan)
         {
             switch (asal)
@@ -294,10 +390,10 @@ void towerGame()
             printf("MASUKKAN YANG VALID ADALAH \'A\', \'B\', \'C\' DENGAN ASAL DAN TUJUAN YANG BERBEDA!\n");
         }
 
-        printKondisi(A, B, C);
+        printKondisi(A, B, C, sumPiringan);
     }
-    printf("=============\n");
+    printf("=========================\n");
     score = minsteps + 10 - steps;
     printf("SCORE : %d\n", score);
-    printf("=============\n");
+    printf("=========================\n");
 }

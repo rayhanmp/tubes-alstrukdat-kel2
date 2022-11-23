@@ -6,8 +6,10 @@
 #include "../ADT/mesinkata.h"
 #include <math.h>
 
-void printKondisi(Stack S1, Stack S2, Stack S3);
-void towerGame();
+void printchar(char character, int n);
+void printKondisi(Stack S1, Stack S2, Stack S3, int jumlahpiringan);
 boolean isTowerValid(Stack S, int input);
 boolean isInputValid(char input);
+void towerGame();
+
 #endif
