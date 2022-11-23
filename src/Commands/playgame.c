@@ -19,7 +19,10 @@ void playGame (queueGame* q){
                 prs();
             } else if (isKataEqual(game, "HANGMAN")) {
                 hangman();
-            } else {
+            } else if (isKataEqual(game, "TOWER OF HANOI")) {
+                towerGame();
+            }
+            else {
                 gametambahan();
             }
         }

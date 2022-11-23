@@ -8,6 +8,7 @@
 #include "../gameTambahan/gametambahan.h"
 #include "../prs/prs.h"
 #include "../hangman/hangman.h"
+#include "../Tower_of_Hanoi/towergame.h"
 
 void playGame (queueGame* q);
 /*
