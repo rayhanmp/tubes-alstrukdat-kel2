@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "hashmap.h"
+#include "maphash.h"
 
 /* *** Konstruktor/Kreator *** */
-void CreateEmpty(HashMap *M){
+void CreateEmptyMH(HashMap *M){
     (*M).Count = Nil;
     int i;
     for (i = 0; i < MaxEl; i++){
@@ -23,7 +23,7 @@ address Hash(keytype K){
 /* Menghasilkan indeks penyimpanan dengan operasi modulo ke MaxEl */
 
 /* ********** Operator Dasar HashMap ********* */
-valuetype Value(HashMap M, keytype k){
+valuetype ValueMH(HashMap M, keytype k){
     int i = 0;
     boolean found = false;
     while (!found && (i < MaxEl)){
@@ -42,8 +42,8 @@ valuetype Value(HashMap M, keytype k){
 /* Mengembalikan nilai value dengan key k dari M */
 /* Jika tidak ada key k pada M, akan mengembalikan Undefined */
 
-void Insert(HashMap *M, keytype k, valuetype v){
-    if (Value(*M,k) == Undefined) {
+void InsertMH(HashMap *M, keytype k, valuetype v){
+    if (ValueMH(*M,k) == Undefined) {
         if ((*M).Elements[Hash(k)].Key == Undefined){
             (*M).Elements[Hash(k)].Key = k;
             (*M).Elements[Hash(k)].Value = v;
