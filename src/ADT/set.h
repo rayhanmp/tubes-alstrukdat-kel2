@@ -56,4 +56,22 @@ void Delete(Set *S, infotype Elmt);
 boolean IsMember(Set S, infotype Elmt);
 /* Mengembalikan true jika Elmt adalah member dari S */
 
+Set SetUnion(Set s1, Set s2);
+// Mengembalikan set baru yang berisi elemen-elemen yang terdapat pada s1 atau s2
+// Contoh: [1, 2] U [2, 3] = [1, 2, 3]
+
+Set SetIntersection(Set s1, Set s2);
+// Mengembalikan set baru yang berisi elemen-elemen dari s1 dan s2 yang terdapat pada kedua set
+// Contoh: [1, 2] ∩ [2, 3] = [2]
+
+Set SetSymmetricDifference(Set s1, Set s2);
+// Mengembalikan set baru yang berisi elemen yang ada di s1 atau s2, tapi tidak pada keduanya
+// Contoh: [1, 2] ⊖ [2, 3] = [1, 3]
+
+Set SetSubtract(Set s1, Set s2);
+// Mengembalikan set baru yang berupa hasil pengurangan s1 dengan s2
+// Contoh:
+// s1 = [1, 2] s2 = [2, 3]
+// s1 - s2 = [1]
+
 #endif
