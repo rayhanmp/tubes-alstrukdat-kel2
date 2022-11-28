@@ -1,9 +1,3 @@
-//NIM               : 18221126
-//Nama              : Karunia Mega Lestari
-//Tanggal           : 30 Okt 2022
-//Topik praktikum   : Praprakktikum 8
-//Deskripsi         : implementasi map.h
-
 #include <stdio.h>
 #include "map.h"
 
