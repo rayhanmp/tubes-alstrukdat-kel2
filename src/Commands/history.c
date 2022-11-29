@@ -20,7 +20,7 @@ void history (stackGame *s, int n){
             PopSG(&sTemp, &game);
             PushSG(s, game);
         }
-    } else {
+    } else if (n > 0) {
         for (i = 1; i <= n; i++){
             PopSG(s, &game);
             printf("%d. %s\n", i, game.TabWord);
@@ -30,6 +30,8 @@ void history (stackGame *s, int n){
             PopSG(&sTemp, &game);
             PushSG(s, game);
         }
+    } else {
+        printf("Masukkan jumlah yang valid!\n");
     }
 }
 
