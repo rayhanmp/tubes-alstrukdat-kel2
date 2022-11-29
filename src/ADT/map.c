@@ -97,3 +97,21 @@ boolean IsMemberMap(Map M, keytype k){
 	}
 }
 /* Mengembalikan true jika k adalah member dari M */
+
+void PrintMap(Map M, arrGame arr){
+    if (!IsEmpty(M)){
+        for (int i = 0; i < M.Count; i++){
+            printf("***SCOREBOARD %s***\n", listGame(arr));
+            printf("|   NAMA  |    SKOR   |\n");
+            printf("-----------------------\n");
+            printf("belom yh nunggu map jadi\n");
+        }
+    }
+    else{
+            printf("***SCOREBOARD %s***\n", listGame(arr));
+            printf("|   NAMA  |    SKOR   |\n");
+            printf("---SCOREBOARD KOSONG---\n");       
+    }
+}
+/* I.S. M terdefinisi */
+/* F.S. M dicetak ke layar */
