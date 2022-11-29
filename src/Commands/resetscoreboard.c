@@ -1,6 +1,6 @@
 #include "resetscoreboard.h"
 
-void resetScoreboard(Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games){
+void resetScoreboard(scoreMap RNG, scoreMap dinerDash, scoreMap hangman, scoreMap tower, scoreMap snake, arrGame Games){
     int i = 0;
     while(i < Length(Games)){
         if(isKataEqual(Get(Games,i),"HANGMAN")){
