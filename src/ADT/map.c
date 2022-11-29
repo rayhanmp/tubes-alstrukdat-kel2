@@ -28,7 +28,7 @@ valuetype ValueMap(Map M, keytype k){
 	address i = 0;
 	if (!IsEmpty(M)){
 		while (i < M.Count && !found){
-			if (M.Elements[i].Key == k){
+			if (isIdentical(M.Elements[i].Key,k)){
 				found = true;
 			} 
             else{
@@ -66,7 +66,7 @@ void DeleteMap(Map *M, keytype k){
 		boolean found = false;
 		address i = 0;
 		while ((i < (*M).Count) && (!found)) {
-			if ((*M).Elements[i].Key == k) {
+			if (isIdentical(M->Elements[i].Key,k)) {
 				found = true;
 			} 
             else{
@@ -88,7 +88,7 @@ void DeleteMap(Map *M, keytype k){
 /* F.S. element dengan key k bukan anggota dari M */
 
 boolean IsMemberMap(Map M, keytype k){
-    valuetype v = Value(M, k);
+    valuetype v = ValueMap(M, k);
     if (v == Undefined){
 		return false;
 	} 
@@ -98,20 +98,23 @@ boolean IsMemberMap(Map M, keytype k){
 }
 /* Mengembalikan true jika k adalah member dari M */
 
-void PrintMap(Map M, arrGame arr){
-    if (!IsEmpty(M)){
-        for (int i = 0; i < M.Count; i++){
-            printf("***SCOREBOARD %s***\n", listGame(arr));
-            printf("|   NAMA  |    SKOR   |\n");
-            printf("-----------------------\n");
-            printf("belom yh nunggu map jadi\n");
-        }
-    }
-    else{
-            printf("***SCOREBOARD %s***\n", listGame(arr));
-            printf("|   NAMA  |    SKOR   |\n");
-            printf("---SCOREBOARD KOSONG---\n");       
-    }
+void PrintMap(Map Creategame, Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games){
+	int i = 0;
+	while(i < Length(Games)){
+		if(isKataEqual(Get(Games,i),"HANGMAN")){
+			if(!IsEmptyMap(hangman)){
+				printf("***SCOREBOARD HANGMAN***\n");
+				printf("|   NAMA    |   SKOR   |\n");
+				printf("-----------------------\n");
+			}
+		}
+		else{
+				printf("***SCOREBOARD %s***\n", Get(Games, i));
+				printf("|   NAMA  |    SKOR   |\n");
+				printf("---SCOREBOARD KOSONG---\n");       
+		}
+		i++;
+	}
 }
 /* I.S. M terdefinisi */
 /* F.S. M dicetak ke layar */

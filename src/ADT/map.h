@@ -1,9 +1,10 @@
 #ifndef map_H
 #define map_H
 #include <stdio.h>
-#include "boolean.h"
+#include "../boolean.h"
 #include "word.h"
 #include "../Commands/listGame.h"
+#include "../ADT/arrayGame.h"
 
 /* MODUL Map
 Deklarasi stack yang dengan implementasi array eksplisit-statik rata kiri
@@ -71,7 +72,7 @@ void DeleteMap(Map *M, keytype k);
 boolean IsMemberMap(Map M, keytype k);
 /* Mengembalikan true jika k adalah member dari M */
 
-void PrintMap(Map M, arrGame arr);
+void PrintMap(Map Creategame, Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games);
 /* I.S. M terdefinisi */
 /* F.S. M dicetak ke layar */
 
