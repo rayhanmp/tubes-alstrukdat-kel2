@@ -1,6 +1,6 @@
 #include "resetscoreboard.h"
 
-void resetScoreboard(Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games){
+void resetScoreboard(scoreMap RNG, scoreMap dinerDash, scoreMap hangman, scoreMap tower, scoreMap snake, arrGame Games){
     printf("DAFTAR SCOREBOARD:\n");
     printf("0. ALL\n");
     for (int i = 1; i <= Length(Games); i++){
