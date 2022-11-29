@@ -5,7 +5,7 @@
 #include "scoreboard.h"
 #include "../ADT/mesinkarakter.h"
 
-void resetScoreboard(Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games);
+void resetScoreboard(scoreMap RNG, scoreMap dinerDash, scoreMap hangman, scoreMap tower, scoreMap snake, arrGame Games);
 /*I.S. Sembarang*/
 /*F.S. Menghapus semua data dan atau data yang diinginkan pada scoreboard*/
 
