@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "boolean.h"
 #include "word.h"
+#include "../Commands/listGame.h"
 
 /* MODUL Map
 Deklarasi stack yang dengan implementasi array eksplisit-statik rata kiri
@@ -15,7 +16,7 @@ Deklarasi stack yang dengan implementasi array eksplisit-statik rata kiri
 #define Undefined -999
 
 // typedef int bool;
-typedef word keytype;
+typedef Word keytype;
 typedef int valuetype;
 typedef int address;
 
@@ -69,5 +70,9 @@ void DeleteMap(Map *M, keytype k);
 
 boolean IsMemberMap(Map M, keytype k);
 /* Mengembalikan true jika k adalah member dari M */
+
+void PrintMap(Map M, arrGame arr);
+/* I.S. M terdefinisi */
+/* F.S. M dicetak ke layar */
 
 #endif
