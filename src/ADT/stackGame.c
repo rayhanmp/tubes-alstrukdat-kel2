@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "stackGame.h"
 
-void CreateEmpty(stackGame *S){
+void CreateEmptySG(stackGame *S){
     Top(*S) = NilSG;
 }
 /* I.S. sembarang{} */
@@ -11,17 +11,17 @@ void CreateEmpty(stackGame *S){
 /* Ciri stack kosong : TOP bernilai Nil */
 
 /* ************ Predikat Untuk test keadaan KOLEKSI ************ */
-boolean IsEmpty(stackGame S){
+boolean IsEmptySG(stackGame S){
     return (Top(S) == NilSG);
 }
 /* Mengirim true jika Stack kosong: lihat definisi di atas */
-boolean IsFull(stackGame S){
+boolean IsFullSG(stackGame S){
     return (Top(S) == MaxSG-1);
 }
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void Push(stackGame * S, Game game){
+void PushSG(stackGame * S, Game game){
     Top(*S) += 1;
     InfoTop(*S) = game;
 }
@@ -30,7 +30,7 @@ void Push(stackGame * S, Game game){
 /* F.S. X menjadi TOP yang baru,TOP bertambah 1 */
 
 /* ************ Menghapus sebuah elemen Stack ************ */
-void Pop(stackGame * S, Game* game){
+void PopSG(stackGame * S, Game* game){
     *game = InfoTop(*S);
     Top(*S) -= 1;
 }
