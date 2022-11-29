@@ -6,7 +6,6 @@
 
 
 void CreateEmptyMatrixChar(matrixchar *m,int h, int w){
-
     for(int i = 0; i < h; i++){
         for(int j = 0; j < w; j++){
             InsertLastW(&m->info[i][j], "  ");
@@ -18,8 +17,6 @@ void CreateEmptyMatrixChar(matrixchar *m,int h, int w){
 
 void InsertMatrixChar(matrixchar *m, Word c, point p){
     CloneWord(&m->info[Yp(p)][Xp(p)], c);
-    // InsertLastW(&m->info[Yp(p)][Xp(p)], c);
-    // m->info[Yp(p)][Xp(p)] = c;
 }
 
 void PrintMatrixChar(matrixchar m){
