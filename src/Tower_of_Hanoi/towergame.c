@@ -1,12 +1,5 @@
 #include "towergame.h"
 
-void printchar(char character, int n)
-{
-    for (int i = 1; i <= n; i++)
-    {
-        printf("%c", character);
-    }
-}
 
 void printKondisi(Stack S1, Stack S2, Stack S3, int jumlahpiringan)
 {
@@ -159,11 +152,32 @@ boolean isTowerValid(Stack S, int input)
 {
     return InfoTop(S) > input;
 }
+
 boolean isInputValid(char input)
 {
     return input == 'A' || input == 'B' || input == 'C';
 }
-void towerGame()
+
+boolean isJumlahPiringanValid(Word jumlahpiringan)
+{
+    boolean valid = 1;
+    int i = 0;
+    while(i < jumlahpiringan.Length && valid){
+        if(jumlahpiringan.TabWord[i] >= 48 && jumlahpiringan.TabWord[i] <= 57){
+            valid = 1;
+            // printf("jumlahpiring: %d\n",jumlahpiringan.TabWord[i] );
+        }
+        else{
+            valid = 0;
+        }
+        // printf("valid: %d\n",valid);
+        i++;
+    }
+    return valid;
+}
+
+
+void towerGame(arrScore *Scores, int gamebrp)
 {
     // TITLE
     printf("=====================================================================================================================================\n");
@@ -182,8 +196,16 @@ void towerGame()
     stacktype var;
     char asal, tujuan;
     steps = 0;
+    
+    //MENERIMA MASUKKAN PENGGUNA
     printf("MASUKKAN JUMLAH PIRINGAN: ");
     STARTWORD_INPUT();
+
+    while(!isJumlahPiringanValid(currentWord)){
+    printf("MASUKKAN JUMLAH PIRINGAN: ");
+    STARTWORD_INPUT();
+    }
+    
     sumPiringan = wordToInt(currentWord);
     minsteps = (int)(pow(2, sumPiringan)) - 1;
 
@@ -395,5 +417,14 @@ void towerGame()
     printf("=========================\n");
     score = minsteps + 10 - steps;
     printf("SCORE : %d\n", score);
+    printf("Masukkan Nama:");
+    STARTWORD_INPUT();
+    if(IsEmptyMap(GetArrM(*Scores, gamebrp))){
+        CreateEmptyMap(&Scores->A[gamebrp]);
+        InsertMap(&Scores->A[gamebrp], currentWord, score);
+    }
+    else{
+       InsertMap(&Scores->A[gamebrp], currentWord, score); 
+    }
     printf("=========================\n");
 }
