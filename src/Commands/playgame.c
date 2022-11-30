@@ -1,6 +1,6 @@
 #include "playgame.h"
 
-void playGame (queueGame* q, stackGame* s){
+void playGame (queueGame* q, stackGame* s, arrGame* Games, arrScore* Scores){
     Word game;
     if (IsEmptyQ(*q)){
         printf("Daftar Game kosong\n");
@@ -21,7 +21,7 @@ void playGame (queueGame* q, stackGame* s){
             } else if (isKataEqual(game, "HANGMAN")) {
                 hangman();
             } else if (isKataEqual(game, "TOWER OF HANOI")) {
-                towerGame();
+                towerGame(Scores, GetArrIdx(*Games, "TOWER OF HANOI"));
             }
             else {
                 gametambahan();

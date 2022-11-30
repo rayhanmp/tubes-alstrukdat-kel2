@@ -3,8 +3,9 @@
 
 #include <stdio.h>
 #include "../ADT/map.h"
+#include "../ADT/arrayMap.h"
 
-void printScoreboard(Map Creategame, Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games);
+void printScoreboard(arrScore Scores, arrGame Games);
 /*I.S. Sembarang*/
 /*F.S. Menampilkan scoreboard yang berisi nama dan skor pemain yang telah bermain*/
 

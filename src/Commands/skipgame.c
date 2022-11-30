@@ -1,6 +1,6 @@
 #include "skipgame.h"
 
-void skipGame (queueGame *q, int n){
+void skipGame (queueGame* q, stackGame* s, arrGame* Games, arrScore* Scores, int n){
     int i; 
     Word skippedGame, currentGame;
 
@@ -18,7 +18,7 @@ void skipGame (queueGame *q, int n){
             Dequeue(q, &skippedGame);
         }
         currentGame = HEAD(*q);
-        playGame(q);
+        playGame(q, s, Games, Scores);
     }
 }
 /*
