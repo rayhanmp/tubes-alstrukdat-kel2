@@ -3,6 +3,7 @@
 
 #include "../ADT/arrayGame.h"
 #include "../ADT/queueGame.h"
+#include "../ADT/stackGame.h"
 #include "../diner_dash/diner_dash.h"
 #include "../RNGGAME/rnggame.h"
 #include "../gameTambahan/gametambahan.h"
@@ -10,7 +11,7 @@
 #include "../hangman/hangman.h"
 #include "../Tower_of_Hanoi/towergame.h"
 
-void playGame (queueGame* q);
+void playGame (queueGame* q, stackGame* s);
 /*
 I.S.: q terdefinisi, currentGame Nil (?)
 F.S.: q berkurang satu, currentGame adalah elemen pertama q sebelum dihapus

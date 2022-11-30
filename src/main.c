@@ -13,6 +13,10 @@
 #include "RNGGAME/random_number_generator_ver_2.h"
 #include "diner_dash/diner_dash.h"
 
+// TUGAS BESAR 2
+#include "Commands/history.h"
+#include "Commands/resethistory.h"
+
 
 
 
@@ -22,6 +26,8 @@ int main(){
     MakeArray(&arrayGame);
     queueGame qGame;
     CreateQueue(&qGame);
+    stackGame sGame;
+    CreateEmptySG(&sGame);
     boolean play = true;
 
     //TITLE PROGRAM
@@ -68,7 +74,7 @@ int main(){
             printf("Berikut adalah daftar Game-mu\n");
             PrintQueue(qGame);
             printf("\n");
-            playGame(&qGame);
+            playGame(&qGame, &sGame);
         }
         else if(isKataEqual(currentWord,"SKIPGAME")){
             ADVWORD_INPUT();
@@ -80,6 +86,13 @@ int main(){
         else if(isKataEqual(currentWord,"QUIT")){
             quit(qGame);
             play = false;
+        }
+        else if(isKataEqual(currentWord,"HISTORY")){
+            ADVWORD_INPUT();
+            history(&sGame, wordToInt(currentWord));
+        }
+        else if(isKataEqual(currentWord,"RESETHISTORY")){
+            resetHistory(&sGame);
         }
         else{
             cmdLain();

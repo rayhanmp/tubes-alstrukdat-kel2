@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "resethistory.h": "c"
+        "resethistory.h": "c",
+        "diner_dash.h": "c",
+        "gametambahan.h": "c",
+        "towergame.h": "c",
+        "arraygame.h": "c"
     }
 }

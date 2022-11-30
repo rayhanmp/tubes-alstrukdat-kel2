@@ -1,11 +1,12 @@
 #include "playgame.h"
 
-void playGame (queueGame* q){
+void playGame (queueGame* q, stackGame* s){
     Word game;
     if (IsEmptyQ(*q)){
         printf("Daftar Game kosong\n");
     } else {
         Dequeue(q, &game);
+        PushSG(s, game);
         if (isKataEqual(game, "DINOSAUR IN EARTH") || isKataEqual(game, "RISEWOMAN") || isKataEqual(game, "EIFFEL TOWER")){
             printf("Game %s masih dalam maintenance, belum dapat dimainkan.\n", game.TabWord);
             printf("Silahkan pilih game lain.\n");
