@@ -58,27 +58,63 @@ int main(){
             ADVWORD_INPUT();
             save(&arrayGame, currentWord.TabWord);
         }
-        else if(isKataEqual(currentWord,"CREATEGAME")){
+        else if(isKataEqual(currentWord,"CREATE")){
+            ADVWORD_INPUT();
+            if(isKataEqual(currentWord,"GAME")){
             createGame(&arrayGame);
+            }
+            else{
+            cmdLain();
+            }
         }
-        else if(isKataEqual(currentWord,"LISTGAME")){
+        else if(isKataEqual(currentWord,"LIST")){
+            ADVWORD_INPUT();
+            if(isKataEqual(currentWord,"GAME")){
             listGame(arrayGame);
+            }
+            else{
+            cmdLain();
+            }
         }
-        else if(isKataEqual(currentWord,"DELETEGAME")){
+        else if(isKataEqual(currentWord,"DELETE")){
+            ADVWORD_INPUT();
+            if(isKataEqual(currentWord,"GAME")){
             deleteGame(&arrayGame,qGame);
+            }
+            else{
+            cmdLain();
+            }
         }
-        else if(isKataEqual(currentWord,"QUEUEGAME")){
+        else if(isKataEqual(currentWord,"QUEUE")){
+            ADVWORD_INPUT();
+            if(isKataEqual(currentWord,"GAME")){
             QueueGame(&qGame,arrayGame);
+            }
+            else{
+            cmdLain();
+            }
         }
-        else if(isKataEqual(currentWord,"PLAYGAME")){
+        else if(isKataEqual(currentWord,"PLAY")){
+            ADVWORD_INPUT();
+            if(isKataEqual(currentWord,"GAME")){
             printf("Berikut adalah daftar Game-mu\n");
             PrintQueue(qGame);
             printf("\n");
             playGame(&qGame, &sGame);
+            }
+            else{
+            cmdLain();
+            }
         }
-        else if(isKataEqual(currentWord,"SKIPGAME")){
+        else if(isKataEqual(currentWord,"SKIP")){
             ADVWORD_INPUT();
-            skipGame(&qGame, wordToInt(currentWord));
+            if(isKataEqual(currentWord,"GAME")){
+            ADVWORD_INPUT();
+            skipGame(&qGame, &sGame, wordToInt(currentWord));
+            }
+            else{
+            cmdLain();
+            }
         }
         else if(isKataEqual(currentWord,"HELP")){
             help();
