@@ -1,6 +1,12 @@
 #include "word.h"
 
-
+void printchar(char character, int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%c", character);
+    }
+}
 
 boolean isKataEqual(Word kata, char* string){
 /*
@@ -107,6 +113,9 @@ boolean isIdentical(Word kata1, Word kata2){
             }
             i++;
         }
+    }
+    else{
+        found = false;
     }
     return found;
 }

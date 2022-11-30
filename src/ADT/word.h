@@ -10,6 +10,8 @@ typedef struct
    int Length;
 } Word;
 
+void printchar(char character, int n);
+
 boolean isKataEqual(Word word, char* string);
 /*
 Mengembalikan true jika word == string dan false jika word != string.

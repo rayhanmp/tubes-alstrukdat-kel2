@@ -1,43 +1,43 @@
-#ifndef __ARRAY_GAME_DIN__
-#define __ARRAY_GAME_DIN__
+#ifndef __ARRAY_MAP_DIN__
+#define __ARRAY_MAP_DIN__
 
 #include <stdio.h>
 #include "word.h"
 #include "mesinkata.h"
 #include "../boolean.h"
+#include "map.h"
 
-typedef int IdxType;
-typedef Word Game;
+typedef int Idx;
 typedef struct {
-    Game A[100];
+    scoreMap A[100];
     int Neff;
-} arrGame;
+} arrScore;
 
 /**
  * Konstruktor
  * I.S. sembarang
  * F.S. Terbentuk Array kosong
  */
-void MakeArray(arrGame *arr);
+void MakeArrayM(arrScore *arr);
 
 
 /**
  * Fungsi untuk mengetahui apakah suatu array kosong.
  * Prekondisi: array terdefinisi
  */
-boolean IsEmptyArr(arrGame arr);
+boolean IsEmptyArrM(arrScore arr);
 
 /**
  * Fungsi untuk mendapatkan banyaknya elemen efektif array, 0 jika tabel kosong.
  * Prekondisi: array terdefinisi
  */
-int Length(arrGame arr);
+int LengthArrM(arrScore arr);
 
 /**
  * Mengembalikan elemen array L yang ke-I (indeks lojik).
  * Prekondisi: array tidak kosong, i di antara 0..Length(array).
  */
-Game Get(arrGame arr, IdxType i);
+scoreMap GetArrM(arrScore arr, Idx i);
 
 
 /**
@@ -45,46 +45,46 @@ Game Get(arrGame arr, IdxType i);
  * Prekondisi: array terdefinisi, i di antara 0..Length(array).
  */
 
-boolean IsMemberArr(arrGame arr, Game el);
+boolean IsMemberArrM(arrScore arr, scoreMap el);
 /**
- * Mengembalikan true apabila elemen el terdapat di arrGame
- * Prekondisi: arrGame terdefinisi.
+ * Mengembalikan true apabila elemen el terdapat di arrScore
+ * Prekondisi: arrScore terdefinisi.
  */
 
-void InsertAt(arrGame *arr, Game el, IdxType i);
+void InsertAtM(arrScore *arr, scoreMap el, Idx i);
 
 // /**
 //  * Fungsi untuk menambahkan elemen baru di akhir array.
 //  * Prekondisi: array terdefinisi
 //  */
-void InsertLast(arrGame *arr, Game el);
+void InsertLastM(arrScore *arr, scoreMap el);
 
 // /**
 //  * Fungsi untuk menambahkan elemen baru di awal array.
 //  * Prekondisi: array terdefinisi
 //  */
-void InsertFirst(arrGame *arr, Game el);
+void InsertFirstM(arrScore *arr, scoreMap el);
 
 // /**
 //  * Fungsi untuk menghapus elemen di index ke-i Array
 //  * Prekondisi: array terdefinisi, i di antara 0..Length(array).
 //  */
 
-void DeleteAt(arrGame *arr, IdxType i);
+void DeleteAtM(arrScore *arr, Idx i);
 
 // /**
 //  * Fungsi untuk menghapus elemen terakhir Array
 //  * Prekondisi: array tidak kosong
 //  */
 
-void DeleteLast(arrGame*arr);
+void DeleteLastM(arrScore*arr);
 
 // /**
 //  * Fungsi untuk menghapus elemen pertama Array
 //  * Prekondisi: array tidak kosong
 //  */
 
-void DeleteFirst(arrGame *arr);
+void DeleteFirstM(arrScore *arr);
 
 // /**
 //  * Fungsi untuk melakukan print suatu Array.
@@ -92,8 +92,5 @@ void DeleteFirst(arrGame *arr);
 //  * dan diakhiri newline.
 //  * Prekondisi: array terdefinisi
 //  */
-void PrintArray(arrGame arr);
-
-int GetArrIdx(arrGame arr, char* el);
 
 #endif

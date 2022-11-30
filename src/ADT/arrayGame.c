@@ -134,6 +134,21 @@ void PrintArray(arrGame arr){
     }
 }
 
+int GetArrIdx(arrGame arr, char* el){
+    boolean found = false;
+    int i = 0;
+    while(!found && i < Length(arr)){
+        if(isKataEqual(Get(arr,i), el)){
+            found = true;
+        }
+        i++;
+    }
+    return i - 1;
+}
+/**
+ * Fungsi untuk melakukan searching dan mengembalikan index sebuah elemen pada array
+ * Prekondisi: elemen pasti ada di dalam array
+ */
 
 // // DRIVER ADT ARRAY
 // #include "mesinkarakter.h"

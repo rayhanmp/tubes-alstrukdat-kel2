@@ -2,7 +2,7 @@
 #include "map.h"
 
 /* *** Konstruktor/Kreator *** */
-void CreateEmptyMap(Map *M){
+void CreateEmptyMap(scoreMap *M){
     (*M).Count = Nil;
 }
 /* I.S. Sembarang */
@@ -10,25 +10,25 @@ void CreateEmptyMap(Map *M){
 /* Ciri Map kosong : count bernilai Nil */
 
 /* ********* Predikat Untuk test keadaan KOLEKSI ********* */
-boolean IsEmptyMap(Map M){
+boolean IsEmptyMap(scoreMap M){
     return (M).Count == Nil;
 }
 /* Mengirim true jika Map M kosong*/
 /* Ciri Map kosong : count bernilai Nil */
 
-boolean IsFullMap(Map M){
+boolean IsFullMap(scoreMap M){
     return M.Count == MaxEl;
 }
 /* Mengirim true jika Map M penuh */
 /* Ciri Map penuh : count bernilai MaxEl */
 
 /* ********** Operator Dasar Map ********* */
-valuetype ValueMap(Map M, keytype k){
+value ValueMap(scoreMap M, key k){
     boolean found = false;
-	address i = 0;
-	if (!IsEmpty(M)){
+	Saddress i = 0;
+	if (!IsEmptyMap(M)){
 		while (i < M.Count && !found){
-			if (isIdentical(M.Elements[i].Key,k)){
+			if (isIdentical(M.Elements[i].Name, k)){
 				found = true;
 			} 
             else{
@@ -36,7 +36,7 @@ valuetype ValueMap(Map M, keytype k){
 			}
 		}
 		if (found){
-			return M.Elements[i].Value;
+			return M.Elements[i].Score;
 		} 
         else{
 			return Undefined;
@@ -49,10 +49,10 @@ valuetype ValueMap(Map M, keytype k){
 /* Mengembalikan nilai value dengan key k dari M */
 /* Jika tidak ada key k pada M, akan mengembalikan Undefined */
 
-void InsertMap(Map *M, keytype k, valuetype v){
-    if (!IsMember(*M, k)){
-		(*M).Elements[(*M).Count].Key = k;
-		(*M).Elements[(*M).Count].Value = v;
+void InsertMap(scoreMap *M, key k, value v){
+    if (!IsMemberMap(*M, k)){
+		(*M).Elements[(*M).Count].Name = k;
+		(*M).Elements[(*M).Count].Score = v;
 		(*M).Count++;
 	}
 }
@@ -61,12 +61,12 @@ void InsertMap(Map *M, keytype k, valuetype v){
         M mungkin sudah beranggotakan v dengan key k */
 /* F.S. v menjadi anggota dari M dengan key k. Jika k sudah ada, operasi tidak dilakukan */
 
-void DeleteMap(Map *M, keytype k){
-    if (IsMember(*M, k)){
+void DeleteMap(scoreMap *M, key k){
+    if (IsMemberMap(*M, k)){
 		boolean found = false;
-		address i = 0;
+		Saddress i = 0;
 		while ((i < (*M).Count) && (!found)) {
-			if (isIdentical(M->Elements[i].Key,k)) {
+			if (!isIdentical(M->Elements[i].Name,k)) {
 				found = true;
 			} 
             else{
@@ -76,8 +76,8 @@ void DeleteMap(Map *M, keytype k){
 		if (found){
 			(*M).Count--;
 			for (int j = i; j < (*M).Count; j++){
-				(*M).Elements[j].Key = (*M).Elements[j + 1].Key;
-				(*M).Elements[j].Value = (*M).Elements[j + 1].Value;
+				(*M).Elements[j].Name = (*M).Elements[j + 1].Name;
+				(*M).Elements[j].Score = (*M).Elements[j + 1].Score;
 			} 
 		}
 	}   
@@ -87,8 +87,8 @@ void DeleteMap(Map *M, keytype k){
         element dengan key k mungkin anggota / bukan anggota dari M */
 /* F.S. element dengan key k bukan anggota dari M */
 
-boolean IsMemberMap(Map M, keytype k){
-    valuetype v = ValueMap(M, k);
+boolean IsMemberMap(scoreMap M, key k){
+    value v = ValueMap(M, k);
     if (v == Undefined){
 		return false;
 	} 
@@ -98,22 +98,20 @@ boolean IsMemberMap(Map M, keytype k){
 }
 /* Mengembalikan true jika k adalah member dari M */
 
-void PrintMap(Map Creategame, Map RNG, Map dinerDash, Map hangman, Map tower, Map snake, arrGame Games){
-	int i = 0;
-	while(i < Length(Games)){
-		if(isKataEqual(Get(Games,i),"HANGMAN")){
-			if(!IsEmptyMap(hangman)){
-				printf("***SCOREBOARD HANGMAN***\n");
-				printf("|   NAMA    |   SKOR   |\n");
-				printf("-----------------------\n");
-			}
-		}
-		else{
-				printf("***SCOREBOARD %s***\n", Get(Games, i));
-				printf("|   NAMA  |    SKOR   |\n");
-				printf("---SCOREBOARD KOSONG---\n");       
-		}
-		i++;
+void PrintMap(scoreMap M){
+	int Nspaces,Sspaces;
+	Word score;
+	for(int i = 0; i < M.Count; i++){
+		Nspaces = 15 - M.Elements[i].Name.Length;
+		CloneWord(&score,intToWord(M.Elements[i].Score));
+		Sspaces = 10 - score.Length;
+		printf("|");
+		printWord(M.Elements[i].Name);
+		printchar(' ', Nspaces);
+		printf("|");
+		printWord(score);
+		printchar(' ', Sspaces);
+		printf("|\n");
 	}
 }
 /* I.S. M terdefinisi */
