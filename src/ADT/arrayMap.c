@@ -8,6 +8,9 @@
  */
 void MakeArrayM(arrScore *arr){
     arr->Neff= 0;
+    for(int i = 0; i < 100; i++){
+        CreateEmptyMap(&arr->A[i]);
+    }
 }
 
 /**
@@ -99,4 +102,8 @@ void DeleteFirstM(arrScore *arr){
     arr->A[i] = arr->A[i+1];
     }
     arr->Neff--;
+}
+
+void setNeffM(arrScore *arr, int n){
+    arr->Neff = n;
 }

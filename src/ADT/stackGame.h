@@ -58,5 +58,6 @@ void PopSG(stackGame * S, Game* game);
 /* Menghapus X dari Stack S. */
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
-
+void CopyStackSG(stackGame Sin, stackGame *Sout);
+int LengthSG(stackGame S);
 #endif

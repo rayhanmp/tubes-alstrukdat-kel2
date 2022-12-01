@@ -37,3 +37,30 @@ void PopSG(stackGame * S, Game* game){
 /* Menghapus X dari Stack S. */
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
+
+void CopyStackSG(stackGame Sin, stackGame *Sout){
+    stackGame Stemp;
+    Game X;
+    CreateEmptySG(Sout);
+    CreateEmptySG(&Stemp);
+    while(!IsEmptySG(Sin)){
+        PopSG(&Sin,&X);
+        PushSG(&Stemp, X);
+    }
+    while(!IsEmptySG(Stemp)){
+        PopSG(&Stemp,&X);
+        PushSG(&Sin, X);
+        PushSG(Sout, X);
+    }
+}
+int LengthSG(stackGame S){
+    stackGame S2;
+    int length = 0;
+    Game X;
+    CopyStackSG(S,&S2);
+    while(!IsEmptySG(S2) && length <= MaxSG){
+        PopSG(&S2, &X);
+        length++;
+    }
+    return length;
+}

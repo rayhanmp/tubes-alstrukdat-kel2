@@ -92,5 +92,6 @@ void DeleteFirstM(arrScore *arr);
 //  * dan diakhiri newline.
 //  * Prekondisi: array terdefinisi
 //  */
+void setNeffM(arrScore *arr, int n);
 
 #endif

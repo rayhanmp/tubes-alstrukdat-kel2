@@ -1,5 +1,12 @@
 #include "word.h"
 
+void createWord(Word * word){
+    for(int i = 0; i < 50; i++){
+        word->TabWord[i] = '\0';
+    }
+    word->Length = 0;
+}
+
 void printchar(char character, int n)
 {
     for (int i = 1; i <= n; i++)
@@ -141,3 +148,4 @@ void printWord(Word kata) {
         i++;
     }
 }
+

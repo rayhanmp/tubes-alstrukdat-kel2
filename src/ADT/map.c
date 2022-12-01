@@ -116,3 +116,12 @@ void PrintMap(scoreMap M){
 }
 /* I.S. M terdefinisi */
 /* F.S. M dicetak ke layar */
+
+int countMap(scoreMap M){
+	if(IsEmptyMap(M)){
+		return 0;
+	}
+	else{
+		return M.Count;
+	}
+}

@@ -10,6 +10,7 @@ typedef struct
    int Length;
 } Word;
 
+void createWord(Word * word);
 void printchar(char character, int n);
 
 boolean isKataEqual(Word word, char* string);

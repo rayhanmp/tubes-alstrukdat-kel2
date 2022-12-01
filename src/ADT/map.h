@@ -75,5 +75,6 @@ boolean IsMemberMap(scoreMap M, key k);
 void PrintMap(scoreMap map);
 /* I.S. M terdefinisi */
 /* F.S. M dicetak ke layar */
+int countMap(scoreMap M);
 
 #endif

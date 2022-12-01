@@ -16,7 +16,9 @@
 // TUGAS BESAR 2
 #include "Commands/history.h"
 #include "Commands/resethistory.h"
-
+#include "Commands/scoreboard.h"
+#include "Commands/saveconfig.h"
+#include "Commands/loadconfig.h"
 
 
 
@@ -24,12 +26,14 @@ int main(){
     // INISIALISASI ARRAY GAME DAN QUEUE GAME
     arrGame arrayGame;
     MakeArray(&arrayGame);
+    arrScore arrayScore;
+    MakeArrayM(&arrayScore);
     queueGame qGame;
     CreateQueue(&qGame);
     stackGame sGame;
     CreateEmptySG(&sGame);
     boolean play = true;
-
+    
     //TITLE PROGRAM
     printf("==================SELAMAT DATANG DI==================\n");
     printf(" /$$$$$$$  /$$   /$$  /$$$$$$  /$$      /$$  /$$$$$$ \n");
@@ -49,14 +53,16 @@ int main(){
         STARTWORD_INPUT();
         if(isKataEqual(currentWord,"START")){
             start(&arrayGame);
+            setNeffM(&arrayScore, Length(arrayGame));
         }
         else if(isKataEqual(currentWord,"LOAD")){
             ADVWORD_INPUT();
-            load(&arrayGame, currentWord.TabWord);
+            loadConfig(&arrayGame,&arrayScore, &sGame, currentWord.TabWord);
+            setNeffM(&arrayScore, Length(arrayGame));
         }
         else if(isKataEqual(currentWord,"SAVE")){
             ADVWORD_INPUT();
-            save(&arrayGame, currentWord.TabWord);
+            saveConfig(&arrayGame, &arrayScore, &sGame, currentWord.TabWord);
         }
         else if(isKataEqual(currentWord,"CREATE")){
             ADVWORD_INPUT();
@@ -100,7 +106,7 @@ int main(){
             printf("Berikut adalah daftar Game-mu\n");
             PrintQueue(qGame);
             printf("\n");
-            playGame(&qGame, &sGame);
+            playGame(&qGame, &sGame, &arrayGame, &arrayScore);
             }
             else{
             cmdLain();
@@ -110,11 +116,14 @@ int main(){
             ADVWORD_INPUT();
             if(isKataEqual(currentWord,"GAME")){
             ADVWORD_INPUT();
-            skipGame(&qGame, &sGame, wordToInt(currentWord));
+            skipGame(&qGame, &sGame, &arrayGame, &arrayScore, wordToInt(currentWord));
             }
             else{
             cmdLain();
             }
+        }
+        else if(isKataEqual(currentWord,"SCOREBOARD")){
+            printScoreboard(arrayScore, arrayGame);
         }
         else if(isKataEqual(currentWord,"HELP")){
             help();
