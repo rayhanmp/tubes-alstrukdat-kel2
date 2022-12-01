@@ -10,6 +10,7 @@
 #include "../prs/prs.h"
 #include "../hangman/hangman.h"
 #include "../Tower_of_Hanoi/towergame.h"
+#include "../snake on meteor/snake_on_meteor.h"
 
 void playGame (queueGame* q, stackGame* s, arrGame* Games, arrScore* Scores);
 /*

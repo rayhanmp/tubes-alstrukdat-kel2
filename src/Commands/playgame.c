@@ -22,6 +22,8 @@ void playGame (queueGame* q, stackGame* s, arrGame* Games, arrScore* Scores){
                 hangman();
             } else if (isKataEqual(game, "TOWER OF HANOI")) {
                 towerGame(Scores, GetArrIdx(*Games, "TOWER OF HANOI"));
+            } else if (isKataEqual(game, "SNAKE ON METEOR")) {
+                snake_on_meteor();
             }
             else {
                 gametambahan();

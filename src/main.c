@@ -33,6 +33,7 @@ int main(){
     stackGame sGame;
     CreateEmptySG(&sGame);
     boolean play = true;
+
     
     //TITLE PROGRAM
     printf("==================SELAMAT DATANG DI==================\n");
@@ -52,7 +53,7 @@ int main(){
         printf("MASUKKAN COMMAND: ");
         STARTWORD_INPUT();
         if(isKataEqual(currentWord,"START")){
-            start(&arrayGame);
+            loadConfig(&arrayGame,&arrayScore, &sGame, "default_config.txt");
             setNeffM(&arrayScore, Length(arrayGame));
         }
         else if(isKataEqual(currentWord,"LOAD")){

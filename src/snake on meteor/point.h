@@ -3,7 +3,7 @@
 
 #define Xp(P) (P).x
 #define Yp(P) (P).y
-#include "boolean.h"
+#include "../boolean.h"
 typedef struct
 {
    int x;

@@ -1,9 +1,7 @@
 #ifndef _START_H_
 #define _START_H_
 
-#include "../ADT/mesinkata.h"
-#include "../ADT/arrayGame.h"
-
+#include "loadconfig.h"
 void start(arrGame* arr);
 /*
 I.S.: arrGame sembarang

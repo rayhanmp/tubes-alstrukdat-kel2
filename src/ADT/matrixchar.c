@@ -6,9 +6,12 @@
 
 
 void CreateEmptyMatrixChar(matrixchar *m,int h, int w){
+    Word space;
+    createWord(&space);
+    InsertLastW(&space, "  ");
     for(int i = 0; i < h; i++){
         for(int j = 0; j < w; j++){
-            InsertLastW(&m->info[i][j], "  ");
+            CloneWord(&m->info[i][j], space);
         }
     }
     m->h = h;
