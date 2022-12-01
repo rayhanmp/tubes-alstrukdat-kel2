@@ -12,6 +12,7 @@ int rnggame(){
     boolean success = false;
     int ans;
     int x = rng(MIN_RNG_X, MAX_RNG_X);
+    int score;
     printf("RNG Telah dimulai. Uji keberuntungan Anda dengan menebak X.\n");
     while ((try < MAX_RNG_TRY) && (!success)){
         STARTWORD_INPUT();
@@ -28,6 +29,9 @@ int rnggame(){
     }
     if (!success){
         printf("\n \nX adalah %d.\n",x);
+        score = 0;
+    } else { 
+        score = (4-try);
     }
     return 0;
 }
