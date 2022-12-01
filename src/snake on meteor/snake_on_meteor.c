@@ -9,11 +9,12 @@
 
 int snake_on_meteor(){
     /*__________DECLARE/INISIALISASI__________*/
-    char display[5][5];
+    matrixchar display;
     int input;
     boolean valid;
     long long seed;
     List snake,obstacle;
+    Word w,w2;
     point h,f,m;
     point o;
     int n;
@@ -65,40 +66,31 @@ int snake_on_meteor(){
     }
     /*END__INISIALISASI FOOD__END*/
     /*_____DISPLAY PERTAMA KALI_____*/
-    for(int i = 0; i < 5; i++){
-        for(int j = 0; j < 5; j++){
-            display[i][j] = ' ';
-        }
-    }
+    CreateEmptyMatrixChar(&display,5,5);
     p = First(snake);
-    display[Y(p)][X(p)] = 'H';
+    InsertLastW(&w,'H ');
+    InsertMatrixChar(&display, w, p->info);
     p = Next(p);
     n = 1;
     while (p != Nil){
-        display[Y(p)][X(p)] = (char) (n + 48);
+        CloneWord(&w,intToWord(n));
+        if (n < 10) {
+            InsertLastW(&w,' ');
+        }
+        InsertMatrixChar(&display,w, p->info);
         n++;
         p = Next(p);
     }
     p = First(obstacle);
+    CloneWord(&w,w2);
+    InsertLastW(&w,' X');
     while (p != Nil){
-        display[Y(p)][X(p)] = 'X';
+        InsertMatrixChar(&display,w, p->info);
         p = Next(p);
     }
-    display[Yp(f)][Xp(f)] = 'o';
-    for(int i = 0; i < 5; i++){
-        for(int j = 0; j < 5; j++){
-            printf("|%c",display[i][j]);
-        }
-        printf("|\n|");
-        for(int j = 0; j < 5; j++){
-            printf("_|");
-        }
-        printf("\n");
-    }
+    PrintMatrixChar(display);
     
     /*END__DISPLAY PERTAMA KALI__END*/
-    PrintForward (snake);/* DELETE THIS*/
-    printf("\n"); /* DELETE THIS*/
     while (run)
     {
         
@@ -107,9 +99,9 @@ int snake_on_meteor(){
         while (!valid)
         {
             printf("Silahkan masukkan command anda: ");
-            scanf("%d",&input);
-            if ((1 <= input) && (input <= 5)){
-                    if (input == 1) { /* KIRI*/
+            STARTWORD_INPUT();
+            if ((isKataEqual(currentWord, 'A'))||(isKataEqual(currentWord, 'S'))||(isKataEqual(currentWord, 'W'))||(isKataEqual(currentWord, 'D'))){
+                    if ((isKataEqual(currentWord, 'A')) { /* KIRI*/
                         if (X(First(snake)) == 0){
                             Xp(h) = 4;
                         }
@@ -129,7 +121,7 @@ int snake_on_meteor(){
                                 printf("\nMeteor masih panas! Anda belum dapat kembali ke titik tersebut.\n");
                             }
                         }
-                } else if (input == 3) { /* KANAN */
+                } else if ((isKataEqual(currentWord, 'D')) { /* KANAN */
                         if (X(First(snake)) == 4){
                             Xp(h) = 0;
                         }
@@ -149,7 +141,7 @@ int snake_on_meteor(){
                                 printf("\nMeteor masih panas! Anda belum dapat kembali ke titik tersebut.\n");
                             }
                         }
-                } else if (input == 5) { /* ATAS */
+                } else if ((isKataEqual(currentWord, 'W')) { /* ATAS */
                         if (Y(First(snake)) == 0){
                             Yp(h) = 4;
                         }
@@ -169,7 +161,7 @@ int snake_on_meteor(){
                                 printf("\nMeteor masih panas! Anda belum dapat kembali ke titik tersebut.\n");
                             }
                         }  
-                } else if (input == 2) { /* BAWAH */
+                } else if ((isKataEqual(currentWord, 'S')) { /* BAWAH */
                         if (Y(First(snake)) == 4){
                             Yp(h) = 0;
                         }
@@ -282,41 +274,30 @@ int snake_on_meteor(){
         }
         /*END__METEOR__END*/
         /*_____PRINT_____ */
-        for(int i = 0; i < 5; i++){
-            for(int j = 0; j < 5; j++){
-                display[i][j] = ' ';
-            }
-        
-        }
+        CreateEmptyMatrixChar(&display,5,5);
         p = First(snake);
-        display[Y(p)][X(p)] = 'H';
-        n = 1;
+        InsertLastW(&w,'H ');
+        InsertMatrixChar(&display, w, p->info);
         p = Next(p);
+        n = 1;
         while (p != Nil){
-            display[Y(p)][X(p)] = (char) (n + 48);
+            CloneWord(&w,intToWord(n));
+            if (n < 10) {
+                InsertLastW(&w,' ');
+            }
+            InsertMatrixChar(&display,w, p->info);
             n++;
             p = Next(p);
         }
         p = First(obstacle);
+        CloneWord(&w,w2);
+        InsertLastW(&w,' X');
         while (p != Nil){
-            display[Y(p)][X(p)] = 'X';
+            InsertMatrixChar(&display,w, p->info);
             p = Next(p);
         }
-        display[Yp(f)][Xp(f)] = 'o';
-        display[Yp(m)][Xp(m)] = 'm';
-        for(int i = 0; i < 5; i++){
-            for(int j = 0; j < 5; j++){
-                printf("|%c",display[i][j]);
-            }
-            printf("|\n|");
-            for(int j = 0; j < 5; j++){
-                printf("_|");
-            }
-            printf("\n");
-        }
-        /* DELETE THIS */
-        PrintForward (snake); /*DELETE THIS*/
-        printf("\n"); /* DELETE THIS*/
+        PrintMatrixChar(display);
+    
         /*_____CEK GAME OVER_____*/
         if (X(Last(snake)) == 4){ /* CEK KANAN*/
             Xp(h) = 0;    
