@@ -100,8 +100,8 @@ int snake_on_meteor(){
         {
             printf("Silahkan masukkan command anda: ");
             STARTWORD_INPUT();
-            if ((isKataEqual(currentWord, 'A'))||(isKataEqual(currentWord, 'S'))||(isKataEqual(currentWord, 'W'))||(isKataEqual(currentWord, 'D'))){
-                    if ((isKataEqual(currentWord, 'A')) { /* KIRI*/
+            if ((isKataEqual(currentWord, 'A'))||(isKataEqual(currentWord, 'S'))||(isKataEqual(currentWord, 'W'))||(isKataEqual(currentWord, 'D'))||(isKataEqual(currentWord, 'a'))||(isKataEqual(currentWord, 's'))||(isKataEqual(currentWord, 'w'))||(isKataEqual(currentWord, 'd')) ){
+                    if ((isKataEqual(currentWord, 'A')) || (isKataEqual(currentWord, 'a'))) { /* KIRI*/
                         if (X(First(snake)) == 0){
                             Xp(h) = 4;
                         }
@@ -121,7 +121,7 @@ int snake_on_meteor(){
                                 printf("\nMeteor masih panas! Anda belum dapat kembali ke titik tersebut.\n");
                             }
                         }
-                } else if ((isKataEqual(currentWord, 'D')) { /* KANAN */
+                } else if ((isKataEqual(currentWord, 'D'))||(isKataEqual(currentWord, 'd'))) { /* KANAN */
                         if (X(First(snake)) == 4){
                             Xp(h) = 0;
                         }
@@ -141,7 +141,7 @@ int snake_on_meteor(){
                                 printf("\nMeteor masih panas! Anda belum dapat kembali ke titik tersebut.\n");
                             }
                         }
-                } else if ((isKataEqual(currentWord, 'W')) { /* ATAS */
+                } else if ((isKataEqual(currentWord, 'W'))|| (isKataEqual(currentWord, 'w'))) { /* ATAS */
                         if (Y(First(snake)) == 0){
                             Yp(h) = 4;
                         }
@@ -161,7 +161,7 @@ int snake_on_meteor(){
                                 printf("\nMeteor masih panas! Anda belum dapat kembali ke titik tersebut.\n");
                             }
                         }  
-                } else if ((isKataEqual(currentWord, 'S')) { /* BAWAH */
+                } else if ((isKataEqual(currentWord, 'S'))||(isKataEqual(currentWord, 's'))) { /* BAWAH */
                         if (Y(First(snake)) == 4){
                             Yp(h) = 0;
                         }
