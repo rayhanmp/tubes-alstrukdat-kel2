@@ -2,7 +2,7 @@
 
 void resetHistory(stackGame* s){
     Game game;
-    printf("APAKAH KAMU YAKIN INGIN MELAKUKAN RESET HISTORY? ");
+    printf("APAKAH KAMU YAKIN INGIN MELAKUKAN RESET HISTORY? (YA/TIDAK) ");
     STARTWORD_INPUT();
     if (isKataEqual(currentWord,"YA")){
         while (!IsEmptySG(*s)){
