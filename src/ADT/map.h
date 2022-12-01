@@ -57,6 +57,10 @@ value ValueMap(scoreMap M, key k);
 /* Mengembalikan nilai value dengan key k dari M */
 /* Jika tidak ada key k pada M, akan mengembalikan Undefined */
 
+void sortMap(scoreMap *M);
+/* I.S. M terdefinisi */
+/* F.S. M diurutkan berdasarkan nilai value dari yang terbesar ke yang terkecil */
+
 void InsertMap(scoreMap *M, key k, value v);
 /* Menambahkan Elmt sebagai elemen Map M. */
 /* I.S. M mungkin kosong, M tidak penuh
