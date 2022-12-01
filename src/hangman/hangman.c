@@ -111,6 +111,14 @@ void tambahDiksi (arrGame *arrKata) {
             save(arrKata, "kamus.txt");
 }
 
+void freeGuesses(char *guesses) {
+/* I.S. Array of char guesses terdefinisi */
+/* F.S. Array of char guesses diisi dengan '.' */
+    for (int i = 0; i < 20; i++) {
+        guesses[i] = '\0';
+    }
+}
+
 void hangman () {
 /* I.S. Sembarang */
 /* F.S. Prosedur menjalankan gim hangman */
@@ -145,6 +153,9 @@ void hangman () {
     /* Load isi kamus ke arrKata */
     load(&arrKata, "kamus.txt");
     printf("\n");
+
+    /* Pengisian array guesses dengan '\0' */
+    freeGuesses(guesses);
 
     /* Menu utama */
     printf("WELCOME TO HANGMAN\n");
@@ -190,6 +201,8 @@ void hangman () {
                     }
                 }
                 printf("\n");
+                printf("Kesempatan: %d\n", 10-wrong);
+
 
                 /* Meminta pengguna memasukan tebakan */
                 printf("Masukkan tebakan: ");
@@ -218,8 +231,6 @@ void hangman () {
                         printf("Huruf sudah pernah ditebak!");
                     }
                     else { 
-                        printRegArr(guesses, guess);
-                        printf("Kesempatan: %d", 10-wrong);
                         guesses[guess] = currentWord.TabWord[0];
                         guess++;
                         wrong++;
@@ -258,9 +269,7 @@ void hangman () {
             guess = 0;
 
             /* Kosongkan array guesses */
-            for (int j=0; j<20; j++) {
-                guesses[j] = '\0';
-            }
+            freeGuesses(guesses);
         }
 
         /* Tuliskan skor akhir */
