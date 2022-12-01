@@ -49,12 +49,31 @@ value ValueMap(scoreMap M, key k){
 /* Mengembalikan nilai value dengan key k dari M */
 /* Jika tidak ada key k pada M, akan mengembalikan Undefined */
 
+void sortMap(scoreMap *M){
+	int i, j;
+	Word tempWord;
+    value tempScore;
+	for (i = 0; i < (*M).Count; i++){
+		for (j = i + 1; j < (*M).Count; j++){
+			if ((*M).Elements[i].Score < (*M).Elements[j].Score){
+				tempScore = (*M).Elements[i].Score;
+				(*M).Elements[i].Score = (*M).Elements[j].Score;
+				(*M).Elements[j].Score = tempScore;
+				CopyWord((*M).Elements[i].Name, &tempWord);
+				CopyWord((*M).Elements[j].Name, &(*M).Elements[i].Name);
+				CopyWord(tempWord, &(*M).Elements[j].Name);
+			}
+		}
+	}
+}
+
 void InsertMap(scoreMap *M, key k, value v){
     if (!IsMemberMap(*M, k)){
 		(*M).Elements[(*M).Count].Name = k;
 		(*M).Elements[(*M).Count].Score = v;
 		(*M).Count++;
 	}
+	sortMap(M);
 }
 /* Menambahkan Elmt sebagai elemen Map M. */
 /* I.S. M mungkin kosong, M tidak penuh
