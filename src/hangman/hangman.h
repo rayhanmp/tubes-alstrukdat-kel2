@@ -29,6 +29,10 @@ void tambahDiksi (arrGame *arrKata);
 /* I.S. arrKata terdefinisi */
 /* F.S. Prosedur meminta masukan kepada pengguna hingga pengguna memberi masukan 'STOP', kemudian prosedur menyimpan masukan ke berkas kamus.txt */
 
+void freeGuesses(char *guesses);
+/* I.S. Array of char guesses terdefinisi */
+/* F.S. Array of char guesses diisi dengan '\0' */
+
 void hangman();
 /* I.S. Sembarang */
 /* F.S. Prosedur menjalankan gim hangman */
