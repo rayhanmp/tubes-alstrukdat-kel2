@@ -62,6 +62,7 @@ int snake_on_meteor(){
     /*_____DISPLAY PERTAMA KALI_____*/
     CreateEmptyMatrixChar(&display,5,5);
     p = First(snake);
+    CloneWord(&w,w2);
     InsertLastW(&w,"H ");
     InsertMatrixChar(&display, w, p->info);
     p = Next(p);
@@ -82,6 +83,13 @@ int snake_on_meteor(){
         InsertMatrixChar(&display,w, p->info);
         p = Next(p);
     }
+    CloneWord(&w,w2);
+    InsertLastW(&w," o");
+    InsertMatrixChar(&display,w,f);
+    CloneWord(&w,w2);
+    InsertLastW(&w," m");
+    InsertMatrixChar(&display,w,m);
+    
     PrintMatrixChar(display);
     
     /*END__DISPLAY PERTAMA KALI__END*/
@@ -270,6 +278,7 @@ int snake_on_meteor(){
         /*_____PRINT_____ */
         CreateEmptyMatrixChar(&display,5,5);
         p = First(snake);
+        CloneWord(&w,w2);
         InsertLastW(&w,"H ");
         InsertMatrixChar(&display, w, p->info);
         p = Next(p);
@@ -290,8 +299,15 @@ int snake_on_meteor(){
             InsertMatrixChar(&display,w, p->info);
             p = Next(p);
         }
+        CloneWord(&w,w2);
+        InsertLastW(&w," o");
+        InsertMatrixChar(&display,w,f);
+        CloneWord(&w,w2);
+        InsertLastW(&w," m");
+        InsertMatrixChar(&display,w,m);
+
         PrintMatrixChar(display);
-    
+
         /*_____CEK GAME OVER_____*/
         if (X(Last(snake)) == 4){ /* CEK KANAN*/
             Xp(h) = 0;    
