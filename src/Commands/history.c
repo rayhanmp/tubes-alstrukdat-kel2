@@ -5,7 +5,7 @@ void history (stackGame *s, int n){
     CreateEmptySG(&sTemp);
     int i; Game game;
 
-    printf("Berikut adalah daftar Game yang telah dimainkan");
+    printf("Berikut adalah daftar Game yang telah dimainkan\n");
     if (IsEmptySG(*s)) {
         printf("History Game Anda KOSONG!\n");
     } else if (n >= Top(*s)) {
