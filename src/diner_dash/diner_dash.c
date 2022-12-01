@@ -50,6 +50,7 @@ void displaySeparator(){
 
 int diner_dash(){
     /*DECLARE/INISIALISASI*/
+    int score;
     Map mCook;
     Map mServe;
     QueueDD qErrand;
@@ -172,5 +173,6 @@ int diner_dash(){
         displaySeparator();
     }
     printf("Jumlah pelanggan yang dilayani : %d\n Saldo total : %d\n",customer,saldo);
+    score = saldo/10000;
     return 0;
 }
