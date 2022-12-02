@@ -68,7 +68,8 @@ void sortMap(scoreMap *M){
 }
 
 void InsertMap(scoreMap *M, key k, value v){
-    if (!IsMemberMap(*M, k)){
+	toLower(&k);
+	if (!IsMemberMap(*M, k)){
 		(*M).Elements[(*M).Count].Name = k;
 		(*M).Elements[(*M).Count].Score = v;
 		(*M).Count++;

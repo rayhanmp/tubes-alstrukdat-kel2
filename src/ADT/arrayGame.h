@@ -96,4 +96,5 @@ void PrintArray(arrGame arr);
 
 int GetArrIdx(arrGame arr, char* el);
 
+int GetArrIdxW(arrGame arr, Word el);
 #endif

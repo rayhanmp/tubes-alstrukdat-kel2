@@ -150,6 +150,17 @@ int GetArrIdx(arrGame arr, char* el){
  * Prekondisi: elemen pasti ada di dalam array
  */
 
+int GetArrIdxW(arrGame arr, Word el){
+    boolean found = false;
+    int i = 0;
+    while(!found && i < Length(arr)){
+        if(isIdentical(Get(arr,i), el)){
+            found = true;
+        }
+        i++;
+    }
+    return i - 1;
+}
 // // DRIVER ADT ARRAY
 // #include "mesinkarakter.h"
 // #include "mesinkata.h"
