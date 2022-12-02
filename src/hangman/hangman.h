@@ -1,7 +1,7 @@
 #include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
-#include "../Commands/load.h"
-#include "../Commands/save.h"
+#include "../hangman/loadKamus.h"
+#include "../hangman/saveKamus.h"
 #include <time.h>
 #include <stdlib.h>
 
