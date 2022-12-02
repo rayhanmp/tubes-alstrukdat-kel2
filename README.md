@@ -14,6 +14,9 @@ Berikut ini adalah struktur folder dari project ini:
   * folder `Commands` berisi perintah utama yang dapat dijalankan di _main_
   * folder `RNGGAME` berisi file c dan header untuk gim Diner Dash
   * folder `prs` berisi file c dan header untuk gim Paper Rock Scissor
+  * folder `hangman` berisi file c dan header untuk gim Hangman
+  * folder `Tower_of_Hanoi` berisi file c dan header untuk gim Tower of Hanoi
+  * folder `snake on meteor` berisi file c dan header untuk gim Snake on Meteor
   * folder `gameTambahan` berisi file c dan header untuk gim tambahan
 
 ## Prosedur Penggunaan
@@ -49,9 +52,12 @@ Program ini memiliki sejumlah fitur utama di _main_ yang dapat diakses oleh peng
 <tr><td>7.</td><td>QUEUEGAME</td><td>Menambahkan suatu gim ke daftar antrean</td></tr>
 <tr><td>8.</td><td>PLAYGAME</td><td>Memainkan gim dengan urutan pertama di antrean</td></tr>
 <tr><td>9.</td><td>SKIPGAME</td><td>Melewatkan sejumlah permainan tertentu berdasarkan masukan</td></tr>
-<tr><td>10.</td><td>QUIT</td><td>Keluar dari program</td></tr>
-<tr><td>11.</td><td>HELP</td><td>Program akan menampilkan daftar perintah yang bisa diakses.
-</td></tr>
+<tr><td>11.</td><td>SCOREBOARD</td><td>Menampilkan nama pemain dan score</td></tr>
+<tr><td>12.</td><td>RESET SCOREBOARD</td><td>Mengosongkan data pemain dan score pada scoreboard</td></tr>
+<tr><td>13.</td><td>HISTORY</td><td>Menampilkan riwayat permainan yang pernah dimainkan</td></tr>
+<tr><td>14.</td><td>RESET HISTORY</td><td>Mengosongkan riwayat game yang dimainkan pemain</td></tr>
+<tr><td>15.</td><td>QUIT</td><td>Keluar dari program</td></tr>
+<tr><td>16.</td><td>HELP</td><td>Program akan menampilkan daftar perintah yang bisa diakses.</td></tr>
 
 </table>
 
@@ -64,6 +70,7 @@ Program ini memiliki sejumlah gim yang dapat dimainkan oleh pengguna, di antaran
 <tr><td>3.</td><td>HANGMAN</td>
 <tr><td>4.</td><td>TOWER OF HANOI</td>
 <tr><td>5.</td><td>SNAKE ON METEOR</td>
+<tr><td>6.</td><td>PAPER ROCK SCISSOR</td>
 </td></tr>
 
 </table>
