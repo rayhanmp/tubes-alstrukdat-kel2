@@ -8,7 +8,7 @@ void resetHistory(stackGame* s){
         while (!IsEmptySG(*s)){
             PopSG(s, &game);
         }
-        printf("History berhasil di-reset.");
+        printf("History berhasil di-reset.\n");
     } else if (isKataEqual(currentWord,"TIDAK")){
         printf("History tidak jadi di-reset. Berikut adalah daftar Game yang telah dimainkan\n");
         history(s, Top(*s));
