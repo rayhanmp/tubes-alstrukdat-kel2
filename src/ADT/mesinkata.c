@@ -26,13 +26,17 @@ void IgnoreEnters()
     } 
 }
 
-void STARTWORD(char* filename)
+int STARTWORD(char* filename)
 {
     /* I.S. : currentChar sembarang
        F.S. : endWord = true, dan currentChar = MARK;
               atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
               currentChar karakter pertama sesudah karakter terakhir kata */
-    START(filename);
+    int retval;
+    retval = START(filename);
+    if(retval == 0){
+        return retval;
+    }
     IgnoreEnters();
     if (currentChar == MARK)
     {
@@ -43,6 +47,7 @@ void STARTWORD(char* filename)
         endWord = false;
         CopyWord();
     }
+    return retval;
 }
 
 void STARTWORD_INPUT()

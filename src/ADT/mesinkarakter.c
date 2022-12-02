@@ -14,11 +14,12 @@ void START_INPUT()
     ADV_INPUT();
 }
 
-void START(char* filename)
+int START(char* filename)
 {
     /* Mesin siap dioperasikan. Pita disiapkan ... */
     /* Algoritma */
     char directory[50] = "data/";
+    int retval;
     int i=0,j=0;
     while(directory[i]!='\0'){
         i++;  
@@ -31,7 +32,14 @@ void START(char* filename)
     }
   directory[i]='\0';
     pita = fopen(directory, "r");
+    if(pita == NULL){
+        retval = 0;
+    }
+    else{
+        retval = 1;
+    }
     ADV();
+    return retval;
 }
 
 void ADV()

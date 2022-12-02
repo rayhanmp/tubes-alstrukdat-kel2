@@ -19,7 +19,16 @@ int sepScore(Word word){
 void loadConfig(arrGame* games, arrScore* scores, stackGame* history, char* filename){
 
     //MEMBACA ISI FILE
-    STARTWORD(filename);
+    int retval;
+    retval = STARTWORD(filename);
+    if(!retval){
+        printf("Nama file tidak ada\\tidak dapat diakses!\n");
+        return;
+    }
+    // if(currentChar == 10){
+    //     printf("Nama file tidak ada\\tidak dapat diakses!\n");
+    //     return;
+    // }
     int banyakgame, banyakscore, banyakhistory;
     banyakgame = wordToInt(currentWord);
     for(int i = 0; i <= banyakgame;i++){
