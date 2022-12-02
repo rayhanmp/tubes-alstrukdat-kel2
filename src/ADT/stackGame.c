@@ -64,3 +64,19 @@ int LengthSG(stackGame S){
     }
     return length;
 }
+
+void PrintAllSG(stackGame S){
+    stackGame sTemp; 
+    CreateEmptySG(&sTemp);
+    int i = 1; Game game;
+    while (!IsEmptySG(S)) {
+        PopSG(&S, &game);
+        printf("%d. %s\n", i, game.TabWord);
+        i++;
+        PushSG(&sTemp, game);
+    }
+    while (!IsEmptySG(sTemp)) {
+        PopSG(&sTemp, &game);
+        PushSG(&S, game);
+    }
+}
