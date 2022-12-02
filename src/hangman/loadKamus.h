@@ -1,0 +1,12 @@
+#ifndef _LOAD_H_
+#define _LOAD_H_
+
+#include "../ADT/arrayGame.h"
+
+void loadKamus(arrGame* arrKata, char* filename);
+/*
+I.S.: arrGame sembarang
+F.S.: arrGame terisi dengan game-game dari config yang dipilih dengan nama filename
+*/
+
+#endif

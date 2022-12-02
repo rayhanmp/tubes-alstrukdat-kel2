@@ -108,7 +108,6 @@ void tambahDiksi (arrGame *arrKata) {
                 }
             }
             printf("\n");
-            save(arrKata, "kamus.txt");
 }
 
 void freeGuesses(char *guesses) {
@@ -273,6 +272,7 @@ void hangman () {
         }
 
         /* Tuliskan skor akhir */
+        save(&arrKata, "kamus.txt");
         printf("Skor akhir: %d\n", skor);
         printf("Nama: ");
         STARTWORD_INPUT();
