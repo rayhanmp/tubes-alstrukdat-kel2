@@ -8,6 +8,13 @@
 #include "rnggame.h"
 
 int rnggame(){
+    printf("\n>======>     >==>    >=>    >===>    \n");
+    printf(">=>    >=>   >> >=>  >=>  >>    >=>    \n");
+    printf(">=>    >=>   >=> >=> >=> >=>           \n");
+    printf(">> >==>      >=>  >=>>=> >=>           \n");
+    printf(">=>  >=>     >=>   > >=> >=>   >===>   \n");
+    printf(">=>    >=>   >=>    >>=>  >=>    >>    \n");
+    printf(">=>      >=> >=>     >=>   >====>      \n");
     int try = 0;
     boolean success = false;
     int ans;
