@@ -107,6 +107,7 @@ void tambahDiksi (arrGame *arrKata) {
                     }
                 }
             }
+            saveKamus(arrKata, "kamus.txt");
             printf("\n");
 }
 
@@ -123,7 +124,7 @@ void hangman (arrScore *Scores, int gamebrp) {
 /* F.S. Prosedur menjalankan gim hangman */
 
     /* Kamus */
-    arrGame arrKata;
+    arrGame arrKata, temp;
     int num;
     int arrlen;
     int wrong;
@@ -150,9 +151,8 @@ void hangman (arrScore *Scores, int gamebrp) {
     srand(time(NULL));
 
     /* Load isi kamus ke arrKata */
-    load(&arrKata, "kamus.txt");
+    loadKamus(&arrKata, "kamus.txt");
     printf("\n");
-
     /* Pengisian array guesses dengan '\0' */
     freeGuesses(guesses);
 
