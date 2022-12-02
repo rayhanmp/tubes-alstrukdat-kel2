@@ -69,6 +69,11 @@ int diner_dash(){
     enqueuedd(&qErrand,1,rngver2(&seed,1,5),rngver2(&seed,1,5),rngver2(&seed,10,50)*1000);
     enqueuedd(&qErrand,2,rngver2(&seed,1,5),rngver2(&seed,1,5),rngver2(&seed,10,50)*1000);
     enqueuedd(&qErrand,3,rngver2(&seed,1,5),rngver2(&seed,1,5),rngver2(&seed,10,50)*1000);
+    printf("\nDDD  III N   N EEEE RRRR      DDD   AA   SSS  H  H \n");
+    printf("D  D  I  NN  N E    R   R     D  D A  A S     H  H \n");
+    printf("D  D  I  N N N EEE  RRRR      D  D AAAA  SSS  HHHH\n");
+    printf("D  D  I  N  NN E    R R       D  D A  A     S H  H \n");
+    printf("DDD  III N   N EEEE R  RR     DDD  A  A SSSS  H  H \n");
     printf("Selamat Datang di Diner Dash!\n");
     while (run){
         /* CETAK */
