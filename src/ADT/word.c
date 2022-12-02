@@ -149,3 +149,13 @@ void printWord(Word kata) {
     }
 }
 
+void toLower(Word *word){
+    int i = 0;
+    while(i < word->Length){
+        if(word->TabWord[i] >= 'A' && word->TabWord[i] <= 'Z'){
+            word->TabWord[i] = word->TabWord[i] + 32;
+        }
+        i++;
+    }
+}
+/*Mengubah word menjadi huruf kecil semua*/
