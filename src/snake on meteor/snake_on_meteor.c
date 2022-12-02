@@ -315,32 +315,32 @@ int snake_on_meteor(){
         PrintMatrixChar(display);
 
         /*_____CEK GAME OVER_____*/
-        if (X(Last(snake)) == 4){ /* CEK KANAN*/
+        if (X(First(snake)) == 4){ /* CEK KANAN*/
             Xp(h) = 0;    
         } else {
-            Xp(h) = X(Last(snake)) + 1;
+            Xp(h) = X(First(snake)) + 1;
         }
-        Yp(h) = Y(Last(snake));
+        Yp(h) = Y(First(snake));
         if ((SearchLDP(snake,h) != NULL) || (SearchLDP(obstacle,h) != NULL) || (SamePoint(h,m))){
-            if (X(Last(snake)) == 0){ /* CEK KIRI */
+            if (X(First(snake)) == 0){ /* CEK KIRI */
                 Xp(h) = 4;    
             } else {
-                Xp(h) = X(Last(snake)) - 1;
+                Xp(h) = X(First(snake)) - 1;
             }
-            Yp(h) = Y(Last(snake));
+            Yp(h) = Y(First(snake));
             if ((SearchLDP(snake,h) != NULL) || (SearchLDP(obstacle,h) != NULL) || (SamePoint(h,m))){
-                Xp(h) = X(Last(snake)); /* CEK ATAS */
-                if (Y(Last(snake)) == 0){ 
+                Xp(h) = X(First(snake)); /* CEK ATAS */
+                if (Y(First(snake)) == 0){ 
                 Yp(h) = 4;    
                 } else {
-                Yp(h) = Y(Last(snake)) - 1;
+                Yp(h) = Y(First(snake)) - 1;
                 }
                 if ((SearchLDP(snake,h) != NULL) || (SearchLDP(obstacle,h) != NULL) || (SamePoint(h,m))){
-                    Xp(h) = X(Last(snake)); /* CEK BAWAH */
-                    if (Y(Last(snake)) == 4){ 
+                    Xp(h) = X(First(snake)); /* CEK BAWAH */
+                    if (Y(First(snake)) == 4){ 
                     Yp(h) = 0;    
                     } else {
-                    Yp(h) = Y(Last(snake)) + 1;
+                    Yp(h) = Y(First(snake)) + 1;
                     }
                     if ((SearchLDP(snake,h) != NULL) || (SearchLDP(obstacle,h) != NULL) || (SamePoint(h,m))){
                         run = false;
