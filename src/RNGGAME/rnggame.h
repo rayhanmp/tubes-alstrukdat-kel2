@@ -7,10 +7,11 @@
 #include "boolean.h"
 #include "random_number_generator.h"
 #include "../ADT/mesinkata.h"
+#include "../ADT/arrayMap.h"
 
 #define MAX_RNG_X 100
 #define MIN_RNG_X 0
-#define MAX_RNG_TRY 4
+#define MAX_RNG_TRY 5
 
 
 int rnggame();

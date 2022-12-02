@@ -62,4 +62,5 @@ void CopyStackSG(stackGame Sin, stackGame *Sout);
 int LengthSG(stackGame S);
 void PrintAllSG(stackGame S);
 void PrintSomeSG(stackGame S, int n);
+void reverseSG(stackGame* S);
 #endif

@@ -22,39 +22,46 @@ void loadConfig(arrGame* games, arrScore* scores, stackGame* history, char* file
     STARTWORD(filename);
     int banyakgame, banyakscore, banyakhistory;
     banyakgame = wordToInt(currentWord);
-    for(int i = 0; i < banyakgame;i++){
+    for(int i = 0; i <= banyakgame;i++){
         InsertLast(games, currentWord);
         ADVWORD();
     }
-    ADVWORD();
-    banyakhistory = wordToInt(currentWord);
-    ADVWORD();
-        for(int i = 0; i < banyakhistory;i++){
-        PushSG(history, currentWord);
-        ADVWORD();
-    }
-
-    int j = 1;
-    Word nama;
-    createWord(&nama);
     while(!isEndWord()){
-        banyakscore = wordToInt(currentWord);
+        banyakhistory = wordToInt(currentWord);
         ADVWORD();
-        for(int i = 0; i < banyakscore; i++){
-            int k = 0;
-            CloneWord(&nama, currentWord);
-            while(nama.TabWord[k] != ' '){
-                k++;
-            }
-            k++;
-            while(nama.TabWord[k] != '\0'){
-                nama.TabWord[k] = '\0';
-                k++;
-            }
-            InsertMap(&scores->A[j],nama,sepScore(currentWord));
+            for(int i = 0; i < banyakhistory;i++){
+            PushSG(history, currentWord);
             ADVWORD();
         }
-        j++;
+        reverseSG(history);
+
+        int j = 1;
+        Word nama;
+        while(!isEndWord()){
+            banyakscore = wordToInt(currentWord);
+            ADVWORD();
+            for(int i = 0; i < banyakscore; i++){
+                int k = 0;
+                createWord(&nama);
+                CloneWord(&nama, currentWord);
+                while(nama.TabWord[k] != ' '){
+                    k++;
+                }
+                nama.TabWord[k] = '\0';
+                k++;
+                while(nama.TabWord[k] != '\0'){
+                    nama.TabWord[k] = '\0';
+                    nama.Length--;
+                    k++;
+                }
+                nama.Length--;
+                InsertMap(&scores->A[j],nama,sepScore(currentWord));
+                ADVWORD();
+            }
+            sortMap(&scores->A[j]);
+            j++;
+        }
+
     }
     printf("Save file berhasil dibaca.\n");
 }

@@ -4,6 +4,8 @@
         "diner_dash.h": "c",
         "gametambahan.h": "c",
         "towergame.h": "c",
-        "arraygame.h": "c"
+        "arraygame.h": "c",
+        "arraymap.h": "c",
+        "stdlib.h": "c"
     }
 }

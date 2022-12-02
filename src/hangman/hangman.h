@@ -1,5 +1,6 @@
 #include "../ADT/mesinkata.h"
 #include "../ADT/arrayGame.h"
+#include "../ADT/arrayMap.h"
 #include "../Commands/load.h"
 #include "../Commands/save.h"
 #include <time.h>
@@ -33,6 +34,6 @@ void freeGuesses(char *guesses);
 /* I.S. Array of char guesses terdefinisi */
 /* F.S. Array of char guesses diisi dengan '\0' */
 
-void hangman();
+void hangman(arrScore *Scores, int gamebrp);
 /* I.S. Sembarang */
 /* F.S. Prosedur menjalankan gim hangman */

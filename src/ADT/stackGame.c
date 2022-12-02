@@ -95,3 +95,14 @@ void PrintSomeSG(stackGame S, int n){
         PushSG(&S, game);
     }
 }
+
+void reverseSG(stackGame* S){
+    stackGame temp;
+    Game val;
+    CreateEmptySG(&temp);
+    while(!IsEmptySG(*S)){
+        PopSG(S, &val);
+        PushSG(&temp, val);
+    }
+    CopyStackSG(temp, S);
+}

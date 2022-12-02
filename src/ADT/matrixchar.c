@@ -23,6 +23,10 @@ void InsertMatrixChar(matrixchar *m, Word c, point p){
 }
 
 void PrintMatrixChar(matrixchar m){
+    for(int j = 0; j < m.w; j++){
+            printf("___");
+        }
+    printf("_\n");
     for(int i = 0; i < m.h; i++){
         for(int j = 0; j < m.w; j++){
             printf("|");

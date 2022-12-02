@@ -1,14 +1,16 @@
 #include "creategame.h"
 
-void createGame (arrGame *arr){
-    int jumlah_game = Length(*arr);
+void createGame (arrGame *games, arrScore *scores){
+    scoreMap score;
+    CreateEmptyMap(&score);
+    int jumlah_game = Length(*games);
     Word sum_game, game;
     sum_game.Length = 0;
     //masih bingung kenapa harus di clone 2 kali agar sempurna
     CloneWord(&sum_game,intToWord(jumlah_game));
     CloneWord(&sum_game,intToWord(jumlah_game));
-    DeleteFirst(arr);
-    InsertFirst(arr, sum_game);
+    DeleteFirst(games);
+    InsertFirst(games, sum_game);
     printf("Masukkan nama game yang akan ditambahkan: ");
     STARTWORD_INPUT();
     game = currentWord;
@@ -19,10 +21,11 @@ void createGame (arrGame *arr){
         InsertLastW(&game,currentWord.TabWord);
         ADVWORD_INPUT();
     }
-    InsertLast(arr, game);
+    InsertLast(games, game);
+    InsertLastM(scores,score);
     printf("Game berhasil ditambahkan\n");
 }
 /*
-I.S.: arrGame sembarang
-F.S.: Elemen arrGame ditambahkan dengan nama game baru
+I.S.: gamesGame sembarang
+F.S.: Elemen gamesGame ditambahkan dengan nama game baru
 */
