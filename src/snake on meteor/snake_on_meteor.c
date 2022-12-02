@@ -12,6 +12,7 @@ int snake_on_meteor(){
     matrixchar display;
     int input;
     boolean valid;
+    boolean behead = false;
     long long seed;
     Listdp snake,obstacle;
     Word w,w2;
@@ -272,7 +273,7 @@ int snake_on_meteor(){
         }
         if (SearchLDP(snake,m) != NULL){
             if (SearchLDP(snake,m) == First(snake)){
-                DelPLDP(&snake,m);
+                behead = true;
                 run = false; /* GAME OVER METEOR*/
             } else {
                 DelPLDP(&snake,m);
@@ -351,6 +352,9 @@ int snake_on_meteor(){
         
     }
     printf("\nGAME OVER\n");
+    if (behead){
+        DelFirst(&snake,&p);
+    }
     p = First(snake);
     while (p != NULL)
     {
