@@ -4,8 +4,10 @@
 #include <stdio.h>
 #include "scoreboard.h"
 #include "../ADT/mesinkarakter.h"
+#include "../ADT/arrayMap.h"
+#include "../ADT/arrayGame.h"
 
-void resetScoreboard(scoreMap RNG, scoreMap dinerDash, scoreMap hangman, scoreMap tower, scoreMap snake, arrGame Games);
+void resetScoreboard(arrGame games, arrScore *scores);
 /*I.S. Sembarang*/
 /*F.S. Menghapus semua data dan atau data yang diinginkan pada scoreboard*/
 

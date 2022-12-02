@@ -415,16 +415,23 @@ void towerGame(arrScore *Scores, int gamebrp)
         printKondisi(A, B, C, sumPiringan);
     }
     printf("=========================\n");
-    score = minsteps + 10 - steps;
+    score = minsteps - (minsteps-steps);
     printf("SCORE : %d\n", score);
     printf("Masukkan Nama:");
     STARTWORD_INPUT();
     if(IsEmptyMap(GetArrM(*Scores, gamebrp))){
         CreateEmptyMap(&Scores->A[gamebrp]);
         InsertMap(&Scores->A[gamebrp], currentWord, score);
+        printf("Score berhasil ditambahkan!\n");
     }
     else{
-       InsertMap(&Scores->A[gamebrp], currentWord, score); 
+        toLower(&currentWord);
+        while(IsMemberMap(GetArrM(*Scores,gamebrp),currentWord)){
+            printf("Nama sudah ada! silahkan input ulang: ");
+            STARTWORD_INPUT();
+        }
+        InsertMap(&Scores->A[gamebrp], currentWord, score);
+        printf("Score berhasil ditambahkan!\n");
     }
     printf("=========================\n");
 }

@@ -2,6 +2,7 @@
 
 void playGame (queueGame* q, stackGame* s, arrGame* Games, arrScore* Scores){
     Word game;
+    createWord(&game);
     if (IsEmptyQ(*q)){
         printf("Daftar Game kosong\n");
     } else {
@@ -12,21 +13,21 @@ void playGame (queueGame* q, stackGame* s, arrGame* Games, arrScore* Scores){
             printf("Silahkan pilih game lain.\n");
         } else {
             printf("Loading %s ...\n", game.TabWord);
-            if (isKataEqual(game, "Diner DASH")){
-                diner_dash();
+            if (isKataEqual(game, "DINER DASH")){
+                diner_dash(Scores, GetArrIdx(*Games, "DINER DASH"));
             } else if (isKataEqual(game, "RNG")){
-                rnggame();
+                rnggame(Scores, GetArrIdx(*Games, "RNG"));
             } else if (isKataEqual(game, "PRS")) {
-                prs();
+                prs(Scores, GetArrIdx(*Games, "PRS"));
             } else if (isKataEqual(game, "HANGMAN")) {
-                hangman();
+                hangman(Scores, GetArrIdx(*Games, "HANGMAN"));
             } else if (isKataEqual(game, "TOWER OF HANOI")) {
                 towerGame(Scores, GetArrIdx(*Games, "TOWER OF HANOI"));
             } else if (isKataEqual(game, "SNAKE ON METEOR")) {
-                snake_on_meteor();
+                snake_on_meteor(Scores, GetArrIdx(*Games, "SNAKE ON METEOR"));
             }
             else {
-                gametambahan();
+                gametambahan(Scores, GetArrIdxW(*Games, game));
             }
         }
     }

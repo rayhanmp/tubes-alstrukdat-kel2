@@ -7,7 +7,7 @@
 #include "random_number_generator.h"
 #include "rnggame.h"
 
-int rnggame(){
+int rnggame(arrScore *Scores, int gamebrp){
     printf("\n>======>     >==>    >=>    >===>    \n");
     printf(">=>    >=>   >> >=>  >=>  >>    >=>    \n");
     printf(">=>    >=>   >=> >=> >=> >=>           \n");
@@ -38,7 +38,25 @@ int rnggame(){
         printf("\n \nX adalah %d.\n",x);
         score = 0;
     } else { 
-        score = (4-try);
+        score = (MAX_RNG_TRY-try);
+    }
+    score = score*2;
+    printf("SKOR : %d\n",score);
+    printf("Masukkan Nama:");
+    STARTWORD_INPUT();
+    if(IsEmptyMap(GetArrM(*Scores, gamebrp))){
+        CreateEmptyMap(&Scores->A[gamebrp]);
+        InsertMap(&Scores->A[gamebrp], currentWord, score);
+        printf("Score berhasil ditambahkan!\n");
+    }
+    else{
+        toLower(&currentWord);
+        while(IsMemberMap(GetArrM(*Scores,gamebrp),currentWord)){
+            printf("Nama sudah ada! silahkan input ulang: ");
+            STARTWORD_INPUT();
+        }
+        InsertMap(&Scores->A[gamebrp], currentWord, score);
+        printf("Score berhasil ditambahkan!\n");
     }
     return 0;
 }

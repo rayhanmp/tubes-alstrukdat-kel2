@@ -118,7 +118,7 @@ void freeGuesses(char *guesses) {
     }
 }
 
-void hangman () {
+void hangman (arrScore *Scores, int gamebrp) {
 /* I.S. Sembarang */
 /* F.S. Prosedur menjalankan gim hangman */
 
@@ -178,7 +178,7 @@ void hangman () {
     /* Cek masukan pengguna */
     if (isKataEqual(currentWord, "TAMBAHKATA")) { // Jika pengguna memilih TAMBAHKATA
         tambahDiksi(&arrKata);
-        hangman();
+        hangman(Scores, gamebrp);
     }
     else if (isKataEqual(currentWord, "MAIN")) { // Jika pengguna memilih MAIN
         /* MAIN LOOP: selama gameover bernilai false */
@@ -272,18 +272,29 @@ void hangman () {
         }
 
         /* Tuliskan skor akhir */
-        save(&arrKata, "kamus.txt");
-        printf("Skor akhir: %d\n", skor);
-        printf("Nama: ");
+        printf("SCORE: %d\n", skor);
+        printf("Masukkan Nama:");
         STARTWORD_INPUT();
-        printf("\n");
+        if(IsEmptyMap(GetArrM(*Scores, gamebrp))){
+            CreateEmptyMap(&Scores->A[gamebrp]);
+            InsertMap(&Scores->A[gamebrp], currentWord, skor);
+            printf("Score berhasil ditambahkan!\n");
+        }
+        else{
+            while(IsMemberMap(GetArrM(*Scores,gamebrp),currentWord)){
+                printf("Nama sudah ada! silahkan input ulang: ");
+                STARTWORD_INPUT();
+            }
+            InsertMap(&Scores->A[gamebrp], currentWord, skor);
+            printf("Score berhasil ditambahkan!\n");
+        }
     }
     else if (isKataEqual(currentWord, "EXIT")) { // Jika pengguna memilih EXIT
         return;
     }
     else { // Jika pengguna memasukan input selain MAIN, TAMBAHKATA, dan EXIT
         printf("Input tidak valid!\n"); 
-        hangman();
+        hangman(Scores, gamebrp);
     }
 }
 

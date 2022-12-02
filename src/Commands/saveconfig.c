@@ -1,5 +1,10 @@
 #include "saveconfig.h"
 
+void fputName(Word name, FILE *file){
+    for(int i = 0; i < name.Length; i++){
+        fputc(name.TabWord[i],file);
+    }
+}
 void saveConfig(arrGame* games, arrScore* scores, stackGame* history, char* filename){ 
     //SET DIRECTORY
     char directory[50] = "data/";
@@ -44,9 +49,9 @@ void saveConfig(arrGame* games, arrScore* scores, stackGame* history, char* file
         fprintf(file, "%d", countMap(GetArrM(*scores,i)));
         fputc('\n', file);
         while(j <countMap(scores->A[i])){
-            fputs(GetArrM(*scores,i).Elements->Name.TabWord, file);
+            fputName(GetArrM(*scores,i).Elements[j].Name,file);
             fputc(' ', file);
-            fprintf(file, "%d", GetArrM(*scores,i).Elements->Score);
+            fprintf(file, "%d", GetArrM(*scores,i).Elements[j].Score);
             fputc('\n', file);
             j++;
         }

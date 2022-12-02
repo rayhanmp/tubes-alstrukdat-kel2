@@ -11,6 +11,7 @@
 #include "../ADT/mesinkata.h"
 #include "../ADT/mesinkarakter.h"
 #include "../ADT/word.h"
+#include "../ADT/arrayMap.h"
 
 void displayCook(Map m);
 /*I.S. Map m terdefinis
@@ -24,7 +25,7 @@ void displayServe(Map m);
 void displaySeparator();
 /* I.S. sembarang
    F.S. Menceta = berkali-kali ke terminal*/
-int diner_dash();
+int diner_dash(arrScore *Scores, int gamebrp);
 
 
 

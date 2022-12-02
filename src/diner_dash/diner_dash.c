@@ -48,7 +48,7 @@ void displaySeparator(){
     printf("==========================================================\n");
 }
 
-int diner_dash(){
+int diner_dash(arrScore *Scores, int gamebrp){
     /*DECLARE/INISIALISASI*/
     int score;
     Map mCook;
@@ -179,5 +179,22 @@ int diner_dash(){
     }
     printf("Jumlah pelanggan yang dilayani : %d\n Saldo total : %d\n",customer,saldo);
     score = saldo/10000;
+    printf("SKOR : %d\n",score);
+    printf("Masukkan Nama:");
+    STARTWORD_INPUT();
+    if(IsEmptyMap(GetArrM(*Scores, gamebrp))){
+        CreateEmptyMap(&Scores->A[gamebrp]);
+        InsertMap(&Scores->A[gamebrp], currentWord, score);
+        printf("Score berhasil ditambahkan!\n");
+    }
+    else{
+        toLower(&currentWord);
+        while(IsMemberMap(GetArrM(*Scores,gamebrp),currentWord)){
+            printf("Nama sudah ada! silahkan input ulang: ");
+            STARTWORD_INPUT();
+        }
+        InsertMap(&Scores->A[gamebrp], currentWord, score);
+        printf("Score berhasil ditambahkan!\n");
+    }
     return 0;
 }

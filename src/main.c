@@ -17,9 +17,9 @@
 #include "Commands/history.h"
 #include "Commands/resethistory.h"
 #include "Commands/scoreboard.h"
+#include "Commands/resetscoreboard.h"
 #include "Commands/saveconfig.h"
 #include "Commands/loadconfig.h"
-
 
 
 int main(){
@@ -68,7 +68,7 @@ int main(){
         else if(isKataEqual(currentWord,"CREATE")){
             ADVWORD_INPUT();
             if(isKataEqual(currentWord,"GAME")){
-            createGame(&arrayGame);
+            createGame(&arrayGame, &arrayScore);
             }
             else{
             cmdLain();
@@ -86,7 +86,7 @@ int main(){
         else if(isKataEqual(currentWord,"DELETE")){
             ADVWORD_INPUT();
             if(isKataEqual(currentWord,"GAME")){
-            deleteGame(&arrayGame,qGame);
+            deleteGame(&arrayGame,qGame, &arrayScore);
             }
             else{
             cmdLain();
@@ -137,8 +137,18 @@ int main(){
             ADVWORD_INPUT();
             history(&sGame, wordToInt(currentWord));
         }
-        else if(isKataEqual(currentWord,"RESETHISTORY")){
-            resetHistory(&sGame);
+        else if(isKataEqual(currentWord,"RESET")){
+            ADVWORD_INPUT();
+            if(isKataEqual(currentWord,"HISTORY")){
+                resetHistory(&sGame);
+            }
+            else if(isKataEqual(currentWord,"SCOREBOARD")){
+                resetScoreboard(arrayGame, &arrayScore);
+            }
+            else{
+            cmdLain();
+            }
+
         }
         else{
             cmdLain();

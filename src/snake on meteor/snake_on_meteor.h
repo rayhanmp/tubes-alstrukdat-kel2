@@ -7,5 +7,6 @@
 #include "../ADT/matrixchar.h"
 #include "../ADT/word.h"
 #include "../ADT/mesinkata.h"
+#include "../ADT/arrayMap.h"
 
-int snake_on_meteor();
+int snake_on_meteor(arrScore *Scores, int gamebrp);

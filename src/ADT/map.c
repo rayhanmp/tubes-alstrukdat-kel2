@@ -59,9 +59,9 @@ void sortMap(scoreMap *M){
 				tempScore = (*M).Elements[i].Score;
 				(*M).Elements[i].Score = (*M).Elements[j].Score;
 				(*M).Elements[j].Score = tempScore;
-				CopyWord((*M).Elements[i].Name, &tempWord);
-				CopyWord((*M).Elements[j].Name, &(*M).Elements[i].Name);
-				CopyWord(tempWord, &(*M).Elements[j].Name);
+                CloneWord(&tempWord, (*M).Elements[i].Name);
+                CloneWord(&(*M).Elements[i].Name,(*M).Elements[j].Name);
+                CloneWord(&(*M).Elements[j].Name,tempWord);
 			}
 		}
 	}

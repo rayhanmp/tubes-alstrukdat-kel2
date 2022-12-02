@@ -1,6 +1,6 @@
 #include "prs.h"
 
-void prs() {
+void prs(arrScore *Scores, int gamebrp) {
   /* Definisikan, inisiasi, dan isi variabel*/
   int round, num, i, skorAnda, skorLawan;
   arrGame arrKata;
@@ -28,13 +28,13 @@ void prs() {
   Rock.TabWord[3] = 'K';
 
   
-  Paper.TabWord[0] = 'S';
-  Paper.TabWord[1] = 'C';
-  Paper.TabWord[2] = 'I';
-  Paper.TabWord[3] = 'S';
-  Paper.TabWord[4] = 'S';
-  Paper.TabWord[5] = 'O';
-  Paper.TabWord[6] = 'R';
+  Scissor.TabWord[0] = 'S';
+  Scissor.TabWord[1] = 'C';
+  Scissor.TabWord[2] = 'I';
+  Scissor.TabWord[3] = 'S';
+  Scissor.TabWord[4] = 'S';
+  Scissor.TabWord[5] = 'O';
+  Scissor.TabWord[6] = 'R';
   
   InsertLast(&arrKata, Rock);
   InsertLast(&arrKata, Paper);
@@ -44,9 +44,9 @@ void prs() {
   srand(time(NULL));
   
   /* Tuliskan tampilan awal dan aturan */
-  printf("\t\t\t\t\t\t\t\t█▀█ ▄▀█ █▀█ █▀▀ █▀█   █▀█ █▀█ █▀▀ █▄▀   █▀ █▀▀ █ █▀ █▀ █▀█ █▀█\n\t\t\t\t");
-  printf("\t\t\t\t█▀▀ █▀█ █▀▀ ██▄ █▀▄   █▀▄ █▄█ █▄▄ █░█   ▄█ █▄▄ █ ▄█ ▄█ █▄█ █▀▄\n\t\t\t\t");
-  
+  printf("___  ____ ___  ____ ____    ____ ____ ____ _  _    ____ ____ _ ____ ____ ____ ____ \n");
+  printf("|__] |__| |__] |___ |__/    |__/ |  | |    |_/     [__  |    | [__  [__  |  | |__/ \n");
+  printf("|    |  | |    |___ |  \\    |  \\ |__| |___ | \\_    ___] |___ | ___] ___] |__| |  \\ \n");
   printf("\n");
   printf("\n");
   
@@ -66,7 +66,7 @@ void prs() {
   while (!(round == 3 || round==5 || round==7 || round ==9)) {
     printf("Input tidak valid.\n");
     printf("Masukan jumlah ronde (3/5/7/9): ");
-    ADVWORD_INPUT();
+    STARTWORD_INPUT();
     round = wordToInt(currentWord);
   }
   
@@ -81,13 +81,13 @@ void prs() {
   for (i=0; i<round; i++) {
     printf("ROUND %d...\n", i+1);
     printf("Pilihan Anda (ROCK/PAPER/SCISSOR): ");
-    ADVWORD_INPUT();
+    STARTWORD_INPUT();
     printf("\n");
     
     while (!((isIdentical(currentWord, arrKata.A[0]) || (isIdentical(currentWord, arrKata.A[1]) || (isIdentical(currentWord, arrKata.A[2])))))) {
       printf("Input tidak valid.\n");
       printf("Input harus ditulis dengan huruf kapital, misal: ROCK\n");
-      ADVWORD_INPUT();
+      STARTWORD_INPUT();
     }
     if (isIdentical(currentWord, arrKata.A[0])) {
       num = rand() % 3;
@@ -161,7 +161,22 @@ void prs() {
   /* Menuliskan hasil pertandingan PRS ke layar */
   printf("Skor Anda: %d\n", skorAnda);
   printf("Skor Lawan: %d\n", skorLawan);
-  
+    printf("Masukkan Nama:");
+    STARTWORD_INPUT();
+    if(IsEmptyMap(GetArrM(*Scores, gamebrp))){
+        CreateEmptyMap(&Scores->A[gamebrp]);
+        InsertMap(&Scores->A[gamebrp], currentWord, skorAnda);
+        printf("Score berhasil ditambahkan!\n");
+    }
+    else{
+        toLower(&currentWord);
+        while(IsMemberMap(GetArrM(*Scores,gamebrp),currentWord)){
+            printf("Nama sudah ada! silahkan input ulang: ");
+            STARTWORD_INPUT();
+        }
+        InsertMap(&Scores->A[gamebrp], currentWord, skorAnda);
+        printf("Score berhasil ditambahkan!\n");
+    }
   if (skorAnda>skorLawan) {
     printf("Anda menang!\n");
   }
@@ -171,13 +186,4 @@ void prs() {
   else {
     printf("Anda kalah!\n");
   }
-             
-  /* Display game over */
-    printf("\t\t\t\t\t\t\t\t░██████╗░░█████╗░███╗░░░███╗███████╗\t░█████╗░██╗░░░██╗███████╗██████╗░\n\t\t\t\t");
-    printf("\t\t\t\t██╔════╝░██╔══██╗████╗░████║██╔════╝\t██╔══██╗██║░░░██║██╔════╝██╔══██╗\n\t\t\t\t");
-    printf("\t\t\t\t██║░░██╗░███████║██╔████╔██║█████╗░░\t██║░░██║╚██╗░██╔╝█████╗░░██████╔╝\n\t\t\t\t");
-    printf("\t\t\t\t██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░\t██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗\n\t\t\t\t");
-    printf("\t\t\t\t╚██████╔╝██║░░██║██║░╚═╝░██║███████╗\t╚█████╔╝░░╚██╔╝░░███████╗██║░░██║\n\t\t\t\t");
-    printf("\t\t\t\t░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝\t░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝\n\t\t\t\t");
-             
 }
