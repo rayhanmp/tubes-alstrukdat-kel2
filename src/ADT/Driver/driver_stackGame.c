@@ -113,5 +113,12 @@ int main() {
     printf("\n");
     // Expected output: GAME3 GAME2 GAME1
 
+    /* Uji Reverse Stack Game */
+    reverseSG(&sCopy);
+    printf("Isi elemen Stack Game yang telah di-reverse:\n");
+    PrintAllSG(sCopy);
+    printf("\n");
+    // Expected output: GAME1 GAME2 GAME3 GAME4
+
     return 0;
 }
