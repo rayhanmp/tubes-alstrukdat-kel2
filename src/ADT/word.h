@@ -49,4 +49,8 @@ void InsertLastW(Word* word, char* str);
 
 void printWord(Word word);
 /*Mencetak word ke layar*/
+
+void toLower(Word *word);
+/*Mengubah word menjadi huruf kecil semua*/
+
 #endif
