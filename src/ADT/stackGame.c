@@ -64,3 +64,34 @@ int LengthSG(stackGame S){
     }
     return length;
 }
+
+void PrintAllSG(stackGame S){
+    stackGame sTemp; 
+    CreateEmptySG(&sTemp);
+    int i = 1; Game game;
+    while (!IsEmptySG(S)) {
+        PopSG(&S, &game);
+        printf("%d. %s\n", i, game.TabWord);
+        i++;
+        PushSG(&sTemp, game);
+    }
+    while (!IsEmptySG(sTemp)) {
+        PopSG(&sTemp, &game);
+        PushSG(&S, game);
+    }
+}
+
+void PrintSomeSG(stackGame S, int n){
+    stackGame sTemp; 
+    CreateEmptySG(&sTemp);
+    int i = 1; Game game;
+    for (i = 1; i <= n; i++){
+        PopSG(&S, &game);
+        printf("%d. %s\n", i, game.TabWord);
+        PushSG(&sTemp, game);
+    }
+    for (i = 1; i <= n; i++){
+        PopSG(&sTemp, &game);
+        PushSG(&S, game);
+    }
+}

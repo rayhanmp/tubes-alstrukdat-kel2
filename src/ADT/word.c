@@ -15,7 +15,7 @@ void printchar(char character, int n)
     }
 }
 
-boolean isKataEqual(Word kata, char* string){
+boolean isKataEqual(Word word, char* string){
 /*
 Mengembalikan true jika word == string dan false jika word != string.
 Fungsi ini dipakai untuk menyocokan command input.
@@ -23,7 +23,7 @@ Fungsi ini dipakai untuk menyocokan command input.
     int i = 0;
     boolean equal = true;
     while(string[i] != '\0'){
-        if(kata.TabWord[i]!=string[i]){
+        if(word.TabWord[i]!=string[i]){
             return equal = false;
         }
         i++;
@@ -97,25 +97,24 @@ int wordToInt(Word word) {
     return sum;
 }
 
-int wordToIntDD (Word kata) {
-/*Mengubah kata dari input gim Diner Dash menjadi integer*/
-    int i=1, sum=0, len=kata.Length;
+int wordToIntDD (Word word) {
+/*Mengubah word dari input gim Diner Dash menjadi integer*/
+    int i=1, sum=0, len=word.Length;
     
     for (i; i<len; i++) {
-        sum = sum*10 + (kata.TabWord[i] - '0');
+        sum = sum*10 + (word.TabWord[i] - '0');
     }
     
     return sum;
 }
 
-boolean isIdentical(Word kata1, Word kata2){
-/*Mengembalikan true jika kata1 identik dengan kata2*/
+boolean isIdentical(Word word1, Word word2){
+/*Mengembalikan true jika word1 identik dengan word2*/
     int i = 0;
     boolean found = true;
-    
-    if (kata1.Length == kata2.Length) {
-        while(i < kata1.Length && (found)) {
-            if(kata1.TabWord[i]!=kata2.TabWord[i]){
+    if (word1.Length == word2.Length) {
+        while(i < word1.Length && (found)) {
+            if(word1.TabWord[i]!=word2.TabWord[i]){
                 found = false;
             }
             i++;
@@ -137,14 +136,13 @@ void InsertLastW(Word* word, char* str){
         i++;
     }
   word->TabWord[word->Length] ='\0';
-
 }
 
-void printWord(Word kata) {
+void printWord(Word word) {
 /*Mencetak word ke layar*/
     int i=0;
-    while (i < kata.Length) {
-        printf("%c", kata.TabWord[i]);
+    while (i < word.Length) {
+        printf("%c", word.TabWord[i]);
         i++;
     }
 }

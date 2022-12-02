@@ -60,4 +60,6 @@ void PopSG(stackGame * S, Game* game);
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
 void CopyStackSG(stackGame Sin, stackGame *Sout);
 int LengthSG(stackGame S);
+void PrintAllSG(stackGame S);
+void PrintSomeSG(stackGame S, int n);
 #endif

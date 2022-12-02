@@ -3,6 +3,7 @@
 
 #include "../boolean.h"
 #include <stdio.h>
+#include <stdlib.h>
 typedef char string[50];
 typedef struct
 {
@@ -41,8 +42,8 @@ int wordToInt (Word word);
 int wordToIntDD (Word word);
 /*Mengubah word dari input gim Diner Dash menjadi integer*/
 
-boolean isIdentical(Word kata1, Word kata2);
-/*Mengembalikan true jika kata1 identik dengan kata2*/
+boolean isIdentical(Word word1, Word word2);
+/*Mengembalikan true jika word1 identik dengan word2*/
 
 void InsertLastW(Word* word, char* str);
 /*Memasukkan str ke word dari akhir word.tabword*/
@@ -52,5 +53,4 @@ void printWord(Word word);
 
 void toLower(Word *word);
 /*Mengubah word menjadi huruf kecil semua*/
-
 #endif
