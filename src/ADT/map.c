@@ -128,7 +128,7 @@ void PrintMap(scoreMap M){
 		printWord(M.Elements[i].Name);
 		printchar(' ', Nspaces);
 		printf("|");
-		printWord(score);
+		printf("%d", wordToInt(score));
 		printchar(' ', Sspaces);
 		printf("|\n");
 	}
