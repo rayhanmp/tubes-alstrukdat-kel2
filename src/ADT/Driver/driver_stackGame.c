@@ -1,6 +1,6 @@
 /*** DRIVER ADT STACKGAME ***/
 
-#include "../stackGame.c"
+#include "../stackGame.h"
 
 int main() {
     stackGame s;
@@ -98,8 +98,20 @@ int main() {
     for (int i=0; i < out.Length; i++){
         printf("%c", out.TabWord[i]);
     }
-    printf("\n");
+    printf("\n\n");
     // Expected output: GAME4
+
+    /* Uji Print Beberapa Elemen Stack Game */
+    printf("Isi 2 Elemen Teratas Stack Game:\n");
+    PrintSomeSG(s, 2);
+    printf("\n");
+    // Expected output: GAME3 GAME2
+
+    /* Uji Print Semua Elemen Stack Game */
+    printf("Isi Semua Elemen Stack Game:\n");
+    PrintAllSG(s);
+    printf("\n");
+    // Expected output: GAME3 GAME2 GAME1
 
     return 0;
 }

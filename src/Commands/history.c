@@ -9,27 +9,9 @@ void history (stackGame *s, int n){
     if (IsEmptySG(*s)) {
         printf("History Game Anda KOSONG!\n");
     } else if (n >= Top(*s)) {
-        i = 1;
-        while (!IsEmptySG(*s)) {
-            PopSG(s, &game);
-            printf("%d. %s\n", i, game.TabWord);
-            i++;
-            PushSG(&sTemp, game);
-        }
-        while (!IsEmptySG(sTemp)) {
-            PopSG(&sTemp, &game);
-            PushSG(s, game);
-        }
+        PrintAllSG(*s);
     } else if (n > 0) {
-        for (i = 1; i <= n; i++){
-            PopSG(s, &game);
-            printf("%d. %s\n", i, game.TabWord);
-            PushSG(&sTemp, game);
-        }
-        for (i = 1; i <= n; i++){
-            PopSG(&sTemp, &game);
-            PushSG(s, game);
-        }
+        PrintSomeSG(*s, n);
     } else {
         printf("Masukkan jumlah yang valid!\n");
     }

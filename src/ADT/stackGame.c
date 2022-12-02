@@ -80,3 +80,18 @@ void PrintAllSG(stackGame S){
         PushSG(&S, game);
     }
 }
+
+void PrintSomeSG(stackGame S, int n){
+    stackGame sTemp; 
+    CreateEmptySG(&sTemp);
+    int i = 1; Game game;
+    for (i = 1; i <= n; i++){
+        PopSG(&S, &game);
+        printf("%d. %s\n", i, game.TabWord);
+        PushSG(&sTemp, game);
+    }
+    for (i = 1; i <= n; i++){
+        PopSG(&sTemp, &game);
+        PushSG(&S, game);
+    }
+}
